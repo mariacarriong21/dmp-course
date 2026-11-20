@@ -1,0 +1,52 @@
+% F5 · Plazos concurrentes: rige el más largo (D12·05)
+\documentclass[border=10pt]{standalone}
+\input{fig_comun}
+\begin{document}
+\begin{tikzpicture}[x=0.48cm, y=1cm]
+
+% ---------------- barras, con el rótulo encima ----------------------
+% #1 y  #2 hasta  #3 color trazo  #4 relleno  #5 rótulo
+\newcommand{\barra}[5]{%
+  \node[font=\scriptsize, text=cHead, anchor=west] at (0,#1+.34) {#5};
+  \fill[#4] (0,#1-.17) rectangle (#2,#1+.17);
+  \draw[#3, line width=.8pt] (0,#1-.17) rectangle (#2,#1+.17);}
+
+\barra{4.15}{25}{cMal}{cMalSuave}
+  {\textbf{25 años} · archivo maestro del ensayo clínico, desde su finalización}
+\barra{2.95}{15}{cAcc}{cAccSuave}
+  {\textbf{15 años} · conservación comprometida en el plan}
+\barra{1.75}{3}{cHead}{cSuave}
+  {\textbf{3 años} · límite de la autorización de acceso a datos preexistentes}
+
+% historia clínica: obligación ajena y con otro origen
+\node[font=\scriptsize, text=cGris, anchor=west] at (0,0.55+.34)
+  {\textbf{mín. 5 años} · historia clínica \emph{(del centro, desde el alta de cada proceso: otro origen)}};
+\draw[cGris, line width=.8pt, dash pattern=on 2.5pt off 2pt]
+  (0,0.55-.17) rectangle (5,0.55+.17);
+
+% ---------------- eje ------------------------------------------------
+\draw[cGris, line width=.6pt, -{Stealth[length=5pt]}] (0,-.35) -- (28,-.35);
+\foreach \x/\et in {0/0, 5/5, 10/10, 15/15, 20/20, 25/25}
+  \draw[cGris] (\x,-.27) -- (\x,-.43) node[below, font=\scriptsize, text=cGris] {\et};
+\node[font=\scriptsize\itshape, text=cGris, anchor=west] at (0,-.95)
+  {años desde el cierre del proyecto};
+
+% ---------------- lo que rige ----------------------------------------
+\draw[cMal, line width=1pt, dash pattern=on 3pt off 2pt] (25,4.75) -- (25,-.35);
+\node[font=\small\bfseries, text=cMal, anchor=south] at (25,4.82) {rige el más largo};
+
+% ---------------- y después ------------------------------------------
+\node[cajaTenue, font=\scriptsize, anchor=west, text width=3.3cm] (bloq) at (26.2,3.4)
+  {\textbf{Bloqueo}\\ mientras dure la prescripción};
+\node[cajaTenue, font=\scriptsize, anchor=west, text width=3.3cm] (borr) at (26.2,1.6)
+  {\textbf{Borrado seguro}\\ con acta de destrucción};
+\draw[fl] (25,3.4) -- (bloq.west);
+\draw[fl] (bloq.south) -- (borr.north);
+
+\node[rotulo, text width=19cm, align=left, anchor=north west] at (0,-1.35)
+  {Cumplir el plazo corto no exime del largo. La obligación sobre la historia clínica es del centro,
+   no del proyecto, y se cuenta desde otro momento: lo que el proyecto conserva es su copia extraída,
+   con su propio régimen. Los metadatos, la documentación y los datos agregados no se destruyen.};
+
+\end{tikzpicture}
+\end{document}

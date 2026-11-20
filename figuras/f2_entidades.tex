@@ -1,0 +1,46 @@
+% F2 · El modelo de entidades de un conjunto de datos (D10·05)
+\documentclass[border=10pt]{standalone}
+\input{fig_comun}
+\begin{document}
+\begin{tikzpicture}
+
+\tikzset{
+  ent/.style = {caja, text width=3.7cm, align=left, inner sep=7pt, font=\scriptsize},
+  entAncha/.style = {ent, text width=4.3cm},
+  card/.style= {etiq, font=\scriptsize\bfseries, text=cAcc},
+}
+
+% #1 nombre  #2 «una fila es»  #3 clave  #4 filas
+\newcommand{\entidad}[4]{%
+  {\small\bfseries\ttfamily #1}\\[2pt]
+  \textcolor{cGris}{una fila es}\\ #2\\[3pt]
+  \textcolor{cGris}{clave:} \texttt{#3}\\
+  \textcolor{cGris}{filas:} #4}
+
+\node[ent] (pac) at (0,0)
+  {\entidad{pacientes}{un paciente incluido}{id\_paciente}{400}};
+
+\node[ent] (vis) at (6.4,2.35)
+  {\entidad{visitas}{una visita de un paciente}{id\_paciente + n\_visita}{$\sim$1.800}};
+
+\node[ent] (mue) at (6.4,-0.35)
+  {\entidad{muestras}{una muestra extraída}{id\_muestra}{$\sim$900}};
+
+\node[ent] (img) at (6.4,-2.95)
+  {\entidad{imagen}{un estudio de resonancia}{id\_estudio}{120}};
+
+\node[entAncha] (det) at (12.6,-0.35)
+  {\entidad{determinaciones}{un resultado de laboratorio}{id\_muestra + cod\_prueba}{$\sim$5.400}};
+
+\draw[flAcc] (pac.east) -- (vis.west) node[card, pos=.55] {1 $\rightarrow$ 0 a 5};
+\draw[flAcc] (pac.east) -- (mue.west) node[card, pos=.55] {1 $\rightarrow$ 0 a 3};
+\draw[flAcc] (pac.east) -- (img.west) node[card, pos=.55] {1 $\rightarrow$ 0 o 1};
+\draw[flAcc] (mue.east) -- (det.west) node[card, pos=.5]  {1 $\rightarrow$ n};
+
+\node[rotulo, anchor=north west, text width=14.5cm, align=left] at (0,-4.55)
+  {Ni una palabra de bases de datos: qué tablas hay, qué representa una fila en cada una,
+   cuántas hay por paciente y por qué campo se enlazan. El diccionario de variables
+   cuelga de cada tabla, no de un saco único.};
+
+\end{tikzpicture}
+\end{document}

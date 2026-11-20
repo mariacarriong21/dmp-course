@@ -1,0 +1,8 @@
+﻿Id;Nombre;Contenido;Origen;Sistema de origen;Formato;Volumen estimado;¿Datos personales?;Responsable;Destino previsto
+CD1;Cuaderno de recogida;Variables clínicas y desenlaces, por visita;Recogida nueva;Plataforma institucional de captura;CSV;300 sujetos;Sí, seudonimizados;[nombre];Acceso controlado
+CD2;Extracción de historia clínica;Antecedentes y tratamientos previos;Preexistente, asistencial;Historia clínica del centro;CSV;300 sujetos;Sí, seudonimizados;[nombre];No se comparte
+CD3;Imagen de resonancia;Estudios de RM en el momento de inclusión;Recogida nueva;Servidor del servicio de radiología;DICOM;~120 GB (120 sujetos);Sí, identificabilidad intrínseca;[nombre];Acceso controlado
+CD4;Resultados de laboratorio;Determinaciones de cada visita;Otro sistema del centro;Sistema del laboratorio;CSV;300 sujetos;Sí, seudonimizados;[nombre];Acceso controlado
+CD5;Anotaciones de radiología;Lesiones marcadas por dos lectores;Producción propia sobre CD3;Estación de lectura;CSV;120 estudios;Sí, seudonimizados;[nombre];Acceso controlado
+CD6;Base de análisis;Conjunto integrado y depurado;Derivado de CD1–CD5;Espacio de red del grupo;CSV;254 sujetos;Sí, seudonimizados;[nombre];Acceso controlado
+CD7;Tablas agregadas;Tablas del análisis principal;Derivado de CD6;—;CSV;Tablas;No;[nombre];Abierto

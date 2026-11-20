@@ -1,0 +1,52 @@
+% F1 · La escala de identificabilidad (D6·02)
+\documentclass[border=10pt]{standalone}
+\input{fig_comun}
+\begin{document}
+\begin{tikzpicture}[node distance=0pt]
+
+\def\an{2.75}   % ancho de caja
+\def\se{0.42}   % separación
+
+% --- las cuatro posiciones de la escala ----------------------------
+\foreach \i/\tit/\sub [count=\n from 0] in {
+  1/Identificable/{nombre, n.\textordmasculine{} de historia,\\fecha exacta},
+  2/{Seudonimizado\\clave accesible}/{el equipo puede\\reidentificar},
+  3/{Seudonimizado\\clave separada}/{la custodia alguien\\ajeno al análisis},
+  4/Anonimizado/{no existe clave;\\irreversible}}
+{
+  \pgfmathsetmacro{\x}{\n*(\an+\se)}
+  \node[caja, text width=\an cm-12pt, minimum height=1.15cm] (c\i) at (\x,0) {\tit};
+  \node[rotulo, below=3pt of c\i.south, text width=\an cm] {\sub};
+}
+
+% --- flechas entre cajas -------------------------------------------
+\foreach \a/\b in {c1/c2, c2/c3, c3/c4}
+  \draw[fl] (\a) -- (\b);
+
+% --- frontera del RGPD ---------------------------------------------
+\coordinate (fr) at ($(c3.east)!0.5!(c4.west)$);
+\draw[cMal, line width=1pt, dash pattern=on 3pt off 2pt]
+      ($(fr)+(0,1.45)$) -- ($(fr)+(0,-1.55)$);
+
+% --- llaves y rótulos de ámbito ------------------------------------
+\draw[llave] ($(c1.north west)+(0,.12)$) -- ($(c3.north east)+(0,.12)$)
+  node[midway, above=6pt, font=\small\bfseries, text=cMal]
+  {Datos personales · se aplica el RGPD};
+
+\draw[llave] ($(c4.north west)+(0,.12)$) -- ($(c4.north east)+(0,.12)$)
+  node[midway, above=6pt, font=\small\bfseries, text=cBien]
+  {Fuera del RGPD};
+
+% --- gradiente de riesgo -------------------------------------------
+\draw[{Stealth[length=5pt]}-{Stealth[length=5pt]}, draw=cGris, line width=.6pt]
+  ($(c1.south west)+(0,-1.15)$) -- ($(c4.south east)+(0,-1.15)$);
+\node[rotulo, anchor=west] at ($(c1.south west)+(.05,-1.42)$) {mayor riesgo de reidentificación};
+\node[rotulo, anchor=east] at ($(c4.south east)+(-.05,-1.42)$) {menor riesgo};
+
+% --- aviso sobre la anonimización real ------------------------------
+\node[rotulo, text width=5.4cm, anchor=north, text=cMal]
+  at ($(c4.south)+(0,-1.95)$)
+  {En investigación biomédica la anonimización\\ real es excepcional: casi todo lo que se\\ llama «anonimizado» está en la casilla anterior.};
+
+\end{tikzpicture}
+\end{document}

@@ -1,0 +1,45 @@
+% F4 · El estudio federado: salen resultados, no datos (D10·07)
+\documentclass[border=10pt]{standalone}
+\input{fig_comun}
+\begin{document}
+\begin{tikzpicture}
+
+% ---------------- el equipo investigador ----------------------------
+\node[cajaAcc, text width=4.1cm, align=left, inner sep=8pt] (eq) at (0,0) {
+  {\small\bfseries Equipo investigador}\\[3pt]
+  \scriptsize
+  Definiciones de cohorte\\
+  Paquete de análisis\\
+  Especificación del estudio};
+
+% ---------------- los tres centros ----------------------------------
+\foreach \i/\y/\nom in {1/2.9/{Centro A}, 2/0/{Centro B}, 3/-2.9/{Centro C}}{
+  \node[caja, text width=3.9cm, align=left, inner sep=8pt] (c\i) at (9.2,\y) {
+    {\small\bfseries \nom}\\[3pt]
+    \scriptsize Base local en modelo común\\
+    \textcolor{cMal}{\bfseries los datos no salen}};
+  % barrera
+  \draw[cMal, line width=.9pt, dash pattern=on 2.5pt off 2pt]
+    ($(c\i.north west)+(-.6,.15)$) -- ($(c\i.south west)+(-.6,-.15)$);
+  % ida y vuelta
+  \draw[flAcc] ($(eq.east)+(0,.28)$) to[out=8,in=175] ($(c\i.west)+(-.75,.22)$);
+  \draw[fl, draw=cBien] ($(c\i.west)+(-.75,-.22)$) to[out=185,in=-8] ($(eq.east)+(0,-.28)$);
+}
+
+\node[etiq, text=cAcc] at (5.0,1.15) {va el \textbf{análisis}};
+\node[etiq, text=cBien] at (5.0,-1.15) {vuelven \textbf{resultados agregados}};
+
+% ---------------- lo que el proyecto deposita -----------------------
+\node[cajaOk, text width=11.6cm, align=left, inner sep=8pt] (dep) at (4.6,-5.0) {
+  {\small\bfseries Lo que el proyecto deposita, en abierto y sin restricción legal}\\[3pt]
+  \scriptsize
+  Definiciones de cohorte \quad · \quad Paquete de análisis \quad · \quad Resultados agregados};
+
+\draw[fl, draw=cBien] (eq.south) -- ($(dep.north)+(-4.4,0)$);
+
+\node[rotulo, text width=12cm, anchor=north] at (4.6,-6.1)
+  {El proyecto nunca tuvo datos individuales que depositar, y aun así publica tres cosas citables.
+   La custodia y los plazos de los datos de origen corresponden a cada centro.};
+
+\end{tikzpicture}
+\end{document}

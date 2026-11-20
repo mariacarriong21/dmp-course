@@ -1,0 +1,60 @@
+% F6 · Árbol de decisión: destino de cada conjunto (D13·01)
+\documentclass[border=10pt]{standalone}
+\input{fig_comun}
+\begin{document}
+\begin{tikzpicture}
+
+\tikzset{
+  preg/.style = {caja, text width=4.8cm, minimum height=1.05cm, font=\scriptsize},
+  dest/.style = {text width=3.5cm, minimum height=1cm, font=\scriptsize\bfseries,
+                 rounded corners=2.5pt, align=center, inner sep=6pt, line width=.8pt},
+  si/.style   = {etiq, text=cBien, font=\scriptsize\bfseries},
+  no/.style   = {etiq, text=cMal,  font=\scriptsize\bfseries},
+}
+
+% ---------------- columna de preguntas ------------------------------
+\node[cajaTenue, text width=3.6cm, font=\scriptsize\bfseries] (ini) at (0,0)
+  {Un conjunto del inventario};
+\node[preg] (p1) at (0,-2.0) {¿Contiene datos personales?};
+\node[preg] (p2) at (0,-4.0) {¿Lo permiten el consentimiento\\ y las autorizaciones?};
+\node[preg] (p3) at (0,-6.0) {¿Existe un procedimiento de acceso\\ con órgano, criterios y plazo?};
+
+\draw[fl] (ini) -- (p1);
+\draw[fl] (p1) -- (p2) node[no, pos=.5] {sí};
+\draw[fl] (p2) -- (p3) node[si, pos=.5] {sí};
+
+% ---------------- destinos ------------------------------------------
+\node[dest, draw=cBien, fill=cBienSuave, text=cBien] (ab) at (7.6,-2.0) {ABIERTO};
+\node[dest, draw=cMal,  fill=cMalSuave,  text=cMal]  (nc) at (7.6,-4.0) {NO SE COMPARTE};
+\node[dest, draw=cAcc,  fill=cAccSuave,  text=cAcc]  (ac) at (7.6,-6.0) {ACCESO\\ CONTROLADO};
+
+\draw[fl, draw=cBien] (p1) -- (ab) node[si, pos=.45] {no};
+\draw[fl, draw=cMal]  (p2) -- (nc) node[no, pos=.45] {no};
+\draw[fl, draw=cAcc]  (p3) -- (ac) node[si, pos=.45] {sí};
+
+% la respuesta «no» de la tercera pregunta no cierra el conjunto: obliga a definirlo
+\node[cajaAcc, text width=5.4cm, font=\scriptsize] (def) at (0,-8.1)
+  {Hay que \textbf{definirlo} antes de depositar.\\ No tenerlo no es motivo para cerrar el conjunto};
+\draw[fl, draw=cAcc] (p3) -- (def) node[no, pos=.5] {no};
+\draw[fl, draw=cAcc] (def.east) -| (ac.south);
+
+% ---------------- los tres frenos -----------------------------------
+\node[cajaTenue, text width=3.9cm, font=\scriptsize, anchor=west] (fre) at (12.0,-4.0) {
+  \textbf{El freno, siempre uno de tres}\\[3pt]
+  el RGPD\\ el consentimiento\\ un tercero};
+\draw[fl, draw=cMal] (nc.east) -- (fre.west);
+
+% ---------------- la pregunta obligatoria ---------------------------
+\node[cajaOk, text width=16.4cm, align=left, font=\scriptsize, anchor=north] (alt) at (6.3,-9.6) {
+  {\small\bfseries Y antes de darlo por cerrado: ¿hay una \emph{versión} del conjunto que sí se pueda compartir?}\\[4pt]
+  registro con metadatos públicos \quad · \quad versión agregada \quad · \quad
+  subconjunto sin las variables sensibles \quad · \quad diccionario, documentación y código};
+\draw[fl, draw=cBien] (fre.south) |- (alt.east);
+
+\node[rotulo, text width=15.3cm, align=left, anchor=north west] at (-1.65,-11.4)
+  {Tan abierto como sea posible, tan cerrado como sea necesario. La decisión se toma
+   \textbf{conjunto por conjunto}: decidir en bloque es el error más frecuente, y casi siempre
+   en la dirección restrictiva.};
+
+\end{tikzpicture}
+\end{document}

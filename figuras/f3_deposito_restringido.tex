@@ -1,0 +1,49 @@
+% F3 · Qué se ve y qué no en un depósito con metadatos públicos (D13·02)
+\documentclass[border=10pt]{standalone}
+\input{fig_comun}
+\begin{document}
+\begin{tikzpicture}
+
+% ---------------- el registro público -------------------------------
+\node[cajaOk, text width=6.1cm, align=left, inner sep=9pt] (reg) at (0,0) {
+  {\small\bfseries El registro · público}\\[4pt]
+  \scriptsize
+  Identificador permanente (DOI)\\
+  Título y descripción\\
+  Población, periodo y criterios de inclusión\\
+  Lista de variables y diccionario\\
+  Condiciones de acceso y licencia\\
+  Procedimiento para solicitarlo\\[3pt]
+  \textcolor{cBien}{\bfseries Indexable · citable · encontrable}};
+
+% ---------------- los ficheros --------------------------------------
+\node[cajaNo, text width=4.4cm, align=left, inner sep=9pt] (fich) at (8.6,0) {
+  {\small\bfseries Los ficheros · restringidos}\\[4pt]
+  \scriptsize
+  Registros individuales\\
+  Datos personales de\\ categoría especial\\[3pt]
+  \textcolor{cMal}{\bfseries No se descargan}};
+
+\node[rotulo] at ($(reg.north)!0.5!(fich.north)+(0,.62)$) {un mismo depósito, un mismo identificador};
+\draw[cGris, line width=.6pt, dash pattern=on 2pt off 2pt]
+  ($(reg.north east)+(.55,.35)$) -- ($(reg.south east)+(.55,-.35)$);
+
+% ---------------- quién llega a cada cosa ---------------------------
+\node[cajaTenue, text width=2.5cm] (todos) at (0,-3.1) {Cualquiera\\ en el mundo};
+\draw[fl, draw=cBien] (todos) -- (reg.south -| todos)
+  node[etiq, pos=.55, text=cBien] {acceso libre};
+
+\node[cajaTenue, text width=2.6cm] (solic) at (8.6,-4.6) {Investigador\\ solicitante};
+\node[cajaAcc, text width=4.4cm, align=left, inner sep=7pt] (com) at (8.6,-2.55) {
+  {\scriptsize\bfseries Evaluación de la solicitud}\\[2pt]
+  \scriptsize órgano que decide\\ criterios publicados\\ acuerdo de uso · plazo};
+\draw[flAcc] (solic) -- (com);
+\draw[flAcc] (com) -- (fich);
+
+% ---------------- el mensaje ----------------------------------------
+\node[rotulo, text width=12cm, anchor=north] at (4.3,-5.9)
+  {El catálogo es público; el dato, no. Así se cumplen \textbf{F}, \textbf{I} y \textbf{R} por completo,
+   y la \textbf{A} en su versión de acceso controlado, sin publicar un solo registro.};
+
+\end{tikzpicture}
+\end{document}
