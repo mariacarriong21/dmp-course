@@ -1,0 +1,210 @@
+<p>Es la única actividad que califica. Se responde sobre el caso descrito a continuación, no sobre el proyecto propio. El caso puede releerse en cualquier momento, y los materiales del curso están disponibles durante la prueba.</p>
+<p><strong>Umbral de superación:</strong> 70 %. Dos intentos.</p>
+<hr />
+<h2>El caso · Proyecto NEFRO-SEG</h2>
+<p><strong>Título.</strong> Predictores de progresión de la enfermedad renal crónica en pacientes con diabetes tipo 2: cohorte multicéntrica con seguimiento prospectivo y análisis retrospectivo de historia clínica.</p>
+<p><strong>Financiación.</strong> Convocatoria pública nacional de proyectos de investigación en salud, tres años, con exigencia de plan de gestión de datos alineado con los principios FAIR.</p>
+<p><strong>Centros.</strong> Tres hospitales. El centro A coordina; los centros B y C reclutan y aportan datos.</p>
+<p><strong>Qué hace el proyecto.</strong></p>
+<ol>
+<li>Recluta <strong>600 pacientes</strong> de forma prospectiva en las tres consultas de nefrología, con consentimiento informado. Se recogen variables clínicas y analíticas basales y en cuatro visitas de seguimiento, en un cuaderno de recogida electrónico alojado en una plataforma contratada por el centro A a un proveedor con servidores en Irlanda.</li>
+<li>Extrae de la <strong>historia clínica</strong> de esos mismos pacientes los cinco años previos: diagnósticos, tratamientos, ingresos y analíticas. Cada centro extrae los suyos y los envía al centro A.</li>
+<li>Obtiene una <strong>muestra de sangre basal</strong> de cada paciente, procesada en el laboratorio del centro A, del que se obtiene un panel de biomarcadores. Las muestras sobrantes se conservan congeladas.</li>
+<li>Realiza <strong>secuenciación dirigida</strong> de un panel de 40 genes en un subgrupo de 150 pacientes, en un servicio externo contratado.</li>
+<li>Produce una <strong>base de análisis</strong> limpia y las <strong>tablas de resultados</strong> del análisis principal.</li>
+</ol>
+<p><strong>Documentación existente.</strong> Protocolo v3.0. Hoja de información y consentimiento v2.0, que autoriza el tratamiento de los datos y de la muestra para los objetivos del estudio y su conservación durante diez años; <strong>no menciona</strong> la cesión a terceros, la reutilización posterior ni el depósito en repositorio. Dictamen favorable del CEIm del centro A, con reconocimiento por los CEIm de B y C.</p>
+<p><strong>Sistemas.</strong> La plataforma de captura tiene copia diaria con 30 días de retención, gestionada por el proveedor. El espacio de red del grupo del centro A, donde se trabaja con los datos exportados, tiene copia semanal sin retención declarada. El servidor de análisis del centro A no tiene copia de seguridad.</p>
+<p><strong>Equipo.</strong> IP en el centro A. Una técnica de datos a media jornada durante los tres años. Un investigador predoctoral que hará el análisis y que terminará su tesis en el mes 30. Investigadores colaboradores en B y C.</p>
+<hr />
+<pre><code>&gt;&gt;¿Cuántos conjuntos de datos distintos debería inventariar este proyecto, como mínimo?&lt;&lt;
+( ) Uno: los datos del estudio
+( ) Dos: los prospectivos y los retrospectivos
+(x) Cinco o más: cuaderno de recogida, extracción de historia clínica, biomarcadores, panel genético, base de análisis y tablas de resultados
+( ) Tres: clínicos, biológicos y genéticos
+[explanation]
+Al menos cinco, y probablemente seis. Cada uno tiene origen, sistema, identificabilidad y destino distintos: el cuaderno es recogida nueva; la extracción es dato asistencial preexistente; los biomarcadores derivan de la muestra; el panel genético lo produce un servicio externo; y la base de análisis y las tablas de resultados son conjuntos derivados con vida propia.
+[explanation]
+</code></pre>
+<pre><code>&gt;&gt;El panel de 40 genes de 150 pacientes. ¿Qué decisión hay que tomar sobre él desde el principio?&lt;&lt;
+( ) Anonimizarlo antes del análisis para poder publicarlo en abierto
+(x) Que será de acceso controlado: tiene identificabilidad intrínseca y ninguna transformación razonable la elimina
+( ) Depositarlo como material suplementario del artículo
+( ) Excluirlo del plan por tratarse de un servicio externo
+[explanation]
+Los datos genéticos identifican por naturaleza. La decisión se toma al escribir el plan, no al depositar, porque condiciona lo que se puede prometer en el apartado de compartición.
+[explanation]
+</code></pre>
+<pre><code>&gt;&gt;El servicio externo que realiza la secuenciación, ¿qué figura es?&lt;&lt;
+( ) Un cesionario de datos, que los trata para sus propios fines
+(x) Un encargado de tratamiento, que actúa siguiendo instrucciones del proyecto
+( ) Un corresponsable del tratamiento
+( ) Ninguna: al ser un servicio técnico no trata datos personales
+[explanation]
+Trata datos siguiendo instrucciones y para los fines del proyecto, no los suyos: es un **encargado de tratamiento**, y requiere contrato firmado por la institución. Debe declararse en el apartado 6.
+[explanation]
+</code></pre>
+<pre><code>&gt;&gt;La plataforma de captura tiene servidores en Irlanda. ¿Qué implica?&lt;&lt;
+(x) Nada especial: Irlanda está en el EEE, aunque el proveedor debe figurar como encargado
+( ) Es una transferencia internacional que requiere garantías adicionales
+( ) Obliga a anonimizar los datos antes de introducirlos
+( ) Impide usar la plataforma con datos de categoría especial
+[explanation]
+Irlanda pertenece al Espacio Económico Europeo, así que no hay transferencia internacional. Lo que sí hace falta es el contrato de encargado de tratamiento con el proveedor, y declararlo.
+
+La pregunta merece atención porque el reflejo habitual —«servidores fuera de España, luego transferencia internacional»— es incorrecto: la frontera relevante es la del EEE.
+[explanation]
+</code></pre>
+<pre><code>&gt;&gt;El consentimiento v2.0 no menciona el depósito en repositorio ni la reutilización posterior. ¿Qué se sigue de ello para el plan?&lt;&lt;
+( ) Que hay que modificar el consentimiento antes de continuar
+(x) Que los datos individuales no pueden depositarse, y el plan debe declararlo y ajustar el apartado de compartición
+( ) Que se pueden depositar si se seudonimizan previamente
+( ) Que la decisión corresponde al CEIm caso por caso
+[explanation]
+El consentimiento es el techo de lo que se puede hacer. Un plan que declara el límite y ajusta el destino de cada conjunto en consecuencia es correcto; uno que promete depósito en abierto se contradice con su propia sección legal.
+
+Rehacer el consentimiento con el estudio en marcha implicaría volver a contactar con 600 pacientes, y no es una opción realista.
+[explanation]
+</code></pre>
+<pre><code>&gt;&gt;Con ese consentimiento, ¿qué puede depositar el proyecto en abierto?&lt;&lt;
+[x] Las tablas de resultados agregadas
+[x] El diccionario de variables
+[x] El código de análisis
+[x] La descripción del estudio y los metadatos de los conjuntos
+[ ] La base de análisis seudonimizada
+[ ] El panel genético
+[explanation]
+Todo lo que no sea dato personal, más la documentación y los metadatos. Es exactamente la lección de FAIR con datos de salud: **tres letras de cuatro son alcanzables por completo** aunque no salga ni un registro individual.
+
+La base de análisis seudonimizada sigue siendo dato personal, y el panel genético es identificable por naturaleza.
+[explanation]
+</code></pre>
+<pre><code>&gt;&gt;Los centros B y C envían al centro A los datos extraídos de sus historias clínicas. ¿Qué debe recoger el plan sobre ese flujo?&lt;&lt;
+( ) Nada, si los tres centros participan en el mismo proyecto
+(x) Qué conjunto viaja, en qué nivel de identificabilidad, por qué canal y con qué instrumento jurídico entre los centros
+( ) Solo el canal técnico de transferencia
+( ) Únicamente que los tres CEIm han emitido dictamen
+[explanation]
+Es una salida de datos entre entidades distintas. El dictamen ético no sustituye al instrumento jurídico que ampara la comunicación, ni describe el flujo.
+[explanation]
+</code></pre>
+<pre><code>&gt;&gt;El servidor de análisis del centro A no tiene copia de seguridad. ¿Qué debe hacer el plan?&lt;&lt;
+( ) Omitirlo: no es el emplazamiento principal de los datos
+( ) Afirmar que se realizan copias periódicas, como es habitual
+(x) Declarar que no está cubierto e indicar la medida prevista, con responsable y plazo
+( ) Trasladar todo el análisis a la plataforma de captura
+[explanation]
+Declarar una limitación real y la acción prevista es lo que hace ejecutable el documento. Una promesa genérica de respaldo deja el riesgo intacto y añade una afirmación falsa.
+[explanation]
+</code></pre>
+<pre><code>&gt;&gt;Las muestras de sangre sobrantes se conservan congeladas. El consentimiento v2.0 autoriza la conservación de la muestra durante diez años para los objetivos del estudio. ¿Puede el proyecto usarlas más adelante para una línea de investigación nueva?&lt;&lt;
+( ) Sí, mientras estén codificadas
+(x) No: el consentimiento cubre los objetivos de este estudio, no investigación futura no relacionada
+( ) Sí, si el CEIm lo autoriza sin necesidad de nuevo consentimiento
+( ) Sí, si se incorporan a un biobanco
+[explanation]
+El consentimiento de las muestras autoriza lo que dice y nada más. Ampliar el uso exigiría una vía específica —nuevo consentimiento, o el cauce que corresponda con dictamen del comité—, y el plan debe declarar el límite tal como está.
+[explanation]
+</code></pre>
+<pre><code>&gt;&gt;¿Qué plazo de conservación corresponde a los datos del cuaderno de recogida de este proyecto?&lt;&lt;
+( ) 25 años, por tratarse de investigación clínica
+( ) 5 años, por el plazo de la historia clínica
+(x) Diez años, que es lo que autoriza el consentimiento, salvo que otra obligación imponga uno mayor
+( ) El que decida el investigador principal al cerrar el proyecto
+[explanation]
+El plazo de 25 años del artículo 58 del Reglamento (UE) 536/2014 se aplica al archivo maestro de los **ensayos clínicos con medicamentos**, y este es un estudio observacional. El plazo de 5 años de la Ley 41/2002 obliga al centro sobre la historia clínica, no al proyecto sobre su copia.
+
+Aquí el plazo relevante es el que el propio consentimiento fijó, y la regla general sigue siendo que cuando concurren varias obligaciones rige la más larga.
+[explanation]
+</code></pre>
+<pre><code>&gt;&gt;La extracción retrospectiva de historia clínica. ¿Qué base legal es más probable que la ampare?&lt;&lt;
+( ) El consentimiento del estudio, que los pacientes ya firmaron
+(x) Una habilitación distinta, determinada por la institución con el DPD y el comité, porque los datos preexisten al proyecto
+( ) El interés legítimo del equipo investigador
+( ) No necesita base legal por tratarse de datos ya recogidos
+[explanation]
+No hay una base legal para el proyecto, sino **para cada tratamiento**. La recogida prospectiva y el acceso a datos asistenciales preexistentes son tratamientos distintos y pueden ampararse de forma distinta.
+
+Que los pacientes hayan firmado el consentimiento del estudio no convierte automáticamente en lícito el acceso a sus historias de los cinco años previos.
+[explanation]
+</code></pre>
+<pre><code>&gt;&gt;El investigador predoctoral termina su tesis en el mes 30 y el proyecto dura 36. ¿Qué debe prever el plan?&lt;&lt;
+[x] La retirada de sus accesos a los sistemas donde residen los datos
+[x] Que la documentación del procesado y el código queden versionados y sean legibles para otros
+[x] A quién revierte la responsabilidad sobre las tareas que tenía asignadas
+[ ] La destrucción de los datos que haya utilizado
+[ ] La firma de un acuerdo de cesión de datos a su nueva institución
+[explanation]
+Las tres primeras son continuidad, y es el suceso más previsible del proyecto.
+
+No procede destruir datos: siguen siendo del proyecto. Y no hay cesión a su nueva institución salvo que se acuerde llevarse datos, que es otra decisión distinta y requeriría su propio instrumento.
+[explanation]
+</code></pre>
+<pre><code>&gt;&gt;El proyecto quiere que la base de análisis sea localizable pese a no poder publicarla. ¿Qué hace?&lt;&lt;
+( ) La publica anonimizada eliminando nombre y número de historia
+(x) La deposita con metadatos públicos e identificador permanente, y los ficheros en acceso restringido
+( ) La incluye como material suplementario del artículo
+( ) Anuncia en el artículo que está disponible bajo petición al IP
+[explanation]
+Es la modalidad que resuelve el caso: el registro es público, citable e indexable; los ficheros requieren autorización.
+
+Eliminar el nombre y el número de historia produce un conjunto **seudonimizado**, no anónimo. El material suplementario no tiene identificador propio ni preservación. Y «bajo petición al autor» no es un procedimiento.
+[explanation]
+</code></pre>
+<pre><code>&gt;&gt;Redactas el procedimiento de acceso controlado para ese depósito. ¿Qué es imprescindible?&lt;&lt;
+[x] Un órgano que evalúa las solicitudes, distinto de una persona concreta
+[x] Criterios de concesión publicados
+[x] Un acuerdo de uso que firma quien recibe los datos
+[x] Un plazo de respuesta
+[ ] Que el solicitante pertenezca a una institución del EEE
+[explanation]
+Los cuatro primeros son lo que convierte una disponibilidad informal en un procedimiento, que es lo que la A de FAIR exige.
+
+La pertenencia al EEE no es un requisito del procedimiento: una solicitud desde fuera es posible, con las garantías que correspondan a esa transferencia.
+[explanation]
+</code></pre>
+<pre><code>&gt;&gt;En el apartado 10 el plan escribe: «La gestión de los datos será responsabilidad del equipo investigador de los tres centros». ¿Qué falla?&lt;&lt;
+( ) Nada: refleja correctamente la naturaleza multicéntrica
+(x) Una tarea asignada a todos es una tarea de nadie: hace falta una persona por tarea
+( ) Debería asignarse íntegramente al investigador principal
+( ) Falta indicar el porcentaje de dedicación de cada centro
+[explanation]
+El reparto necesita **nombres**, tarea por tarea: mantenimiento del documento, custodia de la clave, accesos, diccionario, depósito y borrado.
+
+Asignarlo todo al IP tampoco resuelve nada: el IP responde de todo, pero no ejecuta todo, y hay tareas —la custodia de la clave— que no debe tener quien dirige el análisis.
+[explanation]
+</code></pre>
+<pre><code>&gt;&gt;La técnica de datos está contratada a media jornada durante los tres años. ¿Dónde aparece eso en el plan?&lt;&lt;
+( ) No aparece: el personal es un asunto de la memoria económica
+(x) En el apartado de recursos, como coste de la gestión de datos, y en el reparto de tareas
+( ) Solo en el reparto de tareas
+( ) En el apartado de seguridad, como personal con acceso
+[explanation]
+El **tiempo de personal** es la mayor partida del coste de gestión de datos y la que menos aparece. Y su nombre debe figurar en la tabla de reparto.
+
+Aparecerá además en la lista de personas con acceso, pero eso no sustituye a lo anterior.
+[explanation]
+</code></pre>
+<pre><code>&gt;&gt;En el mes 14, el centro C se retira del proyecto y entra un centro D con un sistema de historia clínica distinto. ¿Qué ocurre con el plan?&lt;&lt;
+( ) Nada mientras no cambien los objetivos del estudio
+(x) Hay que actualizarlo: cambian los centros, el flujo de datos y los sistemas de origen
+( ) Basta con anotarlo en la memoria de seguimiento del proyecto
+( ) Se actualiza al cierre, junto con el resto de la documentación
+[explanation]
+Es uno de los sucesos que obligan a revisar el documento: cambia quién trata los datos, por qué canal viajan y de qué sistema se extraen.
+
+Y se anota en el historial de versiones, que es lo que permite saber años después qué estaba vigente en cada momento.
+[explanation]
+</code></pre>
+<pre><code>&gt;&gt;Al cerrar el proyecto en el mes 36, ¿qué debería poder hacerse leyendo únicamente el plan de gestión de datos?&lt;&lt;
+[x] Saber qué conjuntos existen y dónde está cada uno
+[x] Saber cuánto se conserva cada uno y quién ejecuta el borrado
+[x] Saber qué se ha depositado y bajo qué condiciones de acceso
+[x] Saber quién responde de todo ello una vez cerrado el proyecto
+[ ] Reproducir los resultados del análisis principal
+[explanation]
+Las cuatro primeras son la función del documento: es el único del proyecto que mira hacia después del proyecto, cuando ya no quedará nadie del equipo original.
+
+Reproducir los resultados es cosa del **código y la documentación del procesado**, no del plan. El plan dice dónde están y con qué licencia.
+[explanation]
+</code></pre>

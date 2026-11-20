@@ -1,0 +1,519 @@
+<p><em>Documento de trabajo del curso.</em></p>
+<p>Estructura completa del documento. Las indicaciones en cursiva son ayuda para quien rellena y <strong>deben borrarse</strong> en el documento final: dejarlas dentro delata que nadie ha vuelto a leer el documento después de rellenarlo.</p>
+<h2>0 · Portada y control del documento</h2>
+<div class="tabla"><table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Qué se escribe</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Título del proyecto</strong></td>
+<td>Completo, tal como figura en la resolución de concesión.</td>
+</tr>
+<tr>
+<td><strong>Código del proyecto</strong></td>
+<td>Referencia del financiador.</td>
+</tr>
+<tr>
+<td><strong>Financiador y convocatoria</strong></td>
+<td>Y el año de la convocatoria.</td>
+</tr>
+<tr>
+<td><strong>Investigador/a principal</strong></td>
+<td>Nombre y ORCID.</td>
+</tr>
+<tr>
+<td><strong>Versión del PGD · fecha</strong></td>
+<td>El PGD se versiona. Esta no será la última.</td>
+</tr>
+<tr>
+<td><strong>Autor/a de esta versión</strong></td>
+<td>Quién la ha redactado.</td>
+</tr>
+<tr>
+<td><strong>Historial de versiones</strong></td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<div class="tabla"><table>
+<thead>
+<tr>
+<th><strong>Versión</strong></th>
+<th><strong>Fecha</strong></th>
+<th><strong>Autor/a</strong></th>
+<th><strong>Cambios principales</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Documentos relacionados</strong> <em>(evita repetir información y permite comprobar la coherencia)</em></p>
+<div class="tabla"><table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Qué se escribe</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Protocolo</strong></td>
+<td>Versión y fecha.</td>
+</tr>
+<tr>
+<td><strong>Hoja de información y consentimiento</strong></td>
+<td>Versión y fecha.</td>
+</tr>
+<tr>
+<td><strong>Dictamen del comité de ética</strong></td>
+<td>Referencia y fecha, o estado del trámite.</td>
+</tr>
+<tr>
+<td><strong>Autorización de acceso a datos</strong></td>
+<td>Si procede: referencia y fecha.</td>
+</tr>
+</tbody>
+</table></div>
+<h2>1 · Resumen de la gestión de datos</h2>
+<div class="tabla"><table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Qué se escribe</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Finalidad de los datos</strong></td>
+<td>Para qué se generan o reutilizan estos datos y cómo se relacionan con los objetivos del proyecto.</td>
+</tr>
+<tr>
+<td><strong>Resumen</strong></td>
+<td>Media página. Qué datos genera o reutiliza el proyecto, dónde vivirán, quién responde de ellos y qué se hará con ellos al terminar. <strong>Se escribe al final</strong>, cuando el resto ya está decidido.</td>
+</tr>
+</tbody>
+</table></div>
+<h2>2 · Conjuntos de datos</h2>
+<div class="tabla"><table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Qué se escribe</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Tabla de inventario</strong></td>
+<td>Se pega aquí la tabla de inventario completa (la que se elabora en la actividad de D10).</td>
+</tr>
+</tbody>
+</table></div>
+<figure class="figura">
+<img src="/static/f2_entidades.png" alt="La estructura de un conjunto, al nivel que se pide en la ficha: qué tablas hay, qué representa una fila en cada una, cuántas hay por sujeto y por qué campo se enlazan.">
+<figcaption>La estructura de un conjunto, al nivel que se pide en la ficha: qué tablas hay, qué representa una fila en cada una, cuántas hay por sujeto y por qué campo se enlazan.</figcaption>
+</figure>
+<p>A continuación, <strong>una ficha por cada conjunto</strong> de la tabla.</p>
+<h3>2.<em>n</em> · Ficha del conjunto <em>[Id]</em> — <em>[Nombre]</em></h3>
+<div class="tabla"><table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Qué se escribe</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Descripción y contenido</strong></td>
+<td>Qué contiene, con las variables o grupos de variables principales nombrados.</td>
+</tr>
+<tr>
+<td><strong>Origen</strong></td>
+<td>Recogida nueva, dato asistencial preexistente, cedido o reutilizado. Si es cedido o reutilizado: de quién y bajo qué condiciones.</td>
+</tr>
+<tr>
+<td><strong>Sistema de recogida u origen</strong></td>
+<td>Dónde se genera o de dónde se extrae. <strong>[capa local]</strong></td>
+</tr>
+<tr>
+<td><strong>Formato y volumen</strong></td>
+<td>Formato de los ficheros y volumen estimado.</td>
+</tr>
+<tr>
+<td><strong>Estructura y granularidad</strong></td>
+<td>Qué tablas o ficheros componen el conjunto, <strong>qué representa una fila</strong> en cada uno, cuántas hay por sujeto y por qué campo se enlazan entre sí. Una lista de variables no basta: no dice cuántas veces se mide cada una ni distingue lo que es del paciente de lo que es de la muestra, de la visita o del estudio de imagen.</td>
+</tr>
+<tr>
+<td><strong>Clasificación frente al RGPD</strong></td>
+<td>¿Contiene datos personales? ¿De categoría especial?</td>
+</tr>
+<tr>
+<td><strong>Nivel de identificabilidad</strong></td>
+<td>Identificable · seudonimizado con clave accesible · seudonimizado con clave separada · anonimizado. Si el conjunto es una tabla agregada, indicarlo y decir qué se ha comprobado para que no permita reidentificar.</td>
+</tr>
+<tr>
+<td><strong>Identificabilidad intrínseca</strong></td>
+<td>¿Es un tipo de dato que identifica por sí mismo aunque se le quiten las etiquetas? Genómica, imagen con reconstrucción facial, series muy pequeñas, enfermedades raras, fechas exactas. Si lo es, el destino se decide desde el principio.</td>
+</tr>
+<tr>
+<td><strong>Seudonimización</strong></td>
+<td>Cómo se genera el código y <strong>quién custodia la correspondencia</strong>, dónde, y si se transfiere o no.</td>
+</tr>
+<tr>
+<td><strong>Palabras clave</strong></td>
+<td>Tres o cuatro términos por los que alguien buscaría estos datos. Alimentan los metadatos del depósito.</td>
+</tr>
+<tr>
+<td><strong>Aseguramiento de la calidad</strong></td>
+<td>Qué se hace para que los datos sean correctos: validaciones en la recogida, doble entrada, monitorización, controles de rango.</td>
+</tr>
+<tr>
+<td><strong>Utilidad fuera del proyecto</strong></td>
+<td>A quién le podrían servir estos datos y para qué. Es lo que justifica compartirlos, y lo pregunta expresamente Horizon Europe.</td>
+</tr>
+<tr>
+<td><strong>Persona responsable</strong></td>
+<td>Nombre. No un servicio ni un departamento.</td>
+</tr>
+<tr>
+<td><strong>Destino final</strong></td>
+<td>Qué será de este conjunto al terminar el proyecto.</td>
+</tr>
+</tbody>
+</table></div>
+<h2>3 · Muestras biológicas</h2>
+<p><em>Solo si el proyecto las maneja. Las muestras no son datos, pero van unidas a ellos, y el PGD es donde se documenta ese vínculo.</em></p>
+<div class="tabla"><table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Qué se escribe</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Muestras que se obtienen o reutilizan</strong></td>
+<td>Tipo, número previsto y momento de obtención. Si proceden de un biobanco o de una colección previa, cuál y con qué autorización.</td>
+</tr>
+<tr>
+<td><strong>Vínculo entre muestra y dato</strong></td>
+<td>Cómo se relaciona cada muestra con el registro del sujeto, y quién custodia esa correspondencia. Es el mismo problema que la clave de seudonimización.</td>
+</tr>
+<tr>
+<td><strong>Trazabilidad y procedimientos</strong></td>
+<td>Bajo qué procedimientos normalizados se procesan, almacenan y transportan, y quién responde de ello.</td>
+</tr>
+<tr>
+<td><strong>Consentimiento para las muestras</strong></td>
+<td>Qué autoriza exactamente: este estudio, investigación relacionada o investigación futura. <strong>No se presupone que cubra lo mismo que el de los datos.</strong></td>
+</tr>
+<tr>
+<td><strong>Destino final de las muestras</strong></td>
+<td>Destrucción, conservación en el proyecto o incorporación a un biobanco. Si van a biobanco: cuál, y con qué acuerdo.</td>
+</tr>
+<tr>
+<td><strong>Datos derivados de las muestras</strong></td>
+<td>Los resultados analíticos son un conjunto de datos y deben estar en el inventario de la sección 2, con su propia ficha.</td>
+</tr>
+</tbody>
+</table></div>
+<blockquote>
+<p>Si el proyecto genera <strong>datos genómicos</strong>, conviene decidir aquí que serán de acceso controlado: un genoma identifica a una persona por naturaleza y ninguna transformación razonable lo evita.</p>
+</blockquote>
+<h2>4 · Otros resultados de investigación</h2>
+<p><em>Horizon Europe pregunta expresamente por ellos, y cada vez más convocatorias también. No todo lo que produce un proyecto son datos.</em></p>
+<div class="tabla"><table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Qué se escribe</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>¿Genera otros resultados?</strong></td>
+<td>Software o código de análisis, protocolos, cuadernos de laboratorio, modelos, flujos de trabajo, materiales de formación. Si no genera ninguno, se dice.</td>
+</tr>
+<tr>
+<td><strong>Para cada uno</strong></td>
+<td>Qué es, dónde vivirá, con qué licencia y quién responde de él.</td>
+</tr>
+<tr>
+<td><strong>Código de análisis</strong></td>
+<td>Si el análisis depende de código propio, dónde se versiona y si se publicará junto con los datos. Sin él, muchos resultados no son reproducibles.</td>
+</tr>
+</tbody>
+</table></div>
+<h2>5 · Documentación y metadatos</h2>
+<div class="tabla"><table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Qué se escribe</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Diccionario de variables</strong></td>
+<td>Dónde vive, quién lo mantiene, desde cuándo y <strong>cómo está organizado</strong> — por conjunto, o por tabla dentro de cada conjunto. Un conjunto sin diccionario no es reutilizable por nadie, incluido el propio equipo años después.</td>
+</tr>
+<tr>
+<td><strong>Documentación del procesado</strong></td>
+<td>Cómo se pasa del dato crudo al dato de análisis y dónde se registra ese recorrido.</td>
+</tr>
+<tr>
+<td><strong>Estándares y vocabularios</strong></td>
+<td>Terminologías o estándares empleados y <strong>en qué versión</strong>, distinguiendo qué mide cada variable, de qué sistema salen sus valores y de qué trata el conjunto. Normalmente no se eligen: se heredan del sistema de origen y de la normativa de registro. <strong>[capa local]</strong></td>
+</tr>
+<tr>
+<td><strong>Modelo común de datos</strong></td>
+<td>Si el estudio se realiza sobre bases ya transformadas a un modelo común: cuál, en qué versión, y con qué versión del vocabulario estandarizado. En ese caso la estructura no se describe: se referencia.</td>
+</tr>
+<tr>
+<td><strong>Metadatos para el depósito</strong></td>
+<td>Qué esquema se usará y quién los redactará.</td>
+</tr>
+<tr>
+<td><strong>Identificador persistente</strong></td>
+<td>Si se prevé DOI u otro identificador, y quién lo solicita. Es el primer requisito para que un conjunto sea localizable.</td>
+</tr>
+<tr>
+<td><strong>Nombrado y versionado</strong></td>
+<td>Convención de nombres de ficheros y de versiones del conjunto. Suena menor y es lo que hace que dentro de dos años se sepa cuál es el bueno.</td>
+</tr>
+</tbody>
+</table></div>
+<h2>6 · Marco legal y ético</h2>
+<div class="tabla"><table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Qué se escribe</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Base legal del tratamiento</strong></td>
+<td>Qué ampara cada tratamiento. Si hay varios tratamientos con bases distintas, se dice por separado.</td>
+</tr>
+<tr>
+<td><strong>Consentimiento</strong></td>
+<td>Qué cubre exactamente y qué no. En particular, si contempla o no la reutilización posterior y el depósito en repositorio.</td>
+</tr>
+<tr>
+<td><strong>Evaluación ética</strong></td>
+<td>Dictamen del comité: referencia, fecha o estado.</td>
+</tr>
+<tr>
+<td><strong>Acceso a datos preexistentes</strong></td>
+<td>Si se usan: qué autorización se ha obtenido o se solicitará, y a quién. <strong>[capa local]</strong></td>
+</tr>
+<tr>
+<td><strong>Cesiones y encargados</strong></td>
+<td>Quién recibe datos además del equipo, en qué nivel de identificabilidad y con qué instrumento jurídico.</td>
+</tr>
+<tr>
+<td><strong>Transferencias internacionales</strong></td>
+<td>Si salen datos del EEE: a dónde y qué las habilita. Incluye servicios en la nube y herramientas de análisis.</td>
+</tr>
+<tr>
+<td><strong>Evaluación de impacto (EIPD)</strong></td>
+<td>Procede o no procede, y por qué.</td>
+</tr>
+</tbody>
+</table></div>
+<h2>7 · Almacenamiento, seguridad y acceso</h2>
+<figure class="figura">
+<img src="/static/f7_emplazamientos.png" alt="Dónde vive cada copia durante el proyecto. El quinto emplazamiento no debería existir, y por eso el plan declara expresamente que no se usará.">
+<figcaption>Dónde vive cada copia durante el proyecto. El quinto emplazamiento no debería existir, y por eso el plan declara expresamente que no se usará.</figcaption>
+</figure>
+
+<div class="tabla"><table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Qué se escribe</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Dónde reside cada conjunto</strong></td>
+<td>Sistema concreto por conjunto, durante el proyecto. Se nombra el sistema. <strong>[capa local]</strong></td>
+</tr>
+<tr>
+<td><strong>Control de acceso</strong></td>
+<td>Quién tiene acceso, con qué permisos, quién los concede y <strong>quién los retira</strong> cuando alguien deja el equipo.</td>
+</tr>
+<tr>
+<td><strong>Copias de seguridad</strong></td>
+<td>Quién las hace, con qué frecuencia y si se verifica su restauración. Si no se sabe, hay que preguntarlo antes de escribirlo. <strong>[capa local]</strong></td>
+</tr>
+<tr>
+<td><strong>Medidas adicionales</strong></td>
+<td>Cifrado en reposo, registro de accesos u otras, si aplican.</td>
+</tr>
+<tr>
+<td><strong>Transferencia de datos</strong></td>
+<td>Cómo viajan los datos cuando salen de su sistema: entre centros, hacia el equipo de análisis o hacia un tercero. Es donde se producen la mayoría de los incidentes.</td>
+</tr>
+<tr>
+<td><strong>Recuperación</strong></td>
+<td>Qué se haría para recuperar los datos ante una pérdida, y si se ha probado.</td>
+</tr>
+<tr>
+<td><strong>Qué no se usará</strong></td>
+<td>Declaración explícita: nube personal, correo, dispositivos extraíbles, equipos sin cifrar, servicios no autorizados.</td>
+</tr>
+</tbody>
+</table></div>
+<h2>8 · Conservación y disposición final</h2>
+<figure class="figura">
+<img src="/static/f5_plazos.png" alt="Sobre un mismo conjunto concurren obligaciones de origen distinto. Cumplir la más corta no exime de la más larga.">
+<figcaption>Sobre un mismo conjunto concurren obligaciones de origen distinto. Cumplir la más corta no exime de la más larga.</figcaption>
+</figure>
+
+<div class="tabla"><table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Qué se escribe</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Plazo de conservación</strong></td>
+<td>Por conjunto, con la norma que lo fija. En investigación biomédica rara vez es uno solo, y casi nunca es el más corto: <em>(a)</em> el archivo maestro de un <strong>ensayo clínico con medicamentos</strong> se conserva <strong>25 años</strong> tras su finalización (art. 58 del Reglamento UE 536/2014); <em>(b)</em> la <strong>historia clínica</strong> la conserva el centro sanitario un mínimo de <strong>5 años</strong> desde el alta de cada proceso asistencial (art. 17 de la Ley 41/2002), con su propio régimen, ajeno al proyecto; <em>(c)</em> el financiador y la reproducibilidad de lo publicado imponen sus propios plazos.</td>
+</tr>
+<tr>
+<td><strong>Bloqueo de datos personales</strong></td>
+<td>Si procede: durante cuánto tiempo, dónde y con qué finalidades se conservan bloqueados. <strong>[capa local]</strong></td>
+</tr>
+<tr>
+<td><strong>Borrado seguro</strong></td>
+<td>Quién lo ejecuta, con qué procedimiento y cómo queda acreditado.</td>
+</tr>
+<tr>
+<td><strong>Qué se conserva indefinidamente</strong></td>
+<td>Normalmente los metadatos, la documentación y los datos agregados publicados.</td>
+</tr>
+</tbody>
+</table></div>
+<h2>9 · Compartición y publicación</h2>
+<figure class="figura">
+<img src="/static/f6_destino.png" alt="La decisión se toma conjunto por conjunto. Decidir en bloque es el error más frecuente.">
+<figcaption>La decisión se toma conjunto por conjunto. Decidir en bloque es el error más frecuente.</figcaption>
+</figure>
+
+<figure class="figura">
+<img src="/static/f3_deposito_restringido.png" alt="Depósito con metadatos públicos: el catálogo es público y el dato no. Es la modalidad que resuelve la mayoría de los conjuntos de datos de salud.">
+<figcaption>Depósito con metadatos públicos: el catálogo es público y el dato no. Es la modalidad que resuelve la mayoría de los conjuntos de datos de salud.</figcaption>
+</figure>
+
+<div class="tabla"><table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Qué se escribe</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Decisión por conjunto</strong></td>
+<td>Para cada conjunto: abierto, acceso controlado o no se comparte. <strong>Con la justificación cuando no es abierto</strong>, indicando si el freno es el RGPD, el consentimiento o un tercero.</td>
+</tr>
+<tr>
+<td><strong>Repositorio previsto</strong></td>
+<td>Cuál, con enlace, y por qué ese y no otro. Debe ser un repositorio <strong>fiable</strong>: con permanencia declarada, identificadores persistentes y curación. <strong>[capa local]</strong></td>
+</tr>
+<tr>
+<td><strong>Licencia</strong></td>
+<td>Cuál se aplicará a lo que se publique.</td>
+</tr>
+<tr>
+<td><strong>Procedimiento de acceso controlado</strong></td>
+<td>Quién autoriza las solicitudes, con qué criterios y bajo qué acuerdo de uso. <strong>[capa local]</strong></td>
+</tr>
+<tr>
+<td><strong>Momento y embargo</strong></td>
+<td>Cuándo se depositará y si habrá embargo, con su duración y motivo.</td>
+</tr>
+<tr>
+<td><strong>Declaración de disponibilidad</strong></td>
+<td>Redacción prevista del <em>data availability statement</em> de las publicaciones.</td>
+</tr>
+</tbody>
+</table></div>
+<h2>10 · Responsabilidades y recursos</h2>
+<p><strong>Reparto de tareas</strong></p>
+<div class="tabla"><table>
+<thead>
+<tr>
+<th><strong>Tarea</strong></th>
+<th><strong>Responsable</strong></th>
+<th><strong>Observaciones</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mantenimiento del PGD</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Custodia de la clave de seudonimización</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Control de accesos</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Diccionario de variables y documentación</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Depósito en repositorio</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Borrado seguro al cierre</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<div class="tabla"><table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Qué se escribe</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Recursos y coste</strong></td>
+<td>Qué cuesta la gestión de datos — almacenamiento, licencias, tiempo de personal, tasas de depósito — y a qué partida se carga.</td>
+</tr>
+<tr>
+<td><strong>Continuidad</strong></td>
+<td>Qué ocurre con estas responsabilidades si la persona designada deja el proyecto.</td>
+</tr>
+<tr>
+<td><strong>Calendario de revisión del PGD</strong></td>
+<td>Cuándo se revisará: hitos previstos y sucesos que obligan a actualizarlo.</td>
+</tr>
+</tbody>
+</table></div>

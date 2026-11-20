@@ -1,0 +1,89 @@
+<p>Comprobación de lo esencial de esta unidad didáctica. Sin nota y con intentos ilimitados: sirve para detectar lagunas antes de seguir.</p>
+<h2>Ejercicio · ¿Qué letra de FAIR falla aquí?</h2>
+<p>Cuatro conjuntos de datos, cada uno con un defecto distinto. Se trata de identificar qué principio incumple cada uno.</p>
+<pre><code>&gt;&gt;Un grupo publica su conjunto de datos en la página web del laboratorio, con un enlace del tipo «www.migrupo.es/descargas/datos_final_v3.zip». Los datos están bien documentados y llevan licencia. ¿Qué letra falla principalmente?&lt;&lt;
+(x) F — Localizable
+( ) A — Accesible
+( ) I — Interoperable
+( ) R — Reutilizable
+[explanation]
+Falla la **F**. El conjunto está bien documentado y bien licenciado, y se puede descargar sin trabas, así que la A y la R están razonablemente cubiertas. Pero no tiene identificador permanente y no está en ningún sitio donde alguien busque: cuando el grupo rehaga la web o cambie el servidor, el enlace morirá y nadie sabrá que ese conjunto existió. Depositarlo en un repositorio resuelve el problema casi por completo.
+[explanation]
+</code></pre>
+<pre><code>&gt;&gt;Una cohorte deposita sus datos en un repositorio con DOI y metadatos completos. El acceso requiere solicitud a un comité, que resuelve en dos meses con criterios publicados. ¿Qué letra falla?&lt;&lt;
+( ) F — Localizable
+( ) A — Accesible
+( ) I — Interoperable
+(x) Ninguna: el acceso restringido no incumple FAIR
+[explanation]
+**No falla ninguna por el hecho de estar restringido.** La A no exige acceso abierto: exige que el procedimiento para obtener los datos sea conocido, explícito y aplicable. Un comité con criterios publicados y un plazo conocido cumple exactamente eso. Sería otra cosa si el conjunto solo se pudiera pedir por correo a una persona que quizá conteste: eso sí incumpliría la A.
+[explanation]
+</code></pre>
+<pre><code>&gt;&gt;Un estudio recoge el diagnóstico principal como texto libre escrito por cada investigador: «IAM», «infarto agudo de miocardio», «infarto miocardio». El conjunto se deposita con DOI, licencia y buena documentación. ¿Qué letra falla?&lt;&lt;
+( ) F — Localizable
+( ) A — Accesible
+(x) I — Interoperable
+( ) R — Reutilizable
+[explanation]
+Falla la **I**. El conjunto se encuentra, se obtiene y está documentado, pero no se puede combinar con ningún otro sin un trabajo manual de normalización: nadie puede cruzarlo automáticamente con otra cohorte ni contar casos de forma fiable.
+
+Es además el fallo más caro de arreglar, porque la decisión se tomó **al diseñar la recogida**. Codificar el diagnóstico con una terminología estándar habría costado unos minutos entonces y horas de trabajo ahora.
+[explanation]
+</code></pre>
+<pre><code>&gt;&gt;Un conjunto está en un repositorio, tiene DOI, usa formatos estándar y se descarga sin restricciones. No indica bajo qué condiciones puede usarse ni explica cómo se seleccionaron los sujetos. ¿Qué letra falla?&lt;&lt;
+( ) F — Localizable
+( ) A — Accesible
+( ) I — Interoperable
+(x) R — Reutilizable
+[explanation]
+Falla la **R**. Se localiza, se obtiene y técnicamente se puede combinar, pero nadie puede reutilizarlo con confianza: sin licencia no se sabe qué está permitido hacer con él, y sin criterios de selección no se sabe a qué población representa ni si sirve para la pregunta de quien lo descarga.
+
+Y es el más barato de evitar de los cuatro: una licencia y un párrafo de procedencia.
+[explanation]
+</code></pre>
+<h2>Preguntas de repaso</h2>
+<pre><code>&gt;&gt;¿Qué significa exactamente la A de FAIR?&lt;&lt;
+( ) Que los datos se pueden descargar libremente
+(x) Que el procedimiento para obtener los datos es conocido, explícito y aplicable
+( ) Que los datos están en acceso abierto tras un periodo de embargo
+( ) Que cualquiera puede pedir los datos por correo al autor
+[explanation]
+**Accesible no es sinónimo de abierto.** La A exige que esté claro cómo se obtienen los datos, aunque para obtenerlos haga falta una autorización. Pedirlos por correo a una persona concreta no cumple la A: no es un procedimiento, es una casualidad.
+[explanation]
+</code></pre>
+<pre><code>&gt;&gt;Un conjunto de datos ha sido destruido al vencer su plazo de conservación. Según FAIR, ¿qué debe ocurrir con sus metadatos?&lt;&lt;
+( ) Se eliminan junto con los datos
+(x) Permanecen accesibles, documentando que ese conjunto existió
+( ) Se archivan sin publicar, por si alguien pregunta
+( ) Se sustituyen por una nota genérica
+[explanation]
+Es una de las exigencias menos intuitivas del principio: **los metadatos sobreviven al dato**. La descripción de un conjunto destruido debe seguir siendo localizable, porque documenta que ese trabajo se hizo y evita que otros lo repitan sin saberlo.
+[explanation]
+</code></pre>
+<pre><code>&gt;&gt;¿Cuál de las cuatro letras exige decisiones que se toman al recoger los datos y son muy caras de corregir después?&lt;&lt;
+( ) F — Localizable
+( ) A — Accesible
+(x) I — Interoperable
+( ) R — Reutilizable
+[explanation]
+La **I** depende del formato y del vocabulario con que se recogieron los datos. Recodificar a posteriori una variable anotada en texto libre cuesta mucho más que haberla recogido codificada. Las otras tres admiten arreglo tardío con bastante menos coste.
+[explanation]
+</code></pre>
+<pre><code>&gt;&gt;¿Por qué FAIR insiste tanto en identificadores, metadatos estructurados y vocabularios?&lt;&lt;
+( ) Porque lo exigen los repositorios institucionales
+(x) Porque los principios están pensados también para que las máquinas puedan procesar los datos sin intervención humana
+( ) Porque facilitan la citación en los artículos
+( ) Porque son requisitos de la normativa de protección de datos
+[explanation]
+FAIR está formulado pensando **también en el procesamiento automático**. Una persona puede sortear una variable mal nombrada o un formato raro; un sistema automático que quiera localizar, interpretar y combinar conjuntos, no. De ahí el énfasis en cosas que a un lector humano le parecen burocráticas.
+[explanation]
+</code></pre>
+<pre><code>&gt;&gt;¿Cuál es la forma correcta de plantearse FAIR en un proyecto?&lt;&lt;
+( ) Comprobar si el conjunto cumple los cuatro principios antes de depositarlo
+(x) Preguntarse qué falta para ser un poco más FAIR y cuánto cuesta conseguirlo
+( ) Aplicar FAIR solo a los conjuntos que se vayan a publicar en abierto
+( ) Delegar el cumplimiento en el repositorio elegido
+[explanation]
+FAIR es un **gradiente, no un aprobado**. Ningún conjunto es FAIR o deja de serlo: es más o menos localizable, más o menos interoperable. La pregunta útil es siempre incremental, y se aplica a todos los conjuntos, se publiquen o no.
+[explanation]
+</code></pre>

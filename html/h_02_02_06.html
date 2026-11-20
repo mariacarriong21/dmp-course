@@ -1,0 +1,60 @@
+<p>Dentro de un mismo proyecto conviven tres niveles de dato. Confundirlos es una de las causas más frecuentes de que un conjunto se pierda o de que se conserve lo que no había que conservar.</p>
+<div class="tabla"><table>
+<thead>
+<tr>
+<th>Nivel</th>
+<th>Qué es</th>
+<th>Ejemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Crudo</strong></td>
+<td>El dato tal como se generó, sin tocar</td>
+<td>La exportación íntegra del cuaderno de recogida; el DICOM original</td>
+</tr>
+<tr>
+<td><strong>Procesado</strong></td>
+<td>El dato limpio, integrado y listo para analizar</td>
+<td>La base de análisis con las exclusiones aplicadas y las fuentes unidas</td>
+</tr>
+<tr>
+<td><strong>De resultados</strong></td>
+<td>Lo que producen los análisis</td>
+<td>Las tablas y figuras del artículo; las estimaciones del modelo</td>
+</tr>
+</tbody>
+</table></div>
+<h2>Por qué no da igual</h2>
+<p>Porque <strong>tienen destinos distintos</strong>:</p>
+<ul>
+<li>El <strong>crudo</strong> es la referencia frente a la que se comprueba todo. Suele ser el más pesado y el que más restricciones lleva.</li>
+<li>El <strong>procesado</strong> es el que sostiene el resultado publicado y el que hace falta para reproducirlo. Es el que un revisor pediría.</li>
+<li>El <strong>de resultados</strong> es casi siempre el único <strong>publicable en abierto</strong>, porque está agregado y ya no contiene información sobre personas concretas.</li>
+</ul>
+<p>Un proyecto que solo conserva el crudo no puede reproducir su análisis sin rehacerlo entero. Uno que solo conserva el procesado no puede volver atrás si aparece un error en la limpieza.</p>
+<h2>Lo que hay entre medias</h2>
+<p>El paso de crudo a procesado <strong>también es un dato</strong>, aunque no lo parezca: el registro de qué se hizo, con qué criterio y en qué orden. Sin él, el conjunto procesado es un resultado sin trazabilidad, y no hay forma de saber si aquellos catorce casos se excluyeron por protocolo o por descuido.</p>
+<p>Ese registro puede ser un script, un cuaderno de análisis o un documento. Lo que no puede ser es la memoria de una persona.</p>
+<h2>La objeción: si publico el código, ¿para qué el resultado?</h2>
+<p>Es un argumento sólido y conviene tomarlo en serio. Si el código que produce las tablas está publicado, cualquiera puede regenerarlas; depositarlas parece duplicar algo que ya es derivable.</p>
+<p>El argumento es correcto, pero <strong>tiene una condición que casi nunca se cumple en biomedicina</strong>:</p>
+<blockquote>
+<p>Publicar el código hace reproducible la derivación <strong>para quien pueda obtener la entrada</strong>. Si la entrada es un conjunto de datos de salud restringido, eso es prácticamente nadie.</p>
+</blockquote>
+<p>Con el código publicado y el dato de partida bajo solicitud, quien lea el artículo puede <strong>auditar</strong> cómo se llegó al resultado —que ya es mucho— pero no puede <strong>obtenerlo</strong>. La tabla agregada sigue siendo lo único que circula.</p>
+<p>De hecho el efecto es el contrario del que sugiere la objeción: <strong>publicar el código aumenta el valor de depositar el resultado</strong>, porque convierte una cifra en una cifra con su procedencia comprobable.</p>
+<h2>Cuándo sí es redundante</h2>
+<p>Hay un caso en que la objeción se sostiene entera, y conviene reconocerlo: <strong>cuando el dato de partida es abierto</strong>.</p>
+<p>Con entrada pública y código publicado, el resultado es efectivamente derivable por cualquiera, y depositarlo aparte aporta poco. Es la situación normal en disciplinas de datos abiertos, y ahí es defendible tratar las tablas como parte de la publicación y no como un conjunto.</p>
+<p>En investigación con datos de pacientes esa situación casi no se da. De ahí la regla práctica:</p>
+<blockquote>
+<p>La pregunta no es si el resultado es derivable <strong>en principio</strong>, sino si lo es <strong>para quien lo va a necesitar</strong>. Lo que nadie puede reconstruir, hay que depositarlo.</p>
+</blockquote>
+<h2>Una conclusión que no hay que sacar</h2>
+<p>Todo lo anterior trata de <strong>qué se deposita</strong>, y de ahí es fácil concluir de más: que un conjunto derivado que no se va a depositar tampoco hace falta contarlo. Son dos decisiones distintas, y cada una tiene su criterio.</p>
+<ul>
+<li><strong>Si es un conjunto aparte</strong> lo decide la regla de la unidad D2·01: se separa cuando tiene origen, ubicación, amparo legal, plazo o destino propios. Un producto derivado casi siempre tiene alguno, así que casi siempre cuenta como conjunto y aparece en la lista del proyecto.</li>
+<li><strong>Si se deposita por separado</strong>, con identificador permanente propio, lo decide lo que se acaba de discutir: si alguien que lo necesite podría regenerarlo por su cuenta.</li>
+</ul>
+<p>De ahí que un plan pueda decir, sin contradicción, que un conjunto derivado <strong>existe, está descrito y no se deposita</strong>, porque es reproducible a partir de la entrada y del código publicados. Eso no es un hueco del documento: es una decisión razonada, que es exactamente lo que se pide.</p>

@@ -1,0 +1,24 @@
+<p>Un proyecto no lo hace el IP: lo hace un equipo que cambia con los años. Doctorandos que entran y salen, personal con contrato por obra, rotantes, técnicos que dan apoyo tres meses. Y todos ellos, en algún momento, acceden a los datos.</p>
+<h2>Dos principios</h2>
+<p><strong>El acceso es nominal.</strong> No hay cuentas compartidas ni contraseñas de equipo. Cada persona accede con su identidad, y eso permite saber quién hizo qué. Una credencial compartida hace imposible la trazabilidad y convierte cualquier incidente en un misterio.</p>
+<p><strong>El acceso es el mínimo necesario.</strong> No todo el equipo necesita todos los conjuntos. Quien analiza los resultados agregados no necesita la base con identificadores; quien recoge datos en consulta no necesita el conjunto de imagen.</p>
+<h2>Quién tiene acceso tiene que poder consultarse</h2>
+<p>En cualquier momento debe poder responderse con precisión: <strong>quién tiene acceso a qué conjunto, desde cuándo y con qué permisos</strong>. No es un trámite; es lo que se mira cuando hay que responder a un comité o a una auditoría, o cuando ocurre un incidente.</p>
+<p>Ahora bien, eso <strong>casi nunca exige llevar una lista aparte</strong>. En la mayoría de los proyectos esa información ya existe dentro del propio sistema, en forma de registro de usuarios: una herramienta como REDCap tiene, en cada proyecto, su tabla de usuarios con los permisos de cada uno por formulario; una carpeta institucional tiene su grupo de acceso; un entorno de análisis o un repositorio de código tienen sus miembros.</p>
+<p>Cuando ese registro existe, <strong>es preferible a cualquier lista paralela</strong>, por una razón simple: la lista es una copia y se desactualiza, mientras que el registro del sistema <em>es</em> el acceso real. Lo que el proyecto tiene que hacer entonces es decir en el plan <strong>dónde vive ese registro y quién lo revisa</strong>, no transcribirlo.</p>
+<p>Hace falta mantener una lista propia solo cuando el acceso no pasa por ningún sistema que lo registre: ficheros en un espacio de red compartido por varias personas, o datos en el ordenador de alguien. Y eso, más que una lista, suele ser la señal de que el sitio donde viven esos datos no es el adecuado.</p>
+<h2>La baja que nadie da</h2>
+<p>Es el fallo más común y el más silencioso.</p>
+<blockquote>
+<p>Alguien termina su contrato, defiende su tesis o cambia de grupo. Nadie avisa. Su acceso sigue activo meses o años.</p>
+</blockquote>
+<p>Los sistemas gestionan altas y bajas, pero <strong>solo saben que una persona ha dejado el proyecto si alguien se lo comunica</strong>. Y quien tiene que comunicarlo es el equipo, no el sistema.</p>
+<p>Conviene aprovechar situaciones que ya se producen para incorporarlo a la rutina, como cuando termina un contrato, se defiende una tesis o alguien deja la organización. Y revisar de arriba abajo el registro de usuarios una vez al año es lo mínimo: cuesta diez minutos y casi siempre sobra alguien.</p>
+<h2>Personal en formación y personal externo</h2>
+<p>Dos casos que suelen resolverse mal por prisa:</p>
+<ul>
+<li><strong>Personal en formación.</strong> Un estudiante que hace su trabajo de fin de máster con datos del proyecto necesita el mismo tratamiento que cualquier otro miembro: alta nominal, permisos mínimos y baja al terminar. Que sea temporal no lo hace menor.</li>
+<li><strong>Personal de otra entidad.</strong> Si alguien ajeno a la institución necesita acceder, no basta con darle una clave. Hay condiciones que cumplir, y se ven en el bloque siguiente.</li>
+</ul>
+<h2>Compromisos de confidencialidad</h2>
+<p>Quien accede a datos de un proyecto asume un deber de confidencialidad, que en el personal vinculado suele venir de su relación laboral y en el resto hay que documentar expresamente. Comprobarlo forma parte de dar el alta, no de arreglarlo después.</p>

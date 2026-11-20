@@ -1,0 +1,109 @@
+<p>Los principios están escritos en abstracto a propósito, para que sirvan a cualquier disciplina. Traducidos a lo que hay que hacer en un proyecto biomédico, se quedan en esto:</p>
+<div class="tabla"><table>
+<thead>
+<tr>
+<th>Letra</th>
+<th>Lo que hay que hacer</th>
+<th>Cuándo se hace</th>
+<th>¿Tiene arreglo más tarde?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>F</strong></td>
+<td>Depositar en un repositorio que asigne identificador permanente</td>
+<td>Al cerrar</td>
+<td>Sí, si queda quien lo haga y con qué pagarlo</td>
+</tr>
+<tr>
+<td></td>
+<td>Escribir metadatos que permitan juzgar el conjunto sin abrirlo</td>
+<td>Al depositar</td>
+<td>Sí, se pueden mejorar después</td>
+</tr>
+<tr>
+<td></td>
+<td>Elegir palabras clave por las que alguien buscaría</td>
+<td>Al depositar</td>
+<td>Sí</td>
+</tr>
+<tr>
+<td><strong>A</strong></td>
+<td>Definir el procedimiento de acceso: quién autoriza y con qué criterios</td>
+<td>Al depositar, y cada vez que alguien solicita</td>
+<td>Sí, salvo que el consentimiento no contemple la cesión</td>
+</tr>
+<tr>
+<td></td>
+<td>Publicar la descripción aunque el dato sea restringido</td>
+<td>Al depositar</td>
+<td>Sí</td>
+</tr>
+<tr>
+<td><strong>I</strong></td>
+<td>Usar formatos abiertos y documentados</td>
+<td><strong>Al recoger</strong></td>
+<td>A veces, y convertir cuesta o pierde información</td>
+</tr>
+<tr>
+<td></td>
+<td>Codificar con vocabularios estándar cuando exista uno</td>
+<td><strong>Al recoger</strong></td>
+<td><strong>Casi nunca</strong></td>
+</tr>
+<tr>
+<td></td>
+<td>Documentar cómo se enlaza con otras fuentes</td>
+<td>Al procesar</td>
+<td>Sí, mientras quede quien lo recuerde</td>
+</tr>
+<tr>
+<td><strong>R</strong></td>
+<td>Mantener el diccionario de variables</td>
+<td>Desde la primera variable</td>
+<td>A medias, y preguntando a gente que quizá ya no esté</td>
+</tr>
+<tr>
+<td></td>
+<td>Documentar procedencia, criterios de inclusión y limpieza</td>
+<td>Sobre la marcha</td>
+<td><strong>No.</strong> Es memoria, y se pierde</td>
+</tr>
+<tr>
+<td></td>
+<td>Asignar licencia</td>
+<td>Al depositar</td>
+<td>Sí</td>
+</tr>
+</tbody>
+</table></div>
+<h2>Lo que conviene notar de esa tabla</h2>
+<p><strong>La columna que importa es la última.</strong> Las obligaciones de FAIR no se reparten entre «cosas del principio» y «cosas del final»: casi todas se ejecutan al procesar o al depositar. Lo que de verdad las distingue es <strong>si dejan puertas cerradas</strong>. Un identificador o una licencia se pueden añadir el año que viene; una variable que se anotó en texto libre, no.</p>
+<p><strong>El plan no congela nada.</strong> Que algo se ejecute al cerrar el proyecto no significa que se decida entonces. El plan de gestión de datos se escribe al principio y <strong>se actualiza a lo largo del proyecto</strong> —es el asunto de las unidades didácticas D5 y D18—, de modo que la mayoría de estas casillas se revisan más de una vez. Lo que el documento sirve para evitar es justamente lo de la última columna: llegar a la casilla sin arreglo sin haberla mirado.</p>
+<p><strong>Las dos exigencias de la I se ejecutan al recoger</strong>, y son las que menos remedio tienen: recodificar a posteriori una variable anotada en texto libre cuesta más que haberla recogido codificada, y muchas veces no se puede.</p>
+<p><strong>La R es la más barata y la más olvidada.</strong> Mantener el diccionario y anotar las decisiones de limpieza no cuesta dinero ni infraestructura: cuesta disciplina, y es lo que más se abandona en cuanto el proyecto se acelera.</p>
+<p><strong>La F la aporta en gran medida el repositorio.</strong> Identificador permanente, indexación y formulario de metadatos vienen de serie. La parte que sigue correspondiendo al investigador es escribir unos metadatos que valgan para algo.</p>
+<h2>Cuatro maneras de suspender una letra</h2>
+<p>Los principios se entienden mejor por sus fallos, y estos cuatro son los que más se repiten. En los cuatro, <strong>el dato está</strong>: lo que falla es cómo se dejó.</p>
+<p><strong>Un conjunto en un repositorio, descargable por cualquiera, sin licencia declarada.</strong> Quien lo encuentra no sabe si puede usarlo en un trabajo propio, redistribuirlo o incorporarlo a otro conjunto, y ante la duda un grupo prudente no lo usa. <strong>Falla la R</strong>, y el fallo se arregla marcando una casilla en el formulario de depósito.</p>
+<p><strong>«Datos disponibles bajo petición razonada al autor de correspondencia.»</strong> Es la fórmula más repetida de la literatura biomédica. <strong>Falla la A</strong>, porque eso no es un procedimiento: es la disponibilidad de una persona, que cambiará de institución, de correo o de disposición. Un comité con criterios publicados y un plazo de respuesta sí lo es, aunque deniegue solicitudes.</p>
+<p><strong>Los datos en la web del grupo, o en un enlace a una carpeta en la nube.</strong> <strong>Falla la F</strong> por partida doble: el enlace dejará de funcionar, y mientras funcione no está donde la gente busca. Nadie encuentra un conjunto de datos rastreando páginas de grupos de investigación.</p>
+<p><strong>El diagnóstico anotado como texto libre en español.</strong> <strong>Falla la I</strong>: para combinar ese conjunto con otro hay que releer y reinterpretar cada registro a mano. Y es el único de los cuatro que no tiene arreglo barato, porque se decidió al diseñar la recogida.</p>
+<h2>El arreglo más barato: el código <em>además</em> del texto</h2>
+<p>Merece la pena ver ese último caso resuelto, porque suele imaginarse más costoso de lo que es. Una descripción corriente de una variable dice:</p>
+<pre><code>dx_renal    Enfermedad renal crónica
+</code></pre>
+<p>Y la misma, hecha con un poco más de cuidado:</p>
+<pre><code>dx_renal    Enfermedad renal crónica · CIE-10: N18
+</code></pre>
+<p>Para una persona, las dos dicen lo mismo. La diferencia es que la segunda <strong>la puede usar un buscador, un catálogo o un programa</strong> que no entienda español, y que otro centro puede comprobar si su variable equivalente significa exactamente eso o no.</p>
+<p>Conviene subrayar lo que <em>no</em> ocurre en la segunda: <strong>el texto no se sustituye, se le añade el código</strong>. Codificar no obliga a renunciar a que el dato se lea. Es un error frecuente en sentido contrario —dejar solo el código y perder la etiqueta—, y produce ficheros igual de opacos.</p>
+<p>Lo mismo vale para la descripción del conjunto entero, que es donde más rinde porque es donde se busca:</p>
+<pre><code>Palabras clave: enfermedad renal crónica, diabetes tipo 2, cohorte prospectiva
+</code></pre>
+<pre><code>Palabras clave: enfermedad renal crónica [CIE-10 N18], diabetes mellitus tipo 2 [CIE-10 E11],
+                cohorte prospectiva
+</code></pre>
+<p>Cuál es la clasificación adecuada en cada caso, y por qué casi nunca la elige el investigador, se ve en la unidad didáctica D11. Aquí basta con retener que <strong>poner el código al lado del término cuesta un minuto por variable</strong> y es la diferencia entre un conjunto que se encuentra y otro que no.</p>
+<h2>Por dónde empezar si no se puede con todo</h2>
+<p>Con recursos limitados, el orden que más rinde es: <strong>R</strong>, porque no cuesta dinero; <strong>F</strong>, porque la infraestructura del repositorio hace casi todo; <strong>A</strong>, porque exige decidir un procedimiento pero no técnica; y por último <strong>I</strong>, que es la más cara y la que hay que planificar desde el principio.</p>

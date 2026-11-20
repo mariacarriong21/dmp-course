@@ -1,0 +1,105 @@
+<p>A partir de aquí, cada unidad muestra fragmentos de un plan de gestión de datos ya escrito. Para que esos fragmentos se puedan comparar entre sí, <strong>todos pertenecen al mismo proyecto</strong>, y conviene presentarlo antes de empezar.</p>
+<p>Es el estudio <strong>PREVIA</strong>, que ya ha aparecido dos veces. Fue el <strong>proyecto B</strong> de la unidad D0·02, el que diez años después seguía teniendo sus datos localizables y solicitables; y volvió al final del bloque A como ejercicio, el de contar cuántos conjuntos de datos tenía.</p>
+<p>Ahora se trata de escribir el documento que hizo posible aquel año 10.</p>
+<h2>El proyecto</h2>
+<blockquote>
+<p><strong>PREVIA · Predictores de progresión en enfermedad renal crónica.</strong> Cohorte prospectiva de <strong>300 pacientes</strong> con enfermedad renal crónica, reclutados en un hospital, con seguimiento de 24 meses y visitas a los 0, 6, 12 y 24 meses.</p>
+<p>En cada visita se recogen variables clínicas en un cuaderno electrónico. La analítica de cada visita llega desde el sistema del laboratorio. A <strong>120 de los pacientes</strong> se les hace una resonancia basal, sobre la que dos radiólogos marcan lesiones de forma independiente. Del sistema del hospital se extraen los diagnósticos y tratamientos previos a la inclusión. Con todo ello se construye la base de análisis, y de ella salen las tablas del artículo.</p>
+<p>El proyecto es ficticio, y también lo son las decisiones que se muestran sobre él. Cada situación que aparece, en cambio, es frecuente.</p>
+</blockquote>
+<h2>Sus siete conjuntos de datos</h2>
+<p>Son los que el ejercicio del bloque A pedía contar. Con un código estable cada uno, porque es así como se nombrarán en todo el documento:</p>
+<div class="tabla"><table>
+<thead>
+<tr>
+<th>Id</th>
+<th>Conjunto</th>
+<th>Origen</th>
+<th>Identificabilidad</th>
+<th>Destino previsto</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>CD1</strong></td>
+<td>Cuaderno de recogida electrónico</td>
+<td>Recogida propia</td>
+<td>Seudonimizado, clave separada</td>
+<td>Acceso controlado</td>
+</tr>
+<tr>
+<td><strong>CD2</strong></td>
+<td>Extracción de historia clínica</td>
+<td>Preexistente, asistencial</td>
+<td>Seudonimizado, clave separada</td>
+<td>No se comparte</td>
+</tr>
+<tr>
+<td><strong>CD3</strong></td>
+<td>Imagen de resonancia</td>
+<td>Recogida propia</td>
+<td>Seudonimizado con identificabilidad intrínseca</td>
+<td>Acceso controlado</td>
+</tr>
+<tr>
+<td><strong>CD4</strong></td>
+<td>Resultados de laboratorio</td>
+<td>Otro sistema del centro</td>
+<td>Seudonimizado, clave separada</td>
+<td>Acceso controlado</td>
+</tr>
+<tr>
+<td><strong>CD5</strong></td>
+<td>Anotaciones de los radiólogos</td>
+<td>Producción propia sobre CD3</td>
+<td>Seudonimizado</td>
+<td>Acceso controlado</td>
+</tr>
+<tr>
+<td><strong>CD6</strong></td>
+<td>Base de análisis</td>
+<td>Derivado de CD1 a CD5</td>
+<td>Seudonimizado, clave separada</td>
+<td>Acceso controlado</td>
+</tr>
+<tr>
+<td><strong>CD7</strong></td>
+<td>Tablas agregadas de resultados</td>
+<td>Derivado de CD6</td>
+<td>No son datos personales</td>
+<td>Abierto</td>
+</tr>
+</tbody>
+</table></div>
+<p>Tres cosas que conviene mirar en esa tabla antes de seguir, porque explican por qué el resto del bloque está organizado como está:</p>
+<p><strong>Las cuatro columnas ya no dicen lo mismo en todas las filas.</strong> Origen, identificabilidad y destino cambian de un conjunto a otro. Es exactamente lo que hacía imposible escribir el documento en singular.</p>
+<p><strong>CD2 no se comparte y CD7 es abierto</strong>, y los dos salen del mismo proyecto. Un plan que decidiera en bloque tendría que elegir entre no publicar nada o prometer lo que no puede cumplir.</p>
+<p><strong>CD6 y CD7 son derivados y aun así están en la lista</strong>, por lo que se vio en la unidad D2·08: tienen plazo, emplazamiento y destino propios.</p>
+<h2>Tres casos, tres papeles distintos</h2>
+<p>El curso maneja tres proyectos ficticios, y conviene no confundirlos:</p>
+<div class="tabla"><table>
+<thead>
+<tr>
+<th>Caso</th>
+<th>Para qué está</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>PREVIA</strong></td>
+<td>El <strong>ejemplo</strong>. Sirve para enseñar cómo queda escrito cada apartado. No hay que hacer nada con él</td>
+</tr>
+<tr>
+<td><strong>ADHIERE</strong></td>
+<td>El <strong>caso de trabajo</strong>, disponible entre los materiales del curso. Sirve para escribir un plan a quien no tenga un proyecto propio</td>
+</tr>
+<tr>
+<td>El caso de la evaluación final</td>
+<td>La <strong>evaluación</strong>. Aparece al final del curso, y no conviene mirarlo antes</td>
+</tr>
+</tbody>
+</table></div>
+<p>El proyecto A de aquella misma unidad D0·02 —el de la hoja de cálculo y los datos perdidos— no es un cuarto caso: es el contraejemplo, y no vuelve a aparecer.</p>
+<h2>Lo que se va a ver de PREVIA</h2>
+<p>En cada unidad del bloque aparecerá el fragmento del plan que corresponde a ese apartado, y en varias de ellas también <strong>la versión mal escrita del mismo fragmento</strong>, porque la comparación enseña más que el modelo solo.</p>
+<p>Conviene leer esos fragmentos con el criterio de la unidad siguiente: no con el ojo de quien juzga la redacción, sino con el de quien tiene que comprobar si se cumple.</p>

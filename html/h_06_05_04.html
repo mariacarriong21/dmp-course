@@ -1,0 +1,74 @@
+<p>Comprobación de lo esencial de esta unidad didáctica. Sin nota y con intentos ilimitados: sirve para detectar lagunas antes de seguir.</p>
+<h2>Ejercicio · ¿Esta frase se puede comprobar?</h2>
+<p>Frases reales tomadas del apartado de almacenamiento y seguridad de planes de gestión de datos presentados a convocatorias. Se aplica a cada una el criterio de suficiencia.</p>
+<pre><code>&gt;&gt;Señalar las frases que NO se pueden comprobar.&lt;&lt;
+[x] «Los datos se almacenarán en servidores seguros del centro con las garantías técnicas y organizativas adecuadas.»
+[ ] «Los datos residen en la unidad de red del grupo, con acceso nominal concedido por la IP y ejecutado por el servicio de informática.»
+[x] «Se realizarán copias de seguridad periódicas de todos los datos del proyecto.»
+[ ] «El servicio de informática realiza copia diaria de la plataforma de captura con treinta días de retención. La carpeta de trabajo del equipo no está incluida en ese respaldo; la responsable de datos mantiene una copia semanal en el espacio institucional.»
+[explanation]
+Las dos marcadas fallan, y cada una por un motivo distinto.
+
+**«Servidores seguros con garantías adecuadas»** no nombra el servidor ni dice en qué consiste la garantía. La palabra *adecuadas* es la señal más fiable de un campo sin rellenar.
+
+**«Copias de seguridad periódicas de todos los datos»** falla en dos palabras. *Periódicas* no es una frecuencia, y *todos los datos* es casi siempre falso: lo habitual es que la plataforma institucional tenga respaldo y la carpeta de trabajo del equipo no.
+
+Las dos frases correctas comparten un rasgo: **para escribirlas hubo que preguntar antes**. La segunda, además, declara lo que *no* está cubierto, que es una señal de fiabilidad, no de debilidad.
+[explanation]
+</code></pre>
+<pre><code>&gt;&gt;«Los datos serán tratados exclusivamente por el equipo investigador.» ¿Qué problema tiene esta frase en un proyecto que envía muestras a un laboratorio externo y usa una plataforma de captura contratada a un proveedor?&lt;&lt;
+( ) Ninguno: el laboratorio y el proveedor no son investigadores
+(x) Es falsa: hay al menos dos terceros tratando datos del proyecto
+( ) Debería decir «equipo investigador autorizado»
+( ) Solo sería falsa si el proveedor estuviera fuera del EEE
+[explanation]
+Es falsa. El laboratorio que analiza las muestras y devuelve resultados, y el proveedor que aloja la plataforma de captura, tratan datos del proyecto: son **encargados de tratamiento** y deben estar declarados, con su contrato.
+
+Es el tipo de frase que se escribe de buena fe, describiendo a quién *investiga* con los datos en lugar de a quién *los trata*. Y es la que hace que un comité pida aclaraciones.
+[explanation]
+</code></pre>
+<h2>Preguntas de repaso</h2>
+<pre><code>&gt;&gt;¿Cuántos emplazamientos suele tener a la vez un proyecto ordinario?&lt;&lt;
+( ) Uno: el sistema institucional donde se guardan los datos
+(x) Al menos tres: sistema de captura, almacenamiento de trabajo y entorno de análisis
+( ) Dos: el sistema institucional y el repositorio final
+( ) Depende del número de conjuntos de datos
+[explanation]
+Tres como mínimo, y cada uno tiene una copia de los datos que hay que declarar. Lo que queda fuera de la declaración suele ser lo peor protegido.
+
+Hay además un cuarto que no debería existir y aparece casi siempre: **el portátil de quien hace el análisis**.
+[explanation]
+</code></pre>
+<pre><code>&gt;&gt;¿Por qué la plantilla pide declarar explícitamente qué NO se usará?&lt;&lt;
+( ) Para cumplir un requisito de las convocatorias europeas
+(x) Porque los incidentes vienen de atajos razonables tomados con prisa, y una regla escrita da a qué remitirse
+( ) Porque el RGPD exige enumerar los sistemas prohibidos
+( ) Para limitar la responsabilidad del investigador principal
+[explanation]
+Nadie decide sacar datos de pacientes de la institución: alguien necesita mandar una tabla y usa la herramienta que tiene a mano.
+
+Una declaración escrita convierte esa decisión individual en una regla del proyecto. Pero solo funciona **si va acompañada de la alternativa**: prohibir sin ofrecer salida garantiza el incumplimiento.
+[explanation]
+</code></pre>
+<pre><code>&gt;&gt;De los cuatro momentos del ciclo de un permiso de acceso, ¿cuál falla sistemáticamente?&lt;&lt;
+( ) La concesión, porque no queda claro quién autoriza
+( ) El uso, porque pocos sistemas registran los accesos
+(x) La retirada, cuando alguien deja el proyecto
+( ) La revisión periódica de la lista
+[explanation]
+La **retirada**. Los permisos son invisibles: no ocupan espacio, no molestan y nadie los echa de menos. En un proyecto de cinco años con rotación, la lista de acceso acaba con más gente fuera que dentro.
+
+La solución es vincular la retirada a un acto que sí ocurre, con un plazo y un responsable con nombre.
+[explanation]
+</code></pre>
+<pre><code>&gt;&gt;Antes de escribir sobre copias de seguridad, ¿qué hay que averiguar?&lt;&lt;
+( ) La marca del sistema de respaldo del centro
+(x) Qué está cubierto y qué no, con qué frecuencia y retención, y si alguna vez se ha probado a restaurar
+( ) Si el proveedor cumple la normativa de protección de datos
+( ) El volumen total de datos del proyecto
+[explanation]
+Las tres preguntas. Y la tercera es la que casi nadie hace: **una copia que nunca se ha restaurado es una hipótesis, no un respaldo**.
+
+Es habitual además que la plataforma de captura tenga copias institucionales y la carpeta donde el equipo trabaja no las tenga.
+[explanation]
+</code></pre>

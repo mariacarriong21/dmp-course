@@ -1,1 +1,89 @@
+<p>Los datos son hoy uno de los principales resultados de la investigación, y durante mucho tiempo han sido el peor cuidado.</p>
+<h2>Cómo se pierden los datos de un proyecto</h2>
+<p>Un caso de los que ocurren todas las semanas. Lo importante es fijarse en qué momento empieza el problema.</p>
+<p>Un grupo recoge durante tres años los datos de una cohorte de pacientes: las variables clínicas de cada visita, los resultados de laboratorio que llegan del sistema del hospital y unas imágenes de resonancia. Todo va a parar a una hoja de cálculo que se amplía según hace falta, con columnas que se añaden sobre la marcha y nombres abreviados que en ese momento todo el mundo entiende, porque todo el mundo está en la misma sala. El fichero vive en el ordenador de la persona que hace el análisis, y hay una copia en una carpeta compartida de la que nadie sabe con certeza si coincide con la buena.</p>
+<p>Se publica el artículo. La persona que recogió y analizó los datos termina su contrato y se marcha a otro centro.</p>
+<p><strong>Dos años después</strong> llega una petición: un grupo de otro hospital quiere comprobar un resultado y propone un análisis conjunto. Alguien va a buscar los ficheros. Aparecen ocho versiones con nombres sucesivos y no está claro cuál sostuvo el artículo. Hay una columna llamada <code>est2</code> que nadie sabe descifrar, y un valor <code>-9</code> repetido que lo mismo significa «no medido» que es un dato real. La persona que lo sabía contesta amablemente que ya no lo recuerda.</p>
+<p>Los datos siguen ahí. Lo que se ha perdido es <strong>la capacidad de usarlos</strong>.</p>
+<h2>Y esto no es un asunto personal</h2>
+<p>Es la idea que conviene fijar antes de seguir, porque cambia de quién es el problema.</p>
+<p>Cuando se investiga <strong>para un instituto, una universidad, un hospital o un organismo de investigación</strong>, la gestión de los datos no es una cuestión de orden personal ni una manía de quien es cuidadoso. Es una <strong>responsabilidad institucional</strong>, por tres razones concretas:</p>
+<ul>
+<li><strong>Los datos no son de quien los recoge.</strong> Pertenecen al proyecto y a la institución que lo alberga, y en investigación biomédica proceden además de pacientes que autorizaron un uso determinado. Nadie se los lleva al cambiar de trabajo.</li>
+<li><strong>La institución es quien responde.</strong> Ante el financiador que exige justificar qué se hizo con la ayuda, ante la autoridad de protección de datos si algo se maneja mal, y ante el comité que autorizó el estudio. El investigador decide, pero lo que decide compromete a su centro.</li>
+<li><strong>Los medios son institucionales.</strong> Los sistemas donde viven los datos, las copias de seguridad, los servicios que extraen información de la historia clínica y los comités que autorizan pertenecen todos a la institución.</li>
+</ul>
+<p>A partir de aquí, podemos extraer una idea clave que nos acompañará durante todo el curso:</p>
+<blockquote>
+<p>Las decisiones sobre datos <strong>se toman con la institución, no al margen de ella</strong>. Buena parte de este curso consiste en saber qué preguntar y a quién.</p>
+</blockquote>
+<h2>De qué trata entonces el curso</h2>
+<p><strong>De cómo evitar lo anterior.</strong> De cómo se organizan, se documentan, se custodian y se comparten los datos de un proyecto de investigación, y de cómo se planifica todo eso por adelantado en un documento llamado <strong>plan de gestión de datos</strong>, o <strong>PGD</strong>.</p>
+<p>Es habitual encontrarlo nombrado por sus siglas en inglés, <strong>DMP</strong>, de <em>data management plan</em>: es como aparece en las convocatorias europeas y en la mayor parte de la literatura. Las dos siglas designan lo mismo. En este curso usaremos <strong>PGD</strong>, que es la forma española y la que va ganando terreno en las convocatorias nacionales.</p>
+<h2>Por qué ahora: la ciencia abierta</h2>
+<p>Que esto se pida hoy y no hace quince años responde a un cambio con nombre propio: la <strong>ciencia abierta</strong>, la idea de que los resultados de la investigación financiada con fondos públicos deben poder consultarse, verificarse y reutilizarse, en lugar de quedarse en un artículo de pago y unos datos en un cajón.</p>
+<p>En España tiene respaldo legal desde la <a href="https://www.boe.es/eli/es/l/2022/09/05/17">Ley 17/2022</a>, que reformó la Ley de la Ciencia e incorporó la obligación de difundir los datos de investigación conforme a los <strong>principios FAIR</strong>.</p>
+<p>Conviene desplegar ya ese acrónimo, porque aparecerá en todo el curso y en todas las convocatorias. <strong>FAIR</strong> son las iniciales inglesas de cuatro propiedades que deberían tener los datos de investigación:</p>
+<div class="tabla"><table>
 
+<tbody>
+<tr>
+<td><strong>F</strong></td>
+<td><em>Findable</em></td>
+<td><strong>Localizables</strong>: que alguien pueda encontrarlos sin conocer a quien los produjo</td>
+</tr>
+<tr>
+<td><strong>A</strong></td>
+<td><em>Accessible</em></td>
+<td><strong>Accesibles</strong>: que esté claro cómo se obtienen, aunque haga falta autorización</td>
+</tr>
+<tr>
+<td><strong>I</strong></td>
+<td><em>Interoperable</em></td>
+<td><strong>Interoperables</strong>: que se puedan combinar con otros sin traducirlos a mano</td>
+</tr>
+<tr>
+<td><strong>R</strong></td>
+<td><em>Reusable</em></td>
+<td><strong>Reutilizables</strong>: que alguien pueda volver a usarlos con confianza</td>
+</tr>
+</tbody>
+</table></div>
+<p>Ninguna de las cuatro significa exactamente lo que su nombre sugiere, y la unidad didáctica D3 está dedicada entera a ellas. En Europa, cumplirlas lleva años siendo condición de la financiación.</p>
+<p>De ahí vienen las tres cosas que han cambiado, y que convergen en la misma dirección:</p>
+<ul>
+<li><strong>Los financiadores lo exigen.</strong> El plan de gestión de datos se ha convertido en un requisito habitual de las convocatorias públicas, nacionales y europeas.</li>
+<li><strong>Las revistas lo exigen.</strong> Cada vez más publicaciones piden declarar dónde están los datos que sostienen un artículo y en qué condiciones puede accederse a ellos.</li>
+<li><strong>La investigación lo necesita.</strong> La reproducibilidad, la reutilización y los estudios multicéntricos dependen de que los datos estén descritos y sean recuperables.</li>
+</ul>
+<p>Conviene deshacer desde ahora el malentendido más extendido, porque con datos de pacientes genera un rechazo comprensible:</p>
+<blockquote>
+<p><strong>Ciencia abierta no significa publicar los datos de los pacientes.</strong></p>
+</blockquote>
+<p>En investigación biomédica, «abierto» casi nunca quiere decir descargable por cualquiera. Quiere decir <strong>descrito, localizable y obtenible por quien tenga un motivo legítimo y una autorización</strong>. La unidad D1·05 explica qué es exactamente la ciencia abierta y qué relación tiene con los datos de investigación.</p>
+<h2>Qué aspecto tiene el resultado</h2>
+<p>Antes de empezar, merece la pena ver adónde lleva todo esto, porque es más concreto de lo que parece.</p>
+<p><strong>Zenodo</strong> es uno de los repositorios generalistas más usados en Europa. Este enlace lista los conjuntos de datos que alberga:</p>
+<p><strong><a href="https://zenodo.org/search?q=&amp;f=resource_type%3Adataset">Conjuntos de datos depositados en Zenodo</a></strong></p>
+<p><em>Si el enlace no conservara el filtro, basta con seleccionar «Dataset» en la columna de la izquierda.</em></p>
+<p>Conviene abrir dos o tres registros y fijarse en lo mismo en todos:</p>
+<ul>
+<li>Tienen un <strong>identificador permanente</strong>, un DOI, igual que un artículo.</li>
+<li>Tienen una <strong>descripción</strong>, una lista de autores, una fecha y unas palabras clave.</li>
+<li>Dicen bajo qué <strong>licencia</strong> se pueden usar.</li>
+<li>Y algunos permiten descargar los ficheros, mientras que otros <strong>solo muestran la descripción</strong> y exigen solicitar el acceso.</li>
+</ul>
+<p>Ese último caso, que a primera vista parece un defecto, es exactamente el destino de la mayoría de los datos de salud, y una parte importante del curso trata de cómo llegar hasta ahí.</p>
+<h2>Conviene mirarlos con ojo crítico</h2>
+<p>Una advertencia para que esa visita no deje una impresión equivocada: <strong>estar depositado en Zenodo no garantiza nada</strong>. El repositorio acepta lo que se le envía, y la calidad de lo depositado es muy desigual.</p>
+<p>Entre los primeros resultados aparecerán registros ejemplares y, junto a ellos, otros con una descripción de dos líneas, sin diccionario de variables, sin licencia declarada, sin palabras clave y con un título que no permite adivinar qué contiene el fichero. Son conjuntos de datos <strong>técnicamente disponibles y materialmente inservibles</strong>: nadie que no conozca al autor podría usarlos.</p>
+<p>Eso no invalida el ejercicio; lo mejora. La pregunta útil al abrir cada registro no es «qué bonito», sino:</p>
+<blockquote>
+<p>¿Podría alguien ajeno a este proyecto <strong>entender y reutilizar</strong> estos datos con lo que hay aquí?</p>
+</blockquote>
+<p>Al terminar el curso, esa pregunta se responderá con criterios concretos. De momento basta con notar que unos registros la superan y otros no.</p>
+<h2>Lo que tienen en común los buenos</h2>
+<p>Los registros que sí resisten esa pregunta comparten una cosa: <strong>alguien decidió por adelantado</strong> que existirían y con qué aspecto. Probablemente lo escribió en un plan de gestión de datos — y es seguro que lo pensó antes de recoger el primer dato, porque buena parte de lo que hace falta para un depósito decente no se puede añadir al final.</p>
+<h2>Un curso pensado para investigación biomédica</h2>
+<p>Los principios de la gestión de datos son comunes a todas las disciplinas, pero en investigación biomédica casi todo dato es un dato de salud, y eso cambia las reglas: hay comités que evalúan antes de empezar, hay normativa de protección de datos que limita lo que puede hacerse, y hay decisiones que no admiten posponerse al final del proyecto.</p>
+<p>Existen buenos cursos de gestión de datos de investigación que tratan esa especificidad como un añadido: explican lo general y dedican un apartado a las particularidades de los datos personales. Aquí el planteamiento es el contrario. <strong>Un bloque entero del curso está dedicado a la investigación biomédica</strong>, y lo que se aprende en él condiciona todo lo que viene después: qué base legal ampara cada tratamiento, qué se puede compartir y qué no, y por qué.</p>

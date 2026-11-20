@@ -1,0 +1,31 @@
+<p>La identificabilidad ya quedó declarada conjunto por conjunto en la ficha del apartado 2. Aquí se recoge lo que tiene consecuencias legales, y sobre todo lo que un comité de ética pregunta siempre: <strong>quién tiene la clave</strong>.</p>
+<h2>Por qué la custodia de la clave es la pregunta central</h2>
+<p>Porque es lo que determina si un conjunto está realmente seudonimizado o solo lo parece.</p>
+<p>Conviene recordar la escala del bloque C. Entre «seudonimizado con clave accesible por el equipo» y «seudonimizado con clave separada, custodiada por alguien ajeno al análisis» hay una diferencia grande: en el primer caso, quien analiza puede reidentificar en cualquier momento, y por tanto el riesgo real es el de un dato identificado.</p>
+<blockquote>
+<p>Que unos datos estén seudonimizados no es una propiedad del fichero. Es una propiedad del <strong>conjunto formado por el fichero y quien puede deshacer la correspondencia</strong>.</p>
+</blockquote>
+<p>Por eso la plantilla pregunta cuatro cosas: cómo se genera el código, <strong>quién custodia la correspondencia</strong>, dónde vive esa correspondencia, y si se transfiere o no.</p>
+<h2>Qué se escribe</h2>
+<blockquote>
+<p><em>La seudonimización la realiza el servicio de informática del centro en el momento de la extracción, mediante un código secuencial sin relación con los identificadores de origen. La tabla de correspondencia reside en un sistema separado bajo custodia de ese servicio; el equipo investigador no tiene acceso a ella. La reidentificación solo puede solicitarse por escrito, motivada, y para los supuestos previstos en el protocolo: [comunicación de hallazgos incidentales / verificación de datos discordantes].</em></p>
+</blockquote>
+<p>Cuatro elementos: quién codifica, dónde está la correspondencia, quién no puede acceder y en qué supuestos se levanta.</p>
+<p>Ese último punto merece atención. <strong>La reidentificación no es siempre indeseable</strong>: hay proyectos que la necesitan para comunicar un hallazgo clínicamente relevante, para completar el seguimiento o para verificar un dato incoherente. Lo que hay que escribir es en qué casos está prevista y con qué procedimiento, no negarla en abstracto.</p>
+<h2>Los dos errores frecuentes</h2>
+<p><strong>Escribir «datos anonimizados» donde hay datos seudonimizados.</strong> Es el error más repetido de todo el documento. Un dato anonimizado sale del ámbito del RGPD; uno seudonimizado, no. Si existe una clave en algún sitio, aunque esté en otro edificio y bajo llave, los datos <strong>no están anonimizados</strong>.</p>
+<p>La consecuencia práctica es inmediata: el plan promete a continuación cosas que no puede cumplir, como depositar el conjunto en abierto porque «ya está anonimizado».</p>
+<p><strong>Dejar la custodia sin nombre.</strong> «La clave se custodia de forma segura» es el ejemplo de manual de frase no comprobable. Segura ¿por quién? Un comité preguntará exactamente eso.</p>
+<h2>Identificabilidad intrínseca</h2>
+<p>Si algún conjunto la tiene —genómica, imagen con reconstrucción facial, series muy pequeñas, enfermedades raras, fechas exactas—, aquí es donde se declara su consecuencia.</p>
+<p>Y la consecuencia se declara sin rodeos: ese conjunto no se publicará en abierto, porque ninguna transformación razonable elimina esa identificabilidad. Decirlo aquí evita que en el apartado 9 aparezca una promesa incompatible.</p>
+<h2>La reducción de identificabilidad como decisión de diseño</h2>
+<p>Hay medidas que reducen la identificabilidad sin perder información útil, y que conviene decidir al escribir el plan, no después:</p>
+<ul>
+<li>Sustituir <strong>fechas exactas</strong> por intervalos desde una fecha índice.</li>
+<li>Agrupar variables geográficas o de centro cuando el número de sujetos por categoría es pequeño.</li>
+<li>Retirar el <strong>texto libre</strong>, que arrastra identificadores con una fiabilidad que ninguna herramienta garantiza.</li>
+<li>Retirar de las imágenes los metadatos que las acompañan y que suelen contener el nombre del paciente.</li>
+</ul>
+<p>Ninguna de estas medidas convierte los datos en anónimos, y el plan no debe decir que lo haga. Reducen el riesgo, que es cosa distinta y también se escribe.</p>
+<p>Y una advertencia sobre lo que va más allá: la <strong>anonimización estadística</strong> y la seudonimización avanzada son trabajo técnico especializado, no una casilla que se marque en el plan. Si el proyecto la necesita, hay que preverla como un servicio con su coste y su tiempo en el apartado 10.</p>

@@ -1,0 +1,108 @@
+<p>Esta es la unidad central del bloque. El apartado 2 de la plantilla contiene la tabla de inventario y, después, <strong>una ficha por cada fila de esa tabla</strong>.</p>
+<h2>Qué cuenta como conjunto de datos</h2>
+<p>Un conjunto agrupa datos que se producen de manera relacionada, se guardan juntos y comparten decisiones importantes de gestión. Si su origen, ubicación, identificabilidad, plazo o destino son distintos, conviene separarlos en conjuntos diferentes aunque se analicen juntos. Los conjuntos derivados —por ejemplo, una base de análisis o unas tablas agregadas— también pueden necesitar una ficha propia.</p>
+<h2>Por qué una ficha por conjunto y no un texto corrido</h2>
+<p>Porque cada conjunto tiene un origen, un nivel de identificabilidad, un responsable y un destino distintos, y un texto corrido obliga a escribir en singular sobre algo plural. En cuanto se intenta, aparecen las frases con excepciones —«los datos se conservan cinco años, excepto los de imagen»— y a la tercera excepción el párrafo deja de entenderse.</p>
+<p>Con una ficha por conjunto el problema desaparece: cada uno dice lo suyo, y lo que no aplica se marca como tal.</p>
+<p>Conviene recordar además la confirmación de la unidad D8·04: el modelo RDA representa un plan exactamente así, como una lista de conjuntos con sus propiedades colgando de cada uno.</p>
+<h2>Qué contiene la ficha</h2>
+<p>Catorce campos, y ninguno pide más de dos líneas:</p>
+<div class="tabla"><table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Qué se pone</th>
+<th>Por qué está</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Descripción y contenido</strong></td>
+<td>Qué contiene, nombrando las variables o los grupos de variables principales</td>
+<td>«Datos clínicos» no describe nada. Qué datos clínicos, sí</td>
+</tr>
+<tr>
+<td><strong>Origen</strong></td>
+<td>Recogida nueva, dato asistencial preexistente, cedido por un tercero o reutilizado de otro proyecto. Si es cedido o reutilizado: de quién y con qué condiciones</td>
+<td>Determina casi todo lo demás: un dato preexistente arrastra el circuito de autorizaciones del bloque C</td>
+</tr>
+<tr>
+<td><strong>Sistema de recogida u origen</strong></td>
+<td>Dónde se genera o de dónde se extrae, con el nombre del sistema</td>
+<td>Es lo que permite comprobar la extracción y pedirla de nuevo</td>
+</tr>
+<tr>
+<td><strong>Formato y volumen</strong></td>
+<td>Formato de los ficheros tal como salen, número de sujetos y de registros, tamaño aproximado</td>
+<td>El volumen es lo que hace creíble —o no— la partida de almacenamiento del apartado 10</td>
+</tr>
+<tr>
+<td><strong>Estructura y granularidad</strong></td>
+<td>Qué tablas o ficheros lo componen, <strong>qué representa una fila</strong> en cada uno, cuántas hay por sujeto y por qué campo se enlazan</td>
+<td>Sin esto, un recuento no se puede interpretar: <em>n = 1.200</em> puede ser 1.200 pacientes o 300 con cuatro visitas. Lo desarrolla D11</td>
+</tr>
+<tr>
+<td><strong>Clasificación frente al RGPD</strong></td>
+<td>¿Contiene datos personales? ¿De categoría especial?</td>
+<td>Si hay duda, la respuesta es que sí</td>
+</tr>
+<tr>
+<td><strong>Nivel de identificabilidad</strong></td>
+<td>Identificable · seudonimizado con clave accesible · seudonimizado con clave separada · anonimizado</td>
+<td>Es la escala del bloque C, aplicada conjunto por conjunto</td>
+</tr>
+<tr>
+<td><strong>Identificabilidad intrínseca</strong></td>
+<td>¿Identifica por sí mismo aunque se le quiten las etiquetas? Genómica, imagen con reconstrucción facial, series muy pequeñas, enfermedades raras, fechas exactas</td>
+<td>Si lo es, el destino queda decidido desde el principio. Conviene no descubrirlo al final</td>
+</tr>
+<tr>
+<td><strong>Seudonimización</strong></td>
+<td>Cómo se genera el código y, sobre todo, <strong>quién custodia la correspondencia</strong>, dónde y si se transfiere</td>
+<td>Es el campo que más veces aparece vacío y el que más pregunta un comité</td>
+</tr>
+<tr>
+<td><strong>Palabras clave</strong></td>
+<td>Tres o cuatro términos por los que alguien buscaría estos datos</td>
+<td>Alimentan los metadatos del depósito</td>
+</tr>
+<tr>
+<td><strong>Aseguramiento de la calidad</strong></td>
+<td>Validaciones en la recogida, doble entrada, monitorización, controles de rango</td>
+<td>Es de los pocos sitios donde el plan habla de la calidad del dato y no solo de su custodia. El modelo de la RDA lo tiene como campo propio</td>
+</tr>
+<tr>
+<td><strong>Utilidad fuera del proyecto</strong></td>
+<td>A quién podrían servirle estos datos y para qué</td>
+<td>Horizon Europe lo pregunta expresamente, y es lo que justifica el esfuerzo de compartir</td>
+</tr>
+<tr>
+<td><strong>Persona responsable</strong></td>
+<td>Un nombre</td>
+<td>No un servicio, no un departamento, no «el equipo investigador»</td>
+</tr>
+<tr>
+<td><strong>Destino final</strong></td>
+<td>Qué será de este conjunto al terminar el proyecto</td>
+<td>Es la decisión que el apartado 9 desarrolla, anticipada aquí conjunto por conjunto</td>
+</tr>
+</tbody>
+</table></div>
+<p>Dos precisiones sobre la tabla.</p>
+<p><strong>Sobre el nivel de identificabilidad.</strong> Si el conjunto es una tabla agregada no se marca ninguna casilla: se declara que lo es y se indica qué se ha comprobado para que no permita reidentificar, por las razones de la unidad D6·02.</p>
+<p><strong>Sobre las palabras clave</strong>, que parecen el campo más banal de todos:</p>
+<div class="fair">
+<p class="fair-t">En clave FAIR · F</p>
+<p>Esas tres o cuatro palabras son <strong>la F en su forma más barata</strong>: son los términos por los que alguien encontrará el conjunto en un catálogo sin haber oído hablar del proyecto. Decidirlas mientras se describe el conjunto cuesta un minuto; improvisarlas el día del depósito es exactamente lo que produce conjuntos depositados e invisibles.</p>
+</div>
+
+<h2>El campo que más cuesta y más rinde</h2>
+<p>De todos, el que más discusión genera dentro de los equipos es el de <strong>identificabilidad</strong>, porque obliga a mirar de frente algo que suele darse por hecho.</p>
+<p>Muchos proyectos escriben «datos anonimizados» donde en realidad hay datos seudonimizados con la clave en el mismo ordenador que el análisis. Es un error con consecuencias: cambia la base legal, cambia lo que se puede depositar y cambia lo que hay que contarle al comité.</p>
+<p>Rellenar este campo con precisión es incómodo la primera vez y ahorra meses después.</p>
+<h2>Cómo se ve rellena</h2>
+<p>Un fragmento de ficha bien resuelto:</p>
+<blockquote>
+<p><strong>CD2 · Extracción de historia clínica.</strong> Antecedentes, diagnósticos y tratamientos previos de los 300 sujetos de la cohorte, extraídos del sistema de historia clínica del centro. Origen: preexistente, asistencial. Datos personales de categoría especial, seudonimizados con clave separada: el código lo genera el servicio de informática y custodia la correspondencia, a la que el equipo investigador no tiene acceso. No hay identificabilidad intrínseca, salvo por las fechas exactas de ingreso, que se sustituyen por el número de días desde la inclusión. Responsable: [nombre de la coordinadora de datos]. Destino previsto: no se comparte; el permiso de acceso cubre exclusivamente este proyecto.</p>
+</blockquote>
+<p>Ocupa un párrafo y responde a todo lo que un comité preguntará sobre ese conjunto.</p>

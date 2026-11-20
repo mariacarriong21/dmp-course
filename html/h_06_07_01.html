@@ -1,0 +1,84 @@
+<p>El apartado 9 pide una decisión por cada conjunto del inventario, con tres opciones posibles. No es una escala de mejor a peor: son tres destinos distintos, y cada uno es el correcto para ciertos datos.</p>
+<h2>Las tres opciones</h2>
+<p><strong>Abierto.</strong> Cualquiera puede descargar los datos desde el repositorio, bajo una licencia declarada. Es el destino natural de los datos agregados, las tablas de resultados y todo lo que no sea dato personal.</p>
+<p><strong>Acceso controlado.</strong> El conjunto está depositado y descrito públicamente, pero la obtención de los ficheros requiere solicitud y autorización. Es el destino de la mayoría de los datos individuales de salud.</p>
+<p><strong>No se comparte.</strong> El conjunto no se deposita. Debe ir siempre con la razón, y la razón debe ser una de tres: el RGPD, el consentimiento o un tercero.</p>
+<p>Estas tres opciones no son una invención del curso. Son literalmente los tres valores del campo <code>data_access</code> del modelo RDA: <code>open</code>, <code>shared</code> y <code>closed</code>.</p>
+<figure class="figura">
+<img src="/static/f6_destino.png" alt="Árbol de decisión. Primera pregunta: ¿contiene datos personales? Si no, abierto. Si sí, ¿lo permiten el consentimiento y las autorizaciones? Si no, no se comparte, y el freno es siempre el RGPD, el consentimiento o un tercero. Si sí, ¿existe un procedimiento de acceso con órgano, criterios y plazo? Si sí, acceso controlado; si no, hay que definirlo, lo que no es motivo para cerrar el conjunto. Al final, un recuadro recuerda buscar una versión del conjunto que sí se pueda compartir.">
+<figcaption>El recorrido completo, conjunto por conjunto. No tener procedimiento de acceso no es motivo para cerrar un conjunto: es motivo para definirlo.</figcaption>
+</figure>
+
+<h2>Por qué la decisión es por conjunto</h2>
+<p>Porque un proyecto casi nunca tiene un destino único, y suponerlo lleva a uno de dos errores:</p>
+<ul>
+<li>Aplicar a todo el destino del conjunto más sensible, y no publicar nada, ni siquiera las tablas agregadas que no tienen ningún problema.</li>
+<li>Aplicar a todo el destino del conjunto más inocuo, y prometer aperturas imposibles.</li>
+</ul>
+<p>El primero es el que más valor desperdicia. Un proyecto con datos clínicos restringidos suele tener al menos un conjunto perfectamente publicable —los resultados agregados— y no lo publica porque decidió en bloque.</p>
+<h2>La justificación cuando no es abierto</h2>
+<p>Esta es la exigencia que más distingue un plan sólido, y viene de un principio explícito en la política europea: <strong>tan abierto como sea posible, tan cerrado como sea necesario</strong>.</p>
+<p>Lo que se pide no es abrir todo. Es demostrar que el cierre es <strong>necesario</strong>, y para eso hay que decir de dónde viene la restricción:</p>
+<div class="tabla"><table>
+<thead>
+<tr>
+<th>El freno es…</th>
+<th>Significa…</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>El RGPD</strong></td>
+<td>Son datos personales y el riesgo de reidentificación no se puede reducir lo suficiente</td>
+</tr>
+<tr>
+<td><strong>El consentimiento</strong></td>
+<td>Los participantes no autorizaron el depósito o la reutilización</td>
+</tr>
+<tr>
+<td><strong>Un tercero</strong></td>
+<td>El titular de los datos —un centro, un registro, un socio— no lo permite bajo el acuerdo vigente</td>
+</tr>
+</tbody>
+</table></div>
+<p>Escribir «no se comparten por motivos de confidencialidad» no identifica ninguno de los tres, y por eso no es una justificación.</p>
+<h2>Una pregunta que conviene hacerse por cada «no se comparte»</h2>
+<blockquote>
+<p>¿Es este conjunto el que no se puede compartir, o hay una <strong>versión</strong> de él que sí?</p>
+</blockquote>
+<p>Casi siempre la hay: una versión agregada, un subconjunto de variables sin las que identifican, los estadísticos descriptivos. No es lo mismo que el conjunto completo, pero es la diferencia entre publicar algo y no publicar nada.</p>
+<p>Hay otra salida habitual con datos de salud: publicar el registro descriptivo y mantener los ficheros bajo solicitud. La unidad siguiente explica cómo preparar ese depósito y elegir dónde hacerlo.</p>
+<h2>Cómo se escribe</h2>
+<p>Con una tabla, que es la forma más comprobable:</p>
+<div class="tabla"><table>
+<thead>
+<tr>
+<th>Conjunto</th>
+<th>Destino</th>
+<th>Justificación</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CD1 · Cuaderno de recogida</td>
+<td>Acceso controlado</td>
+<td>Datos personales de categoría especial seudonimizados; el consentimiento contempla la cesión para investigación relacionada</td>
+</tr>
+<tr>
+<td>CD2 · Extracción de historia clínica</td>
+<td>No se comparte</td>
+<td>La autorización de acceso concedida cubre exclusivamente este proyecto</td>
+</tr>
+<tr>
+<td>CD3 · Imagen</td>
+<td>Acceso controlado</td>
+<td>Identificabilidad intrínseca por reconstrucción facial; se comparten solo estudios con desfiguración aplicada</td>
+</tr>
+<tr>
+<td>CD7 · Tablas agregadas</td>
+<td>Abierto</td>
+<td>No son datos personales</td>
+</tr>
+</tbody>
+</table></div>
+<p>Es un extracto: en el plan van los siete conjuntos de PREVIA, uno por fila. Pero ya con cuatro se ve lo que se busca —cuatro decisiones y cuatro motivos comprobables—, y es más informativo que dos párrafos sobre ciencia abierta.</p>

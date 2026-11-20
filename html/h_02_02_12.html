@@ -1,0 +1,143 @@
+<p>Comprobación de lo esencial de esta unidad didáctica. Sin nota y con intentos ilimitados: sirve para detectar lagunas antes de seguir.</p>
+<h2>Ejercicio · ¿Cuántos conjuntos hay aquí?</h2>
+<p>Vuelve el proyecto B de la unidad D0·02, ahora con nombre y con el detalle que hace falta para contar. Las preguntas se refieren a él.</p>
+<blockquote>
+<p><strong>Estudio PREVIA.</strong> Cohorte prospectiva de 300 pacientes con enfermedad renal crónica. En cada visita se recogen variables clínicas en un cuaderno electrónico. A los pacientes se les extrae una analítica cuyos resultados llegan desde el sistema del laboratorio. A 120 de ellos se les hace una resonancia basal, sobre la que dos radiólogos marcan lesiones. Del sistema del hospital se extraen los diagnósticos y tratamientos previos a la inclusión. Con todo ello se construye la base de análisis, y de ella salen las tablas del artículo.</p>
+</blockquote>
+<pre><code>&gt;&gt;Aplicando la regla de las cinco preguntas —de dónde sale, dónde vive, qué lo ampara, cuánto se conserva y qué se hace con él al terminar—, ¿cuántos conjuntos maneja el estudio PREVIA?&lt;&lt;
+( ) Uno: los datos del estudio PREVIA
+( ) Tres: los clínicos, los de imagen y los de laboratorio
+( ) Cinco: los cuatro que se recogen o se extraen, y la base de análisis
+(x) Siete
+[explanation]
+**Siete**, y conviene enumerarlos:
+
+1. **Cuaderno de recogida**: variables clínicas por visita, recogidas por el equipo.
+2. **Resultados de laboratorio**: llegan de otro sistema, por otra vía y con otro responsable.
+3. **Imagen de resonancia**: solo 120 sujetos, otro sistema, otro volumen, otro destino.
+4. **Anotaciones de los radiólogos**: se generan sobre la imagen pero no son la imagen; tienen su propio proceso de calidad y su propio autor.
+5. **Extracción de historia clínica**: dato preexistente, del hospital, con su propia vía de autorización.
+6. **Base de análisis**: dato procesado, con exclusiones aplicadas y fuentes integradas.
+7. **Tablas de resultados**: dato agregado, y probablemente lo único publicable en abierto.
+
+En cada caso hay al menos una de las cinco respuestas que obliga a separar: la imagen vive en otro sistema, la extracción de historia clínica la ampara otra autorización, las anotaciones las produce otra persona por otra vía, y la base de análisis tiene otro destino que el dato de partida.
+
+Los errores frecuentes son dos. **Contar uno** —«los datos del estudio»— obliga a tomar la misma decisión para conjuntos que no la admiten, y es de donde sale casi todo lo que después no se puede cumplir. **Contar tres o cinco** olvida los conjuntos derivados: las anotaciones, la base de análisis y los resultados, que son los que más vida propia tienen y los que más a menudo se pueden compartir.
+
+El séptimo es el discutible, y con razón: unas tablas agregadas se parecen más al contenido del artículo que a un conjunto de datos. Entran en la lista porque su ciclo de vida no coincide con el de ningún otro —no son dato personal, se conservan indefinidamente y probablemente son lo único publicable en abierto—, no porque sean un objeto separado de aquello que las produjo.
+[explanation]
+</code></pre>
+<h2>Preguntas de repaso</h2>
+<pre><code>&gt;&gt;¿Cuál de estas tres condiciones NO forma parte de la definición de conjunto de datos?&lt;&lt;
+( ) Se producen de la misma manera
+( ) Se guardan juntos
+(x) Se analizan en el mismo artículo
+( ) Tienen el mismo destino final
+[explanation]
+Que dos grupos de datos se **analicen juntos** no los convierte en un conjunto. Lo determinante es cómo se originan, dónde viven y qué será de ellos al terminar: si difieren en cualquiera de las tres, son conjuntos distintos.
+
+La condición habla de **producir**, no de recoger: hay conjuntos que el proyecto no recoge de ninguna parte, sino que calcula.
+[explanation]
+</code></pre>
+<pre><code>&gt;&gt;En un estudio con secuenciación, ¿por qué el dato crudo y el fichero de variantes son conjuntos distintos?&lt;&lt;
+( ) Porque los produce personal distinto
+(x) Porque tienen volumen, coste de conservación y decisiones de preservación distintos
+( ) Porque el crudo no es un dato de investigación
+( ) Porque solo uno de los dos tiene diccionario de variables
+[explanation]
+La cadena genómica produce niveles encadenados que se diferencian en **volumen y en qué merece la pena conservar**: decenas de gigabytes por muestra en crudo frente a megabytes en variantes. Son decisiones distintas, luego conjuntos distintos.
+[explanation]
+</code></pre>
+<pre><code>&gt;&gt;¿Qué distingue a un repositorio de datos de una carpeta compartida institucional?&lt;&lt;
+( ) Que el repositorio siempre es de acceso abierto
+(x) Que el repositorio se compromete a conservar el conjunto a largo plazo y le asigna un identificador permanente
+( ) Que la carpeta compartida no admite ficheros grandes
+( ) Que el repositorio solo admite datos anonimizados
+[explanation]
+Lo que define a un repositorio es el **compromiso de permanencia** y el identificador estable —normalmente un DOI—, de modo que el conjunto siga localizable cuando el proyecto haya terminado. Un repositorio puede alojar datos de acceso restringido.
+[explanation]
+</code></pre>
+<pre><code>&gt;&gt;Al terminar un proyecto coinciden tres cosas: se publica el artículo, se cierra el presupuesto y acaba el contrato de quien manejaba los datos. ¿Qué transición del ciclo de vida se queda sin nadie que la ejecute y sin con qué pagarla?&lt;&lt;
+( ) Entre la planificación y la recogida
+( ) Entre la recogida y el procesado
+(x) Entre el análisis y la preservación
+( ) Entre la preservación y la reutilización
+[explanation]
+Se rompe **al terminar el proyecto**: se publica el artículo, se cierra el presupuesto y termina el contrato de quien manejaba los datos. Preservar y compartir no ocurren solos, y por eso se planifican al principio, cuando todavía hay quien los haga y con qué pagarlo.
+[explanation]
+</code></pre>
+<pre><code>&gt;&gt;Un proyecto conserva solo la base de análisis, no la exportación original del cuaderno de recogida. ¿Qué pierde?&lt;&lt;
+( ) La posibilidad de reproducir el análisis publicado
+(x) La posibilidad de volver atrás si se detecta un error en la limpieza
+( ) El diccionario de variables
+( ) La capacidad de publicar los resultados en abierto
+[explanation]
+El dato **procesado** basta para reproducir el análisis publicado, que es lo que pediría un revisor. Lo que se pierde al no conservar el **crudo** es el punto de referencia: si aparece un error en las exclusiones o en la integración de fuentes, no hay a qué volver.
+[explanation]
+</code></pre>
+<pre><code>&gt;&gt;Un equipo guarda los resultados de un instrumento en el formato propio de la aplicación del fabricante, que no está documentado. ¿Cuál es el riesgo principal a diez años?&lt;&lt;
+( ) Que los ficheros se corrompan con el paso del tiempo
+(x) Que los ficheros sigan intactos y no exista nada capaz de abrirlos
+( ) Que ocupen demasiado espacio de almacenamiento
+( ) Que el fabricante pueda acceder a los datos de los pacientes
+[explanation]
+El fallo por formato **no se parece a una pérdida**: no hay disco roto ni fichero corrupto. Los ficheros están enteros y son ilegibles, porque el equipo se sustituyó, el programa no funciona en el sistema operativo actual o la empresa ya no existe.
+
+De ahí la consecuencia práctica: si el instrumento solo escribe en su propio formato, **exportar a un formato abierto forma parte de la recogida**, y esa exportación hay que probarla al principio del proyecto.
+[explanation]
+</code></pre>
+<pre><code>&gt;&gt;De estas señales, ¿cuál predice mejor que un formato siga siendo legible dentro de quince años?&lt;&lt;
+( ) Que lo use el programa más extendido hoy
+( ) Que sea binario y ocupe poco
+(x) Que existan varias herramientas independientes que lo lean, alguna de código abierto
+( ) Que el fabricante se comprometa a mantener la compatibilidad
+[explanation]
+Es la señal más fiable de las seis que propone la unidad: **mientras exista una biblioteca libre capaz de leerlo, el formato sigue vivo aunque su creador desaparezca**. Un compromiso de un fabricante vale lo que dure el fabricante, y la popularidad de hoy no dice nada de la de dentro de quince años.
+[explanation]
+</code></pre>
+<pre><code>&gt;&gt;Dos proyectos entregan sus datos en JSON. ¿Qué garantiza eso?&lt;&lt;
+( ) Que los datos de los dos se pueden combinar entre sí
+( ) Que los datos están documentados
+(x) Solo que los ficheros se podrán abrir y leer dentro de muchos años
+( ) Que los dos han seguido un estándar
+[explanation]
+El nombre del formato responde solo a **cómo están escritos los bytes**. Cómo se organizan los datos —qué campos hay, cómo se llaman, cómo se anidan— y qué significan sus valores son dos capas distintas, y cada proyecto puede haberlas resuelto a su manera.
+
+Dos ficheros JSON impecables pueden ser perfectamente incombinables.
+[explanation]
+</code></pre>
+<pre><code>&gt;&gt;Un proyecto organiza sus ficheros y carpetas con una convención propia, porque no existe ninguna aplicable a ese tipo de dato. ¿Es correcto?&lt;&lt;
+(x) Sí, siempre que la convención esté escrita, se aplique de forma consistente y se entregue con los datos
+( ) No: siempre hay que adoptar una convención de comunidad
+( ) Sí, y no hace falta documentarla mientras el equipo la conozca
+( ) Solo si el conjunto no se va a depositar en ningún repositorio
+[explanation]
+Inventarse la organización es lo normal, y casi siempre lo razonable: ningún estándar cubre las escalas y los desenlaces que define un proyecto concreto.
+
+Lo que no es admisible es que esa convención sea **tácita**. Si solo vive en la cabeza de quien montó los ficheros, el conjunto deja de entenderse en cuanto esa persona se va.
+[explanation]
+</code></pre>
+<pre><code>&gt;&gt;«Los metadatos nunca son datos personales, así que se pueden publicar siempre.» ¿Qué tiene de falso?&lt;&lt;
+(x) Que una misma información es metadato o dato según a qué describa
+( ) Nada: los metadatos describen el conjunto, no a las personas que lo componen
+( ) Que los metadatos solo se publican si lo autoriza el comité de ética del centro
+( ) Que los metadatos técnicos de las imágenes médicas se retiran al depositarlas
+[explanation]
+No hay información que sea metadato por naturaleza. La fecha exacta de ingreso, el centro y el código postal describen el **contexto de cada registro**, y fila a fila contribuyen a identificar: ahí son datos personales.
+
+Agregados al nivel del conjunto —«periodo 2026-2028», «tres centros»— describen el conjunto entero y no identifican a nadie. Es la misma información y cambia de naturaleza según a qué se refiera.
+
+La afirmación es cierta solo de los metadatos del conjunto, que es de los que habla el curso cuando dice que pueden publicarse enteros.
+[explanation]
+</code></pre>
+<pre><code>&gt;&gt;Un repositorio publica la descripción de un conjunto cuyos datos no se pueden descargar. ¿Para qué sirve eso?&lt;&lt;
+(x) Para que alguien pueda encontrarlo, citarlo y decidir si le sirve
+( ) Para cumplir el requisito formal de depósito que exigen las convocatorias públicas
+( ) Para nada práctico: sin acceso al dato la descripción no tiene ningún uso real
+( ) Para que el repositorio pueda cobrar por el acceso a los datos individuales
+[explanation]
+Nadie puede buscar dentro de unos datos que no puede descargar: se busca en su descripción. Y quien necesite una cohorte concreta tiene que poder descartarla, o quedársela, sin haberla visto.
+
+Publicar la descripción es además lo que permite **citar** el conjunto y lo que deja constancia de que existe. En investigación biomédica es la situación normal, no la excepción: el registro es público y el dato no.
+[explanation]
+</code></pre>

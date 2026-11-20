@@ -1,0 +1,81 @@
+<p><em>Documento de trabajo del curso.</em></p>
+<p>La plantilla no inventa una estructura propia: es una reordenación de lo que ya piden los dos referentes que importan. Esta tabla permite comprobarlo y, sobre todo, permite al investigador <strong>escribir una vez</strong> y volcar después en el formulario que le toque.</p>
+<h2>Los dos referentes</h2>
+<p>itemize La <strong>plantilla de PGD de Horizon Europe</strong>, de la Comisión Europea. Es el formulario más exigente de los que se encuentra un investigador. La propia Comisión la califica de <em>recomendada, no obligatoria</em>: lo que obliga es el acuerdo de subvención, y esta es la forma sugerida de cumplirlo. Sus apartados se citan aquí <strong>por su título</strong>, porque las preguntas no van numeradas y la numeración de los epígrafes cambia al revisarse. El <strong>RDA DMP Common Standard</strong>, de la Research Data Alliance. No es un formulario sino un <strong>modelo de datos</strong>: define cómo se representa un PGD de forma que una máquina pueda leerlo, validarlo e intercambiarlo. Es la referencia que siguen las herramientas de PGD. itemize</p>
+<h2>Correspondencia</h2>
+<div class="tabla"><table>
+<thead>
+<tr>
+<th><strong>Esta plantilla</strong></th>
+<th><strong>Horizon Europe</strong></th>
+<th><strong>RDA DMP Common Standard</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0 · Portada y control</td>
+<td>—</td>
+<td><code>title</code>, <code>dmp_id</code>, <code>created</code>, <code>modified</code>, <code>language</code>, <code>contact</code>, <code>project</code></td>
+</tr>
+<tr>
+<td>1 · Resumen y finalidad</td>
+<td><em>Data Summary</em>: finalidad y relación con los objetivos</td>
+<td><code>description</code></td>
+</tr>
+<tr>
+<td>2 · Conjuntos de datos (ficha)</td>
+<td><em>Data Summary</em>: tipos y formatos, reutilización, procedencia, volumen, utilidad fuera del proyecto</td>
+<td><code>dataset[]</code>: <code>title</code>, <code>description</code>, <code>type</code>, <code>is_reused</code>, <code>personal_data</code>, <code>sensitive_data</code>, <code>keyword</code>, <code>data_quality_assurance</code>, <code>creator</code></td>
+</tr>
+<tr>
+<td>3 · Muestras biológicas</td>
+<td><em>Other research outputs</em>, entre los resultados físicos que enumera: materiales, anticuerpos, reactivos y <strong>muestras</strong></td>
+<td>— <em>(fuera del modelo)</em></td>
+</tr>
+<tr>
+<td>4 · Otros resultados</td>
+<td><em>Other research outputs</em>, en su vertiente digital: software, flujos de trabajo, protocolos, modelos</td>
+<td>— <em>(fuera del modelo)</em></td>
+</tr>
+<tr>
+<td>5 · Documentación y metadatos</td>
+<td><em>Making data findable</em> · <em>making data interoperable</em> · la documentación que pide <em>increase data re-use</em></td>
+<td><code>metadata[]</code>, <code>dataset_id</code></td>
+</tr>
+<tr>
+<td>6 · Marco legal y ético</td>
+<td><em>Ethics</em>: cuestiones éticas y legales que afecten a la compartición; consentimiento para compartir y conservar</td>
+<td><code>ethical_issues_exist</code>, <code>ethical_issues_description</code>, <code>sensitive_data</code></td>
+</tr>
+<tr>
+<td>7 · Almacenamiento y seguridad</td>
+<td><em>Data security</em> · y de <em>making data accessible</em>, la acreditación de la identidad de quien accede</td>
+<td><code>security_and_privacy[]</code>, <code>technical_resource[]</code></td>
+</tr>
+<tr>
+<td>8 · Conservación y disposición</td>
+<td><em>Allocation of resources</em>, en preservación a largo plazo · y de <em>making data accessible</em>, cuánto seguirán disponibles datos y metadatos</td>
+<td><code>preservation_statement</code>, <code>available_until</code></td>
+</tr>
+<tr>
+<td>9 · Compartición y publicación</td>
+<td><em>Making data accessible</em>: repositorio fiable, embargo, comisión de acceso · y las licencias de <em>increase data re-use</em></td>
+<td><code>distribution[]</code>: <code>data_access</code> (<em>open/shared/closed</em>), <code>host</code>, <code>license</code>, <code>access_url</code>, <code>format</code>, <code>byte_size</code></td>
+</tr>
+<tr>
+<td>10 · Responsabilidades y recursos</td>
+<td><em>Allocation of resources</em>: costes, cómo se cubren y quién responde</td>
+<td><code>cost</code>, <code>contributor</code></td>
+</tr>
+<tr>
+<td><em>(sin equivalente)</em></td>
+<td><em>Other issues</em>: ¿se usan otros procedimientos de gestión de datos, nacionales, del financiador, sectoriales o del departamento?</td>
+<td>—</td>
+</tr>
+</tbody>
+</table></div>
+<h2>Dos coincidencias que no son casualidad</h2>
+<p>El modelo RDA es <em>dataset</em>-céntrico: un PGD contiene una lista de <code>dataset</code>, cada uno con sus propias distribuciones, metadatos, medidas de seguridad y declaración de preservación. Es exactamente la <strong>ficha por conjunto</strong> de esta plantilla. Llegamos ahí razonando sobre qué decisiones cambian de un conjunto a otro, y resulta coincidir con la vía normativa. <strong>«Abierto · acceso controlado · no se comparte»</strong> es literalmente el campo <code>data_access</code> del estándar, cuyos tres valores son <em>open</em>, <em>shared</em> y <em>closed</em>. La decisión que pedimos por conjunto es el dato que espera cualquier herramienta de PGD. </p>
+<blockquote>
+<p>Que la plantilla encaje en el modelo RDA tiene una consecuencia práctica: si en el futuro la institución adopta una herramienta de PGD, los documentos escritos con esta plantilla se podrán volcar sin rehacerlos, porque la información que piden ya está recogida y con la misma granularidad.</p>
+</blockquote>

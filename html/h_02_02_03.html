@@ -1,0 +1,76 @@
+<p>El extremo opuesto del cuaderno de recogida: pocos sujetos, muchísimo dato por sujeto, y una cadena de procesado que produce <strong>varios conjuntos encadenados</strong>.</p>
+<h2>Un estudio así</h2>
+<p><strong>Secuenciación de exoma en 40 pacientes</strong> con una enfermedad renal de sospecha genética y en sus progenitores, para identificar la variante causal. Son 120 muestras, y cada una deja unos ocho gigabytes de lecturas en crudo: cerca de un <strong>terabyte</strong> antes de haber analizado nada. Al otro extremo de la cadena, el fichero de variantes anotadas de cada caso ocupa unos pocos megabytes, y es el que se interpreta en la sesión clínica.</p>
+<h2>Los niveles del dato</h2>
+<p>Es su rasgo característico: la secuenciación no genera un conjunto, sino una escalera.</p>
+<div class="tabla"><table>
+<thead>
+<tr>
+<th>Nivel</th>
+<th>Qué es</th>
+<th>Volumen orientativo por muestra</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Crudo</strong></td>
+<td>Lecturas tal como salen del secuenciador</td>
+<td>Decenas de gigabytes</td>
+</tr>
+<tr>
+<td><strong>Alineado</strong></td>
+<td>Lecturas situadas sobre un genoma de referencia</td>
+<td>Gigabytes</td>
+</tr>
+<tr>
+<td><strong>Variantes</strong></td>
+<td>Solo las posiciones donde el sujeto difiere de la referencia</td>
+<td>Megabytes</td>
+</tr>
+<tr>
+<td><strong>Anotado</strong></td>
+<td>Variantes con su interpretación biológica o clínica</td>
+<td>Pequeño</td>
+</tr>
+</tbody>
+</table></div>
+<p>Cada nivel es un conjunto distinto, con su propio coste de almacenamiento y su propia decisión de conservación. <strong>Guardar el crudo de todo un estudio es caro</strong>, y no siempre necesario: si el procesado está documentado y es reproducible, a veces basta con conservar desde el nivel alineado.</p>
+<h2>Formatos</h2>
+<p>A diferencia del caso anterior, aquí los formatos están <strong>fuertemente estandarizados</strong> por la comunidad. Eso es una ventaja: son abiertos, documentados y perdurables, y existen repositorios especializados que solo admiten esos formatos.</p>
+<div class="tabla"><table>
+<thead>
+<tr>
+<th>Nivel</th>
+<th>Formato habitual</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Crudo</td>
+<td><strong>FASTQ</strong></td>
+</tr>
+<tr>
+<td>Alineado</td>
+<td><strong>BAM</strong>, o <strong>CRAM</strong> si se quiere ocupar menos</td>
+</tr>
+<tr>
+<td>Variantes</td>
+<td><strong>VCF</strong></td>
+</tr>
+<tr>
+<td>Anotado</td>
+<td>VCF anotado, o tablas derivadas de él</td>
+</tr>
+</tbody>
+</table></div>
+<p>Las especificaciones son públicas y las mantiene la comunidad en <strong><a href="https://samtools.github.io/hts-specs/">hts-specs</a></strong> —donde están las de BAM, CRAM y VCF—; no hace falta leerlas, pero sí saber que existen y que cualquier herramienta seria las respeta.</p>
+<h2>Dónde se ven datos así</h2>
+<p>Los dos repositorios europeos de referencia, que además ilustran bien la distinción entre dato abierto y dato con acceso controlado:</p>
+<ul>
+<li><strong><a href="https://ega-archive.org/">European Genome-phenome Archive</a></strong> (EGA) — datos humanos identificables. Los registros son públicos y los datos solo se obtienen con autorización de un comité de acceso. Es el destino habitual de un estudio como el del ejemplo.</li>
+<li><strong><a href="https://www.ebi.ac.uk/ena/browser/home">European Nucleotide Archive</a></strong> (ENA) — secuencias que sí pueden ser públicas.</li>
+</ul>
+<p>Merece la pena abrir un registro de cualquiera de los dos y mirar qué se describe y qué no: es exactamente el problema del que trata la unidad didáctica D15.</p>
+<h2>Lo que lo complica</h2>
+<p>Dos cosas. El <strong>volumen</strong>, que obliga a planificar el almacenamiento desde el principio y a decidir qué niveles se conservan.</p>
+<p>Y una propiedad del dato genómico que lo separa de todos los demás, y que se aborda en el bloque C: por su naturaleza, <strong>una secuencia identifica a la persona de la que procede</strong>. Eso condiciona por completo dónde puede depositarse y con qué condiciones de acceso.</p>

@@ -1,0 +1,26 @@
+<p>El apartado 4 recoge lo que un proyecto produce y no es un conjunto de datos.</p>
+<p><strong>Horizon Europe lo pregunta expresamente</strong>, con un apartado propio dedicado a otros resultados de investigación, y cada vez más convocatorias nacionales también. <strong>El modelo de la RDA, en cambio, no tiene una entidad aparte para esto</strong>: el código, los protocolos y los modelos se representan como conjuntos de datos de otro tipo.</p>
+<p>Esa diferencia no es un problema, y tiene una consecuencia cómoda: <strong>lo que sirve para describir un conjunto sirve para describir el código</strong>. La misma ficha, los mismos campos, el mismo depósito con identificador permanente.</p>
+<h2>Qué cuenta como otro resultado</h2>
+<ul>
+<li><strong>Software y código de análisis</strong>: los guiones de limpieza, transformación y análisis.</li>
+<li><strong>Protocolos y procedimientos normalizados</strong>: los que describen cómo se recoge, procesa o mide.</li>
+<li><strong>Modelos</strong>: estadísticos, predictivos o de aprendizaje automático entrenados en el proyecto.</li>
+<li><strong>Flujos de trabajo</strong>: la cadena de pasos que lleva del dato crudo al resultado.</li>
+<li><strong>Cuadernos de laboratorio</strong> y materiales de formación producidos por el proyecto.</li>
+</ul>
+<p><strong>Si el proyecto no genera ninguno, se dice. Un «no procede» razonado es una respuesta válida; dejar el apartado en blanco no lo es.</strong></p>
+<h2>Para cada uno, cuatro datos</h2>
+<p>Qué es, dónde vivirá, con qué licencia y quién responde de él. Es la misma estructura que la ficha de conjunto, reducida a lo esencial.</p>
+<h2>El código de análisis merece atención aparte</h2>
+<p>De todos estos, el que más impacto tiene sobre la reutilización de los datos es el código.</p>
+<blockquote>
+<p>Un conjunto de datos sin el código que lo produjo permite mirar los datos. Con el código, permite <strong>reproducir el resultado</strong>.</p>
+</blockquote>
+<p>La diferencia es la que separa un depósito que cumple un trámite de uno que sirve a alguien. Y en muchos análisis biomédicos —cohortes con criterios de inclusión complejos, derivación de variables, modelos ajustados— el resultado publicado es sencillamente irreproducible sin ver cómo se calculó.</p>
+<p>Lo que hay que escribir es breve: dónde se versiona el código, si se publicará junto con los datos y bajo qué licencia.</p>
+<h2>La ventaja práctica de este apartado</h2>
+<p>El código y los protocolos tienen una propiedad que los datos biomédicos casi nunca tienen: <strong>se pueden publicar en abierto sin ningún problema legal</strong>.</p>
+<p>No contienen datos personales. No dependen de un consentimiento. No necesitan autorización de un comité para salir. Publicarlos es una decisión que está enteramente en manos del equipo.</p>
+<p>Esto los convierte en la vía más accesible para que un proyecto con datos restringidos tenga presencia real en ciencia abierta. Un repositorio de código con un identificador permanente, citable y enlazado desde el artículo aporta más reutilización efectiva que muchos depósitos de datos que nadie solicita.</p>
+<p><strong>El error frecuente</strong> es tratar el código como un asunto interno del equipo: guiones sin versionar, en el portátil de quien hace el análisis, con nombres del tipo <code>analisis_final_v3_bueno.R</code>. Cuando esa persona deja el proyecto, el resultado publicado deja de ser reproducible, incluso para el propio equipo.</p>

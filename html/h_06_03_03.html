@@ -1,0 +1,91 @@
+<blockquote>
+<p><strong>Nivel 3 · Semántica.</strong> Con qué vocabularios se codifica.</p>
+</blockquote>
+<p>Esta es la unidad donde la <strong>I de FAIR</strong> se convierte en trabajo concreto. Es también el tercer nivel de descripción, el que este curso presenta pero no exige, y conviene decir desde el principio que es la letra donde más se exagera lo que se le pide a un proyecto corriente.</p>
+<h2>El problema que resuelve</h2>
+<p>Dos hospitales estudian la misma enfermedad. Uno codifica el diagnóstico como texto libre en español; el otro, con un código numérico propio. Los dos conjuntos son correctos y perfectamente inútiles el uno para el otro: para combinarlos hay que reinterpretar variable a variable, y eso solo lo puede hacer alguien que conozca los dos estudios.</p>
+<p>Un vocabulario estándar evita ese trabajo porque <strong>el significado viaja con el dato</strong>.</p>
+<div class="fair">
+<p class="fair-t">En clave FAIR · I</p>
+<p>Recoger el diagnóstico como texto libre en lugar de codificarlo hace que el conjunto sea prácticamente imposible de combinar con otros. Es <strong>la decisión que más daño hace a la interoperabilidad</strong>, y no se toma al publicar: se toma al diseñar el cuaderno de recogida, años antes.</p>
+</div>
+
+<h2>Tres sitios distintos donde se aplica</h2>
+<p>Aquí se confunden tres cosas que conviene separar, porque se declaran en sitios distintos del documento y no cuestan lo mismo.</p>
+<p><strong>En la variable: qué mide esa columna.</strong> La columna <code>crea</code> mide creatinina sérica, y eso tiene un código propio en un vocabulario de pruebas de laboratorio. Es la declaración más valiosa y la más barata: una sola por variable, y no depende de los datos.</p>
+<p><strong>En los valores: de qué sistema salen los códigos.</strong> La columna <code>dx_principal</code> contiene códigos, y hay que decir de qué clasificación de diagnósticos proceden y en qué versión. Sin eso, los códigos son números.</p>
+<p><strong>En el conjunto entero: de qué va.</strong> El conjunto trata de enfermedad renal crónica en diabetes tipo 2, y eso también se puede expresar con términos de un vocabulario en lugar de con palabras sueltas. Es lo que alimenta las búsquedas del catálogo.</p>
+<blockquote>
+<p>Confundirlas produce el error típico: decir «los diagnósticos están en CIE-10» y creer que con eso la variable está descrita. Eso describe <strong>los valores</strong>; qué significa la columna sigue sin decirse.</p>
+</blockquote>
+<h2>Qué familias existen</h2>
+<p>No hay que conocerlas. Basta saber cuál corresponde a cada tipo de variable, para poder preguntar:</p>
+<div class="tabla"><table>
+<thead>
+<tr>
+<th>Ámbito</th>
+<th>Familias habituales</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Diagnósticos</td>
+<td>Clasificaciones internacionales de enfermedades; terminologías clínicas de referencia</td>
+</tr>
+<tr>
+<td>Procedimientos</td>
+<td>Clasificaciones de procedimientos; terminologías clínicas de referencia</td>
+</tr>
+<tr>
+<td>Medicamentos</td>
+<td>Clasificaciones anatómico-terapéuticas; nomenclátores nacionales</td>
+</tr>
+<tr>
+<td>Pruebas de laboratorio</td>
+<td>Vocabularios de observaciones y pruebas</td>
+</tr>
+<tr>
+<td>Fenotipos y enfermedades raras</td>
+<td>Ontologías de fenotipo y registros de enfermedades raras</td>
+</tr>
+<tr>
+<td>Genómica</td>
+<td>Nomenclaturas de variantes y formatos de secuencia</td>
+</tr>
+<tr>
+<td>Imagen</td>
+<td>El propio estándar de imagen médica, que ya trae metadatos incorporados</td>
+</tr>
+</tbody>
+</table></div>
+<p>Aparte de los vocabularios están los <strong>modelos de datos</strong> —formatos para estructurar e intercambiar información clínica—, que resuelven un problema distinto: no dicen qué significa un término, sino cómo se organizan los registros. Es la distinción entre esquema y vocabulario que planteaba la unidad D2·10. La unidad siguiente trata un caso en que eso lo cambia todo.</p>
+<h2>Quién elige, y por qué casi nunca es el investigador</h2>
+<p>Esta es la parte que suele faltar en los cursos y la que más ansiedad ahorra.</p>
+<p><strong>La mayoría de las veces no se elige: se hereda.</strong> Si los diagnósticos salen del sistema de historia clínica, vienen ya codificados con la clasificación que use ese sistema, que a su vez suele venir impuesta por normativa nacional de registro asistencial. El trabajo del proyecto no es escoger: es <strong>no perder esa codificación</strong> y declarar cuál es.</p>
+<p>Es un error más frecuente de lo que parece. Alguien exporta los diagnósticos como su descripción en texto y descarta el código, porque «así se lee mejor», y el conjunto pierde en un clic la interoperabilidad que le venía regalada.</p>
+<p><strong>Cuando sí hay elección</strong> —variables propias del cuaderno de recogida, escalas, clasificaciones internas— el criterio no es cuál es mejor en abstracto, sino, por este orden:</p>
+<ol>
+<li><strong>Qué usa ya la fuente</strong>, si el dato viene de algún sitio.</li>
+<li><strong>Qué impone la institución o la normativa nacional</strong>, si hay algo impuesto.</li>
+<li><strong>Qué usa la comunidad que va a reutilizar estos datos</strong>, que es lo que decide si alguien puede combinarlos.</li>
+</ol>
+<blockquote>
+<p>Este curso <strong>no recomienda terminologías concretas</strong>, y es deliberado. Cuáles se usan depende del centro, del sistema de origen y de los estándares nacionales, que varían entre países y cambian con el tiempo. Lo que sí es universal es la obligación de <strong>declarar cuál se usa y en qué versión</strong>.</p>
+</blockquote>
+<p>Averiguar qué terminologías están en uso y cuáles son obligatorias en cada sitio es una consulta a la unidad de sistemas de información o a la oficina de datos del centro. Es la pregunta correcta, y es de las que se responden en un correo.</p>
+<h2>Qué se le pide realmente a un proyecto</h2>
+<ul>
+<li><strong>Conservar la codificación que ya exista</strong> en la fuente, en lugar de sustituirla por texto.</li>
+<li><strong>Elegir un estándar para las variables clave</strong> cuando haya que codificar de cero, sobre todo diagnósticos y fármacos.</li>
+<li><strong>Declarar cuál se usó y en qué versión.</strong> Una variable codificada con un estándar sin decir cuál es casi tan opaca como una sin codificar, porque los códigos cambian entre versiones.</li>
+<li><strong>Usar formatos de fichero abiertos</strong>, que es la parte de la I que no cuesta nada.</li>
+</ul>
+<p>Lo que <strong>no</strong> se espera de un proyecto de tres años con un equipo pequeño es transformar todos sus datos a un modelo común. Eso es un proyecto en sí mismo.</p>
+<h2>Y lo que casi nadie hace, siendo lo más barato</h2>
+<p>Documentar <strong>cómo se enlazan estos datos con otras fuentes</strong>: por qué variable se uniría este conjunto con otro del mismo centro, o con un registro nacional. Es una frase, y es lo que decide si alguien puede combinarlos alguna vez.</p>
+<h2>Lo que se escribe en el plan</h2>
+<p>Las tres granularidades, y la versión de cada vocabulario:</p>
+<blockquote>
+<p><em>Los diagnósticos (<code>dx_principal</code>, <code>dx_secundarios</code>) conservan la codificación del sistema de historia clínica del centro, en la clasificación y versión vigentes en el periodo de extracción, que se hacen constar en el diccionario. Los fármacos conservan la codificación del nomenclátor del sistema de prescripción. Las determinaciones de laboratorio se declaran en el diccionario con su código en el vocabulario de pruebas adoptado por el centro. Las escalas propias del cuaderno de recogida no siguen ningún estándar, por no existir uno aplicable, y quedan definidas en el diccionario. Todos los ficheros se conservan y distribuyen en formatos abiertos.</em></p>
+</blockquote>
+<p>Conviene reparar en lo que hace ese párrafo: no elige nada. <strong>Declara lo que hay</strong> y nombra dónde está escrito el detalle. Eso es lo que se pide.</p>
