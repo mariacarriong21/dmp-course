@@ -1,0 +1,53 @@
+% F7 · Dónde vive cada copia de los datos (D12·01)
+\documentclass[border=10pt]{standalone}
+\input{fig_comun}
+\begin{document}
+\begin{tikzpicture}
+
+\tikzset{empl/.style = {caja, text width=3.8cm, align=left, inner sep=8pt, font=\scriptsize}}
+
+% #1 nombre  #2 quién administra  #3 respaldo
+\newcommand{\empl}[3]{%
+  {\small\bfseries #1}\\[3pt]
+  \textcolor{cGris}{administra:} #2\\
+  \textcolor{cGris}{respaldo:} #3}
+
+\node[empl] (cap) at (0,0)
+  {\empl{1 · Sistema de captura\\ o de origen}{servicio de informática}{\textcolor{cBien}{diario, 30 días}}};
+
+\node[empl] (tra) at (5.3,0)
+  {\empl{2 · Almacenamiento\\ de trabajo}{el grupo}{\textcolor{cMal}{no incluido}}};
+
+\node[empl] (ana) at (10.6,0)
+  {\empl{3 · Entorno de análisis}{el grupo}{\textcolor{cMal}{ninguno}}};
+
+\node[empl, draw=cGris, fill=white] (rep) at (16.7,0)
+  {\empl{4 · Repositorio}{externo}{política de preservación}};
+
+\draw[fl] (cap) -- (tra);
+\draw[fl] (tra) -- (ana);
+\draw[fl, draw=cGris, dash pattern=on 2.5pt off 2pt] (ana) -- (rep)
+  node[etiq, pos=.5, above=1pt, text=cGris] {al cerrar};
+
+% --- el quinto emplazamiento ----------------------------------------
+\node[cajaNo, text width=4.6cm, align=left, inner sep=8pt, font=\scriptsize] (port) at (5.3,-3.3) {
+  {\small\bfseries 5 · El portátil de quien analiza}\\[3pt]
+  \textcolor{cMal}{no debería existir, y existe casi siempre}\\[2pt]
+  sobrevive al proyecto\\ y a veces a la persona};
+\draw[flNo] (tra.south) -- (port.north)
+  node[etiq, pos=.5, text=cMal] {«lo exporto para el fin de semana»};
+\draw[flNo] (ana.south) to[out=-90,in=0] (port.east);
+
+% --- lectura de la figura -------------------------------------------
+\draw[llave] ($(cap.north west)+(0,.15)$) -- ($(ana.north east)+(0,.15)$)
+  node[midway, above=6pt, font=\small\bfseries, text=cHead]
+  {Tres copias vivas a la vez durante el proyecto};
+
+\node[rotulo, text width=16.8cm, align=left, anchor=north west] at (0,-5.1)
+  {Cada emplazamiento tiene administrador, respaldo y control de acceso distintos, y el plan los
+   declara uno a uno. Lo que queda fuera de la declaración suele ser lo peor protegido: aquí, los
+   emplazamientos 2 y 3. Declarar expresamente que el 5 no se usará, y ofrecer la alternativa que
+   lo hace innecesario, es lo que convierte una buena intención en una regla del proyecto.};
+
+\end{tikzpicture}
+\end{document}

@@ -1,0 +1,43 @@
+% ------------------------------------------------------------------
+% Preámbulo común de las figuras del curso C1
+% Paleta y tipografía alineadas con ../../estilo.tex
+% ------------------------------------------------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish,es-noquoting]{babel}
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,decorations.pathreplacing,calc,shapes.geometric,fit,backgrounds}
+
+\definecolor{cHead}{RGB}{68,84,106}
+\definecolor{cAcc}{RGB}{0,102,153}
+\definecolor{cGris}{gray}{0.42}
+\definecolor{cSuave}{RGB}{240,244,248}
+\definecolor{cBien}{RGB}{34,124,68}
+\definecolor{cMal}{RGB}{176,42,42}
+\definecolor{cBienSuave}{RGB}{230,243,234}
+\definecolor{cMalSuave}{RGB}{250,235,233}
+\definecolor{cAccSuave}{RGB}{225,238,246}
+
+\tikzset{
+  caja/.style     = {rectangle, rounded corners=2.5pt, draw=cHead, line width=.7pt,
+                     fill=cSuave, align=center, inner sep=6pt, font=\small},
+  cajaAcc/.style  = {caja, draw=cAcc, fill=cAccSuave},
+  cajaOk/.style   = {caja, draw=cBien, fill=cBienSuave},
+  cajaNo/.style   = {caja, draw=cMal, fill=cMalSuave, dashed},
+  cajaTenue/.style= {caja, draw=cGris, fill=white},
+  rotulo/.style   = {font=\scriptsize\itshape, text=cGris, align=center},
+  etiq/.style     = {font=\scriptsize, text=cHead, align=center,
+                     fill=white, inner sep=1.5pt},
+  fl/.style       = {-{Stealth[length=4.5pt]}, draw=cHead, line width=.7pt},
+  flAcc/.style    = {fl, draw=cAcc},
+  flNo/.style     = {-{Stealth[length=4.5pt]}, draw=cMal, line width=.7pt, dashed},
+  llave/.style    = {decorate, decoration={brace, amplitude=4pt, raise=2pt},
+                     draw=cGris, line width=.6pt},
+  titulo/.style   = {font=\small\bfseries, text=cHead},
+}
+
+% Cabecera de figura: #1 número, #2 título
+\newcommand{\figtit}[2]{\node[font=\footnotesize\bfseries, text=cGris, anchor=west]}
