@@ -1,0 +1,131 @@
+<h1>Por qué anonimizar de verdad casi nunca es viable</h1>
+<p>Anonimizar parece una solución universal: si los datos dejan de ser personales, desaparecen las restricciones y pueden publicarse. Por eso aparece con frecuencia como primera opción en los documentos de proyecto.</p>
+<p>El problema es que <strong>en conjuntos de datos clínicos ricos, la anonimización efectiva es la excepción, no la norma</strong>. Conviene entender por qué antes de comprometerse a ella.</p>
+<h2>1. Qué exige realmente la normativa</h2>
+<p>El considerando 26 del RGPD establece que, para determinar si una persona es identificable, deben tenerse en cuenta:</p>
+<blockquote>
+<p>Todos los medios que razonablemente pueda utilizar el responsable del tratamiento o cualquier otra persona para identificar directa o indirectamente a una persona física, incluida la singularización. También deben considerarse factores como los costes, el tiempo y la tecnología disponible, incluidos sus avances.</p>
+</blockquote>
+<p>— Considerando 26 del <a href="https://www.boe.es/doue/2016/119/L00001-00088.pdf">Reglamento (UE) 2016/679</a>.</p>
+<p>De esta definición se desprenden tres cuestiones:</p>
+<ul>
+<li><strong>No basta con que el equipo investigador no pueda identificar a los pacientes.</strong> También hay que considerar las posibilidades de terceros que puedan cruzar los datos con otras fuentes.</li>
+<li><strong>No es necesario conocer el nombre para identificar a alguien.</strong> La singularización consiste en aislar a una persona dentro de un conjunto mediante una combinación única de variables.</li>
+<li><strong>El anonimato depende del contexto y de la tecnología disponible.</strong> Un conjunto considerado anónimo hoy podría dejar de serlo si aparecen nuevas fuentes de información que permitan cruzarlo con otros datos.</li>
+</ul>
+<p>El mismo considerando aclara que los datos seudonimizados siguen siendo información relativa a personas identificables. Por tanto, <strong>seudonimizar no equivale a anonimizar</strong>.</p>
+<h2>2. El coste de anonimizar: perder información clínica</h2>
+<p>Anonimizar no consiste simplemente en eliminar nombres o identificadores. Requiere transformar los datos hasta reducir suficientemente las posibilidades de identificar a una persona. Las técnicas habituales implican perder precisión:</p>
+<div class="tabla"><table>
+<thead>
+<tr>
+<th>Técnica</th>
+<th>Qué hace</th>
+<th>Qué se pierde</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Generalización</td>
+<td>Sustituye valores exactos por intervalos, como la edad por tramos</td>
+<td>Precisión para estudiar el efecto de la edad</td>
+</tr>
+<tr>
+<td>Supresión</td>
+<td>Elimina variables o registros poco frecuentes</td>
+<td>Información sobre casos minoritarios</td>
+</tr>
+<tr>
+<td>Desplazamiento de fechas</td>
+<td>Modifica las fechas mediante un desplazamiento aleatorio</td>
+<td>Estacionalidad y comparabilidad temporal</td>
+</tr>
+<tr>
+<td>Agregación</td>
+<td>Sustituye registros individuales por recuentos</td>
+<td>Capacidad de análisis a nivel de paciente</td>
+</tr>
+</tbody>
+</table></div>
+<p>Este intercambio es especialmente problemático en biomedicina: <strong>las mismas variables que hacen valioso un conjunto de datos clínicos pueden facilitar la identificación de sus pacientes</strong>.</p>
+<p>Cuanto más se transforman los datos, menor puede ser su utilidad científica. En ocasiones, el nivel de protección necesario exige perder precisamente la información que justificaba realizar el estudio.</p>
+<h2>3. Técnicas para reducir el riesgo de reidentificación</h2>
+<p>Entre la seudonimización y la anonimización existen técnicas que permiten reducir el riesgo de identificación sin limitarse a sustituir los identificadores:</p>
+<div class="tabla"><table>
+<thead>
+<tr>
+<th>Técnica</th>
+<th>Funcionamiento</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Generalización y supresión</td>
+<td>Agrupan valores o eliminan información poco frecuente para reducir combinaciones identificables</td>
+</tr>
+<tr>
+<td>k-anonimidad y refinamientos</td>
+<td>Exigen que cada combinación de variables potencialmente identificadoras aparezca en al menos <em>k</em> personas. La l-diversidad y la t-proximidad abordan algunas de sus limitaciones</td>
+</tr>
+<tr>
+<td>Perturbación y ruido</td>
+<td>Modifican valores o recuentos para dificultar la identificación individual</td>
+</tr>
+<tr>
+<td>Privacidad diferencial</td>
+<td>Añade ruido con garantías matemáticas explícitas sobre cuánto puede revelar una consulta acerca de una persona</td>
+</tr>
+<tr>
+<td>Datos sintéticos</td>
+<td>Generan registros artificiales que reproducen propiedades estadísticas del conjunto sin corresponder a pacientes reales</td>
+</tr>
+</tbody>
+</table></div>
+<p>Hay cuatro aspectos importantes que conviene tener presentes:</p>
+<ul>
+<li><strong>No garantizan la anonimización jurídica.</strong> Aplicar k-anonimidad, por ejemplo, no convierte automáticamente un conjunto en anónimo según el RGPD. La valoración debe considerar también las posibilidades de reidentificación del contexto.</li>
+<li><strong>Implican compromisos de utilidad.</strong> La pregunta no es solo cuánto riesgo reducen, sino qué información se pierde y si el resultado sigue sirviendo para la investigación.</li>
+<li><strong>Requieren conocimientos especializados.</strong> Elegir parámetros y aplicar estas técnicas incorrectamente puede generar una falsa sensación de seguridad. Es una tarea que debería asumir la unidad de datos o la oficina de protección de datos.</li>
+<li><strong>Deben contemplarse en la planificación.</strong> Su aplicación requiere tiempo y recursos, por lo que debe presupuestarse desde el principio.</li>
+</ul>
+<h3>Un ejemplo práctico: seis pacientes de una cohorte renal</h3>
+<p>Consideremos este conjunto ficticio de seis pacientes:</p>
+<pre><code class="language-text">Sexo  Edad  CP     Estadio ERC  FGe basal
+H     34    28801  3            52
+H     36    28802  3            48
+M     58    28803  4            26
+M     61    28804  4            24
+H     72    28805  5            12
+M     74    28806  5            10
+</code></pre>
+<p>Aunque no contiene nombres ni números de historia clínica, cada combinación de sexo, edad y código postal es única. Al cruzar esas variables con información externa, podría identificarse a cada paciente y conocer su estadio de enfermedad renal.</p>
+<p>Si aplicamos k-anonimidad con <em>k</em> = 2, necesitamos que cada combinación de variables identificadoras aparezca al menos dos veces. Para conseguirlo, generalizamos la edad, recortamos el código postal y suprimimos el sexo:</p>
+<pre><code class="language-text">Sexo  Edad   CP     Estadio ERC  FGe basal
+*     30–39  288**  3            52
+*     30–39  288**  3            48
+*     50–64  288**  4            26
+*     50–64  288**  4            24
+*     65–79  288**  5            12
+*     65–79  288**  5            10
+</code></pre>
+<p>El resultado evita que una combinación de esas variables identifique por sí sola a un paciente, pero tiene un coste científico:</p>
+<ul>
+<li>Se pierde la edad exacta, necesaria para cálculos como el filtrado glomerular y para ajustar modelos estadísticos.</li>
+<li>Se elimina el sexo, otra variable relevante en el análisis clínico.</li>
+<li>Se pierde el detalle geográfico, que permitiría estudiar diferencias entre áreas de salud.</li>
+</ul>
+<p>Además, <strong>k-anonimidad no impide todas las formas de identificación</strong>. En el grupo de 65 a 79 años, los dos pacientes tienen estadio 5. Si alguien sabe que su vecino de 72 años participó en el estudio, podría deducir su estadio aunque no consiga distinguir su registro del otro.</p>
+<p>Esto ilustra dos limitaciones: k-anonimidad dificulta la singularización, pero no evita necesariamente la deducción de información sensible; y cuanto menor es la cohorte, más difícil resulta proteger a sus integrantes sin destruir la utilidad del conjunto.</p>
+<p>Para experimentar con este equilibrio entre riesgo y utilidad puede utilizarse <a href="https://arx.deidentifier.org/">ARX</a>, una herramienta libre que permite aplicar distintas técnicas de desidentificación y comparar los resultados.</p>
+<h2>4. Qué hacer en un proyecto de investigación</h2>
+<p>La anonimización debe considerarse, pero no asumirse como resultado automático. Las alternativas habituales son:</p>
+<ul>
+<li><strong>Seudonimizar los datos</strong> y mantenerlos como información personal, con acceso controlado y las garantías correspondientes. Es la vía habitual en investigación clínica.</li>
+<li><strong>Publicar únicamente resultados agregados</strong>, como tablas, estadísticas y conclusiones, evitando compartir registros individuales.</li>
+<li><strong>Reducir el riesgo de reidentificación</strong> mediante técnicas especializadas, cuando exista una necesidad justificada y se pueda asumir la pérdida de utilidad.</li>
+<li><strong>Utilizar datos sintéticos</strong> cuando se necesite compartir una estructura de datos para desarrollar o probar herramientas sin distribuir los registros reales.</li>
+<li><strong>Mantener los datos en cada centro</strong> y ejecutar allí los análisis, compartiendo únicamente los resultados. Es el enfoque de análisis federado; su viabilidad depende de la infraestructura y los acuerdos entre centros.</li>
+</ul>
+<p>Esta última alternativa tampoco elimina las obligaciones del RGPD: cada centro sigue tratando datos personales y necesita su correspondiente base jurídica y garantías. Lo que se evita es transferir los registros individuales al equipo coordinador, aunque los resultados compartidos también deben revisarse para descartar riesgos de identificación.</p>
+<p>Por tanto, que una política o plantilla plantee la anonimización como primera opción significa que hay que valorar su viabilidad y justificar por qué no se aplica cuando no resulta posible. <strong>No significa que sea el resultado habitual ni que siempre sea compatible con las necesidades científicas del estudio.</strong></p>
+<p>Esta valoración debe hacerse durante la planificación, porque afecta tanto al diseño del tratamiento de datos como a los recursos necesarios y a las posibilidades de compartir los resultados.</p>

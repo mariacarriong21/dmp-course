@@ -1,0 +1,60 @@
+<p>Tres palabras que se usan como sinónimos y significan cosas muy distintas. Confundirlas es el error más extendido en los planes de gestión de datos, y arrastra decisiones equivocadas sobre qué se puede publicar.</p>
+<figure class="figura">
+<img src="/static/f1_identificabilidad.png" alt="Escala horizontal de cuatro posiciones: identificable, seudonimizado con clave accesible, seudonimizado con clave separada y anonimizado. Una línea vertical separa las tres primeras, que son datos personales sujetos al RGPD, de la última, que queda fuera de su ámbito. El riesgo de reidentificación decrece de izquierda a derecha.">
+<figcaption>La escala completa. La frontera del RGPD cae entre la tercera y la cuarta posición, y casi todo lo que en investigación biomédica se llama «anonimizado» está en realidad en la tercera.</figcaption>
+</figure>
+
+<h2>La escala</h2>
+<div class="tabla"><table>
+<thead>
+<tr>
+<th>Nivel</th>
+<th>Qué significa</th>
+<th>¿Es dato personal?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Identificado</strong></td>
+<td>Contiene nombre, número de historia u otro identificador directo</td>
+<td>Sí</td>
+</tr>
+<tr>
+<td><strong>Seudonimizado con clave accesible</strong></td>
+<td>Los identificadores se han sustituido por un código, y quien trata los datos puede revertirlo</td>
+<td>Sí</td>
+</tr>
+<tr>
+<td><strong>Seudonimizado con clave separada</strong></td>
+<td>Igual, pero la correspondencia la custodia otra persona, aparte</td>
+<td>Sí</td>
+</tr>
+<tr>
+<td><strong>Anonimizado</strong></td>
+<td>No existe forma razonable de volver a la persona, para nadie</td>
+<td><strong>No</strong></td>
+</tr>
+</tbody>
+</table></div>
+<h2>La línea que importa</h2>
+<p>Solo hay una frontera con consecuencias jurídicas, y no está donde la gente cree:</p>
+<blockquote>
+<p><strong>Un dato seudonimizado sigue siendo un dato personal.</strong> Un dato anonimizado, no.</p>
+</blockquote>
+<p>Da igual que la clave la guarde otra persona, que esté en un cajón cerrado o que nadie tenga intención de usarla. <strong>Si existe una forma razonable de volver a la persona, el dato es personal</strong> y toda la normativa se le aplica entera: base legal, limitación de finalidad, plazos, imposibilidad de publicarlo en abierto.</p>
+<h2>El error clásico</h2>
+<blockquote>
+<p>«Hemos quitado el nombre y el número de historia, así que los datos están anonimizados.»</p>
+</blockquote>
+<p>No lo están: están <strong>seudonimizados</strong>. Y muchas veces ni eso, porque quedan dentro combinaciones de variables que identifican por sí solas.</p>
+<p>Esta frase aparece literalmente en planes de gestión de datos presentados a convocatorias, y no es un descuido de redacción: quien la escribe suele creerlo, y a partir de ahí toma decisiones equivocadas sobre lo que puede compartir.</p>
+<h2>Dónde encaja el dato agregado</h2>
+<p>Una pregunta que surge de inmediato: si un conjunto se reduce a recuentos y tasas, sin registros individuales, ¿en qué casilla de la escala está?</p>
+<p>En ninguna, y conviene decirlo con claridad:</p>
+<blockquote>
+<p><strong>Agregar no es un peldaño más de esta escala.</strong> La escala describe <em>estados</em> de un registro individual; agregar es una <strong>operación</strong> que se aplica a un conjunto, y lo que produce hay que juzgarlo por separado cada vez.</p>
+</blockquote>
+<p>Lo normal es que una tabla agregada no sea dato personal, y por eso suele ser lo único que un proyecto biomédico puede publicar en abierto. Pero no lo es por definición: <strong>si los grupos son pequeños, o si se cruzan suficientes variables, de una tabla agregada se puede deducir información de una persona concreta</strong>. Un recuento por sexo, tramo de edad y hospital en el que una celda contiene dos pacientes informa sobre esos dos pacientes.</p>
+<p>De modo que la pregunta correcta ante una tabla agregada no es en qué casilla cae, sino la misma que ante cualquier otro conjunto: <em>¿puede alguien llegar desde aquí a una persona?</em> Y se responde tabla por tabla, mirando el tamaño de las celdas y cuántas variables se cruzan, no aplicando una etiqueta.</p>
+<h2>La seudonimización sigue siendo valiosa</h2>
+<p>Que no sea anonimización no la convierte en inútil. Al contrario: es <strong>la medida de protección más eficaz y más razonable</strong> en investigación biomédica, porque reduce muchísimo el riesgo sin destruir la utilidad de los datos.</p>

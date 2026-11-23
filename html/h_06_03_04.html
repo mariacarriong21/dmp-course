@@ -1,0 +1,59 @@
+<p>El diccionario explica qué significa cada variable. Esta unidad trata de lo otro: <strong>cómo se pasa del dato crudo al dato con el que se hace el análisis</strong>, y dónde queda escrito ese recorrido.</p>
+<h2>Por qué hace falta</h2>
+<p>Entre lo que se recoge y lo que se analiza hay siempre un trecho: se excluyen sujetos, se corrigen valores imposibles, se unen tablas, se derivan variables, se imputan ausentes. Cada uno de esos pasos es una decisión, y todas juntas explican por qué la base de análisis de PREVIA (CD6) tiene 254 sujetos cuando se reclutaron 300.</p>
+<blockquote>
+<p>Sin esa documentación, un conjunto de datos es un resultado sin procedencia: se puede leer, pero no se puede saber si sirve para otra pregunta.</p>
+</blockquote>
+<p>Es también lo que impide que el propio equipo se contradiga. Cuando dos personas del proyecto obtienen cifras distintas de la misma tabla, la causa casi siempre está en este tramo.</p>
+<h2>Qué hay que poder responder</h2>
+<ul>
+<li><strong>¿Qué sujetos o registros se excluyeron, y por qué?</strong> Con el recuento en cada paso.</li>
+<li><strong>¿Qué correcciones se aplicaron a los valores?</strong> Rangos imposibles, duplicados, fechas incoherentes.</li>
+<li><strong>¿Cómo se unieron las fuentes?</strong> Por qué clave, y qué se hizo con lo que no casó.</li>
+<li><strong>¿Qué variables se derivaron y con qué regla?</strong></li>
+<li><strong>¿Se imputaron ausentes?</strong> Con qué método y en qué variables.</li>
+<li><strong>¿Qué versión del conjunto es la buena, y desde cuándo?</strong></li>
+</ul>
+<h2>Las dos formas de documentarlo</h2>
+<p><strong>Con código.</strong> Si el procesado se hace con guiones —R, Python, Stata—, el propio código es la documentación, siempre que esté versionado y sea legible. Es la opción mejor: no puede desincronizarse del resultado, porque <em>es</em> lo que produjo el resultado.</p>
+<p><strong>Con una nota de procesado.</strong> Si el procesado se hace a mano o en una hoja de cálculo, hace falta un documento aparte que lo describa. Es más frágil, porque hay que acordarse de actualizarlo, pero es infinitamente mejor que nada.</p>
+<p>Lo que no funciona es la tercera opción, que es la habitual: el procesado vive en la cabeza de quien lo hizo, y en unos ficheros con nombres sucesivos.</p>
+<h2>El registro de exclusiones</h2>
+<p>De todo lo anterior, lo que más se agradece después es el <strong>recuento por pasos</strong>:</p>
+<div class="tabla"><table>
+<thead>
+<tr>
+<th>Paso</th>
+<th style="text-align: right;">Excluidos</th>
+<th style="text-align: right;">Quedan</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pacientes reclutados</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;">300</td>
+</tr>
+<tr>
+<td>Sin consentimiento válido documentado</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">291</td>
+</tr>
+<tr>
+<td>Sin la variable principal en la basal</td>
+<td style="text-align: right;">24</td>
+<td style="text-align: right;">267</td>
+</tr>
+<tr>
+<td>Con seguimiento inferior a tres meses</td>
+<td style="text-align: right;">13</td>
+<td style="text-align: right;"><strong>254</strong></td>
+</tr>
+</tbody>
+</table></div>
+<p>Cuesta cinco minutos si se anota sobre la marcha y es imposible de reconstruir un año después. Y es exactamente lo que pedirá un revisor cuando pregunte por el diagrama de flujo del estudio.</p>
+<h2>Lo que se escribe en el plan</h2>
+<p>Una o dos frases: cómo se documenta el procesado, dónde vive esa documentación y quién la mantiene.</p>
+<blockquote>
+<p><em>El procesado desde los datos crudos hasta la base de análisis se realiza mediante guiones en R versionados en el repositorio de código del proyecto, con registro de exclusiones por paso. El código se publicará junto con las tablas de resultados.</em></p>
+</blockquote>

@@ -1,0 +1,70 @@
+<p><em>Documento de trabajo del curso.</em></p>
+<p>No cubre los sesenta campos, sino los que salen mal. Cada uno lleva qué se espera, un ejemplo bien resuelto, uno mal resuelto y el error frecuente.</p>
+<h2>El criterio que gobierna todo</h2>
+<blockquote>
+<p><strong>Criterio de suficiencia.</strong> Un párrafo del PGD está bien si <strong>un tercero puede comprobar que se cumple</strong>. Si nadie ajeno al proyecto puede verificar lo que dice, el párrafo no compromete a nada y sobra.
+Es un criterio operativo, no una aspiración: se aplica frase a frase. «Los datos se almacenarán de forma segura» no lo pasa, porque no hay forma de comprobar si se cumple. Nombrar el sistema, el responsable y la frecuencia sí lo pasa.</p>
+</blockquote>
+<h3>Descripción y contenido del conjunto</h3>
+<p><strong>Qué se espera.</strong> Que alguien que no conoce el proyecto entienda qué hay dentro y pueda juzgar si le sirve. Se nombran las variables o los grupos de variables.</p>
+<blockquote>
+<p><strong>Así sí.</strong> Variables clínicas y de desenlace de una cohorte prospectiva de 300 pacientes con enfermedad renal crónica, recogidas en la basal y a los 6, 12 y 24 meses: sociodemográficas, antecedentes, función renal (creatinina, filtrado glomerular estimado, albuminuria), tratamiento concomitante y desenlaces (progresión a terapia renal sustitutiva, evento cardiovascular, muerte).</p>
+<p><strong>Así no.</strong> Datos clínicos y analíticos de los pacientes incluidos en el estudio.</p>
+<p><strong>Error frecuente.</strong> Describir el proyecto en vez del conjunto. El lector ya sabe de qué va el proyecto; lo que necesita saber es qué contiene este fichero concreto.</p>
+</blockquote>
+<h3>Nivel de identificabilidad y seudonimización</h3>
+<p><strong>Qué se espera.</strong> La palabra exacta, y quién guarda la llave. Es el campo donde más se miente sin querer.</p>
+<blockquote>
+<p><strong>Así sí.</strong> Seudonimizados con clave separada. Cada participante recibe un código alfanumérico generado en el momento de la inclusión. La tabla de correspondencia entre código e identidad la custodia el investigador responsable de cada centro, se conserva separada de la base de datos y no se transfiere al centro coordinador.</p>
+<p><strong>Así no.</strong> Los datos se tratarán de forma anonimizada, sin que sea posible identificar a los participantes.</p>
+<p><strong>Error frecuente.</strong> Declarar «anonimizado» sobre datos que están seudonimizados. Si existe una clave que permite volver a la persona — aunque la guarde otro, aunque esté en un cajón — los datos son seudonimizados y el RGPD se les aplica entero. Es el error más extendido y el que más consecuencias tiene, porque arrastra decisiones equivocadas sobre publicación.</p>
+</blockquote>
+<h3>Dónde reside cada conjunto</h3>
+<p><strong>Qué se espera.</strong> El nombre del sistema, por conjunto. Un sistema con nombre es verificable; «servidores institucionales» no lo es.</p>
+<blockquote>
+<p><strong>Así sí.</strong> CD1 reside en la plataforma institucional de captura de datos, con acceso por roles y registro de accesos. CD3 (imagen) se almacena en el repositorio de imagen del servicio de radiología, del que se extrae una copia seudonimizada al entorno de análisis.</p>
+<p><strong>Así no.</strong> Los datos se almacenarán en servidores institucionales protegidos mediante medidas de seguridad técnicas y organizativas adecuadas.</p>
+<p><strong>Error frecuente.</strong> Esa frase es correcta, elegante y no dice absolutamente nada: no nombra ningún sistema, no permite comprobar nada y no compromete a nadie. Sirve, sin cambiar una palabra, para cualquier proyecto del mundo — que es exactamente la prueba de que no describe este.</p>
+</blockquote>
+<h3>Copias de seguridad</h3>
+<p><strong>Qué se espera.</strong> Quién las hace y cada cuánto. Y que se haya preguntado, en vez de suponerlo.</p>
+<blockquote>
+<p><strong>Así sí.</strong> Las copias de seguridad de la plataforma de captura las realiza el servicio de sistemas con periodicidad diaria y retención de treinta días. Los ficheros de trabajo del equipo investigador <strong>no</strong> están incluidos en ese respaldo; el responsable del conjunto mantiene una copia semanal en el almacenamiento institucional del grupo.</p>
+<p><strong>Así no.</strong> Se realizarán copias de seguridad periódicas de todos los datos del proyecto.</p>
+<p><strong>Error frecuente.</strong> Dar por supuesto que «alguien hace copias». Es la afirmación falsa más habitual en los PGD, y solo se descubre cuando se pierde algo. Antes de escribir este campo, pregunta.</p>
+</blockquote>
+<h3>Plazo de conservación</h3>
+<p><strong>Qué se espera.</strong> Un plazo, por conjunto, y la norma que lo fija. No basta con el plazo suelto.</p>
+<blockquote>
+<p><strong>Así sí.</strong> CD1 y CD2 se conservan cinco años tras el cierre del proyecto, plazo derivado de la obligación de permitir la verificación de los resultados publicados. La imagen original (CD3) permanece en el sistema asistencial y se rige por los plazos de la historia clínica, ajenos al proyecto.</p>
+<p><strong>Así no.</strong> Los datos se conservarán durante el tiempo necesario para cumplir con la finalidad del proyecto y la normativa aplicable.</p>
+<p><strong>Error frecuente.</strong> No distinguir entre conjuntos. Los datos extraídos del sistema asistencial y los recogidos por el proyecto casi nunca tienen el mismo plazo ni el mismo dueño.</p>
+</blockquote>
+<h3>Decisión de compartición por conjunto</h3>
+<p><strong>Qué se espera.</strong> Una decisión por conjunto, y la justificación cuando no es abierto. Restringir el acceso no penaliza; restringirlo sin explicar por qué, sí.</p>
+<blockquote>
+<p><strong>Así sí.</strong> CD4 (resultados agregados) se publicará en acceso abierto junto con el artículo. CD1 se depositará con acceso controlado: contiene datos de categoría especial seudonimizados cuya anonimización efectiva no es viable sin destruir la utilidad analítica, dado el tamaño de la cohorte y la granularidad temporal de las variables. CD2 no se comparte: procede del sistema asistencial y su cesión no está cubierta por la autorización obtenida.</p>
+<p><strong>Así no.</strong> Los conjuntos de datos susceptibles de compartición se depositarán en repositorios científicos reconocidos, siempre que ello sea compatible con los consentimientos otorgados y la normativa aplicable.</p>
+<p><strong>Error frecuente.</strong> La formulación condicional universal — «los datos susceptibles de compartición, cuando proceda, en repositorios adecuados» — no decide nada. Un PGD es un documento de decisiones: si al terminar de leerlo no se sabe qué va a pasar con cada conjunto, no está escrito.</p>
+</blockquote>
+<h3>Repositorio previsto</h3>
+<p><strong>Qué se espera.</strong> Cuál, con enlace, y por qué ese.</p>
+<blockquote>
+<p><strong>Así sí.</strong> Se depositará en el repositorio temático de referencia del área, que admite acceso controlado mediante comité y asigna identificador persistente. Si al cierre del proyecto no admitiera el tipo de dato, la alternativa prevista es el repositorio institucional.</p>
+<p><strong>Así no.</strong> Se depositarán en un repositorio de acceso abierto adecuado al tipo de datos.</p>
+<p><strong>Error frecuente.</strong> Prometer un repositorio abierto para datos que no pueden abrirse. Es una contradicción frecuente: la sección legal explica que los datos son de categoría especial y la de compartición promete acceso abierto. Las dos cosas no pueden ser verdad.</p>
+</blockquote>
+<h3>Persona responsable</h3>
+<p><strong>Qué se espera.</strong> Un nombre.</p>
+<blockquote>
+<p><strong>Así sí.</strong> Responsable del conjunto CD1: la persona que coordina la recogida en el centro promotor. Custodia de la clave: la misma persona. En caso de que deje el proyecto, la responsabilidad pasa al IP hasta designar sustituto, y se registra en el historial de versiones del PGD.</p>
+<p><strong>Así no.</strong> La gestión de los datos corresponde al equipo investigador.</p>
+<p><strong>Error frecuente.</strong> Repartir la responsabilidad entre todos es no asignarla a nadie. Y no prever el relevo es garantizar que, cuando esa persona se vaya, nadie sabrá dónde está la clave.</p>
+</blockquote>
+<h3>Recursos y coste</h3>
+<p><strong>Qué se espera.</strong> Que exista. Es el campo que más se deja en blanco.</p>
+<blockquote>
+<p><strong>Así sí.</strong> Almacenamiento de imagen durante el proyecto y los cinco años posteriores, con cargo a la partida de ejecución. Tiempo de personal técnico para la preparación del depósito, estimado en 40 horas al cierre. El repositorio previsto no aplica tasas.</p>
+<p><strong>Así no.</strong> <em>(en blanco)</em></p>
+<p><strong>Error frecuente.</strong> Dejarlo vacío convierte la conservación a cinco años en una promesa sin presupuesto, que es exactamente el motivo por el que después no se cumple.</p>
+</blockquote>

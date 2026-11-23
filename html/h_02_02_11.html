@@ -1,0 +1,223 @@
+<p>Las dos unidades anteriores han hablado de almacenamiento, de organización y de significado sin enseñar un solo fichero. Conviene verlos, porque los tres conceptos se reconocen a simple vista en cuanto se tiene el contenido delante.</p>
+<p>Los tres ejemplos que siguen son <strong>fragmentos</strong>, recortados y simplificados para que quepan, y están elegidos para ilustrar una idea, no para servir de modelo. Ninguno hay que saber escribirlo: se trata de reconocer qué capa está haciendo cada cosa.</p>
+<hr />
+<h2>1 · Una tabla exportada de un cuaderno de recogida</h2>
+<p>Así sale de una herramienta como REDCap la tabla de datos del estudio PREVIA:</p>
+<pre><code>record_id,redcap_event_name,fecha_visita,pas,pad,crea,tfg,dx_principal
+137,basal_arm_1,2027-04-12,138,84,1.42,52,2
+137,mes_6_arm_1,2027-10-15,132,80,1.51,48,2
+138,basal_arm_1,2027-04-19,145,88,0.98,79,1
+</code></pre>
+<p>Es un CSV: texto plano, una línea por fila, comas entre valores. <strong>Se abrirá dentro de treinta años</strong> con cualquier cosa, y no dice absolutamente nada de lo que contiene. ¿Qué es <code>tfg</code>? ¿En qué unidades está <code>crea</code>? ¿Y qué significa que <code>dx_principal</code> valga <code>2</code>?</p>
+<p>La respuesta está en el <strong>diccionario de variables</strong>, que la herramienta exporta en un fichero aparte:</p>
+<pre><code>Variable / Field Name,Form Name,Field Type,Field Label,Choices,Validation,Min,Max
+crea,laboratorio,text,Creatinina sérica (mg/dL),,number_2dp,0.1,20
+tfg,laboratorio,calc,Filtrado glomerular estimado (mL/min/1.73m2),,,,
+dx_principal,clinica,radio,Diagnóstico principal,&quot;1, N18.2 | 2, N18.3 | 3, N18.4&quot;,,,
+</code></pre>
+<p>Ahora <code>2</code> significa algo: es el código N18.3 de una <strong>clasificación de diagnósticos</strong>, es decir, de una lista de códigos cuyo significado está acordado fuera del proyecto y es el mismo en cualquier hospital que la use. Y <code>crea</code> son miligramos por decilitro, con dos decimales y un rango admisible.</p>
+<p>Esas listas —de diagnósticos, de procedimientos, de fármacos, de pruebas de laboratorio— se llaman <strong>terminologías</strong> o <strong>vocabularios</strong>, y son la tercera capa de la unidad anterior: la del significado. La unidad didáctica siguiente explica por qué son la pieza más cara de FAIR, y D11·03 qué se espera exactamente de un proyecto respecto de ellas. Por ahora basta con el contraste que se ve en este ejemplo: <strong>el <code>2</code> lo entiende quien tenga el diccionario; el <code>N18.3</code> lo entiende cualquiera que conozca la clasificación</strong>.</p>
+<blockquote>
+<p>Los dos ficheros son el mismo conjunto de datos. <strong>El segundo es el que lo hace legible</strong>, y es el que más veces se queda sin exportar.</p>
+</blockquote>
+<h3>El diccionario sale solo; que sirva para algo, no</h3>
+<p>Conviene no sacar de aquí una conclusión tranquilizadora. La herramienta genera el diccionario automáticamente, sí, pero <strong>lo que hay dentro es lo que alguien escribió al diseñar el formulario</strong>, y con frecuencia no está escrito.</p>
+<p>Si la etiqueta de <code>crea</code> fuera «Creatinina» a secas, el diccionario se exportaría igual de puntual y seguiría sin decir en qué unidades está. No es una pega menor: entre mg/dL y µmol/L hay un factor de casi noventa, y una cifra sin unidad no se puede interpretar ni convertir.</p>
+<p>Lo que se ve en un diccionario mal diseñado es siempre lo mismo:</p>
+<ul>
+<li>Nombres de variable que no significan nada —<code>var1</code>, <code>p3b</code>— porque se pusieron deprisa.</li>
+<li>Etiquetas <strong>sin unidades</strong> y sin precisar el momento de la medida.</li>
+<li><strong>Texto libre</strong> donde había una lista de opciones posible, que es la decisión que más interoperabilidad destruye.</li>
+<li>Rangos y validaciones sin declarar, de modo que entra cualquier cosa y hay que limpiarla después.</li>
+<li>Variables que identifican al paciente <strong>sin marcar como tales</strong>.</li>
+</ul>
+<p>La buena noticia es cuándo se arregla: <strong>al diseñar el formulario</strong>, que es el único momento en que cuesta minutos. Hacerlo después obliga a reconstruir significados preguntando a gente que puede haberse ido.</p>
+<blockquote>
+<p>Rellenar bien el formulario <strong>es rellenar bien el diccionario</strong>. Son la misma tarea hecha una sola vez, y casi nadie lo ve así mientras la hace.</p>
+</blockquote>
+<p>Y es una de esas cosas que <strong>no dependen solo del investigador</strong>. Cuando el instituto o el hospital mantiene su propia instancia, el diseño del formulario pasa por sus manos, y ahí cabe convertir esto en un <strong>proceso de calidad</strong> ordinario: una revisión del instrumento antes de abrirlo a producción, con una lista mínima —toda variable con etiqueta descriptiva, unidades declaradas, lista de opciones donde la haya, validación y rango, campos identificadores marcados—. Es una hora por estudio, la hace quien administra la plataforma, y ahorra el trabajo de descifrar un fichero años después.</p>
+<p>Este es además el ejemplo más claro de por qué el nombre del formato no basta. El mismo registro, guardado en JSON en lugar de en CSV:</p>
+<pre><code>{
+  &quot;record_id&quot;: &quot;137&quot;,
+  &quot;redcap_event_name&quot;: &quot;basal_arm_1&quot;,
+  &quot;fecha_visita&quot;: &quot;2027-04-12&quot;,
+  &quot;crea&quot;: &quot;1.42&quot;,
+  &quot;dx_principal&quot;: &quot;2&quot;
+}
+</code></pre>
+<p>Ha cambiado el <strong>almacenamiento</strong> y no ha cambiado nada más: los mismos campos, los mismos nombres, el mismo código sin explicar. Y sigue haciendo falta el diccionario.</p>
+<h3>Una advertencia sobre este ejemplo</h3>
+<p>Merece la pena mirar de qué tipo es cada cosa aquí, porque es un caso de manual:</p>
+<ul>
+<li>El <strong>CSV</strong> es un formato abierto y perdurable, como explicaba la unidad D2·07.</li>
+<li>La <strong>organización</strong> —que la primera columna se llame <code>record_id</code>, que exista una columna de evento llamada <code>redcap_event_name</code>, que el diccionario tenga esas columnas y que las opciones se escriban <code>1, etiqueta | 2, etiqueta</code>— no la define ninguna norma. La define <strong>un programa concreto</strong>.</li>
+</ul>
+<p>Es una convención de las <strong>adoptadas</strong>, y de las buenas: está muy extendida, mucha gente sabe leerla y hay herramientas que la entienden. Pero conviene ser preciso sobre qué la sostiene:</p>
+<blockquote>
+<p>Es un estándar <em>de facto</em> <strong>mientras REDCap siga existiendo y siendo lo que es</strong>. Nadie lo mantiene como norma pública, y nadie se ha comprometido a que dentro de quince años signifique lo mismo.</p>
+</blockquote>
+<p>La consecuencia práctica no es dejar de usarlo, que sería absurdo, sino la de siempre: <strong>exportar el diccionario junto con los datos y explicar en el plan cómo está organizado el conjunto</strong>, en lugar de dar por hecho que quien lo reciba reconocerá de dónde salió. Si el programa desaparece, los CSV seguirán abriéndose; lo que se perdería es saber qué era <code>redcap_event_name</code>.</p>
+<hr />
+<h2>2 · Un fichero de variantes genómicas</h2>
+<p>El extremo contrario: un formato que <strong>lleva su propia documentación dentro</strong>.</p>
+<p>El fragmento es de otro estudio —el de secuenciación de exoma que describía el ejemplo 2 de esta unidad didáctica—, porque PREVIA no genera datos genómicos. Un VCF empieza con un bloque de líneas que declaran su contenido, y solo después vienen los datos:</p>
+<pre><code>##fileformat=VCFv4.3
+##reference=GRCh38
+##contig=&lt;ID=chr16,length=90338345&gt;
+##INFO=&lt;ID=DP,Number=1,Type=Integer,Description=&quot;Profundidad de lectura&quot;&gt;
+##FORMAT=&lt;ID=GT,Number=1,Type=String,Description=&quot;Genotipo&quot;&gt;
+##FORMAT=&lt;ID=DP,Number=1,Type=Integer,Description=&quot;Profundidad en la muestra&quot;&gt;
+#CHROM  POS      ID  REF  ALT  QUAL  FILTER  INFO   FORMAT  EXOMA-0137
+chr16   2138199  .   G    A    712   PASS    DP=54  GT:DP   0/1:54
+</code></pre>
+<p>Todo lo que hay antes de la penúltima línea <strong>son metadatos</strong>, y de un tipo muy concreto: dicen qué campos existen, de qué tipo son, cuántos valores admite cada uno y qué significan. Es decir, <strong>el diccionario de variables del fichero anterior, pero metido dentro del propio fichero</strong>.</p>
+<h3>Qué dice cada línea</h3>
+<div class="tabla"><table>
+<thead>
+<tr>
+<th>Línea</th>
+<th>Qué declara</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>##fileformat</code></td>
+<td>La versión de la especificación con la que hay que leer el fichero. Es obligatoria y va la primera</td>
+</tr>
+<tr>
+<td><code>##reference</code></td>
+<td><strong>El genoma de referencia</strong> frente al que se han descrito las variantes</td>
+</tr>
+<tr>
+<td><code>##contig</code></td>
+<td>Los cromosomas de esa referencia, con su longitud</td>
+</tr>
+<tr>
+<td><code>##INFO</code> y <code>##FORMAT</code></td>
+<td>Los campos que pueden aparecer: su nombre, cuántos valores lleva cada uno, de qué tipo son y qué significan</td>
+</tr>
+<tr>
+<td><code>#CHROM POS …</code></td>
+<td>Los nombres de las columnas. Las ocho primeras son fijas; después va una columna por cada muestra del fichero</td>
+</tr>
+</tbody>
+</table></div>
+<p>Y la línea de datos, descifrada:</p>
+<div class="tabla"><table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Valor</th>
+<th>Qué dice</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>CHROM</code>, <code>POS</code></td>
+<td><code>chr16</code>, <code>2138199</code></td>
+<td>Dónde: cromosoma y posición</td>
+</tr>
+<tr>
+<td><code>REF</code>, <code>ALT</code></td>
+<td><code>G</code>, <code>A</code></td>
+<td>Qué hay ahí en la referencia, y qué se ha encontrado en esta muestra</td>
+</tr>
+<tr>
+<td><code>QUAL</code>, <code>FILTER</code></td>
+<td><code>712</code>, <code>PASS</code></td>
+<td>Cuánta confianza hay en esa llamada, y si superó los filtros de calidad</td>
+</tr>
+<tr>
+<td><code>INFO</code></td>
+<td><code>DP=54</code></td>
+<td>Datos de la variante: aquí, que se leyó 54 veces</td>
+</tr>
+<tr>
+<td><code>FORMAT</code>, muestra</td>
+<td><code>GT:DP</code>, <code>0/1:54</code></td>
+<td>Qué campos se dan por muestra y sus valores: <code>0</code> es el alelo de la referencia y <code>1</code> el primero de <code>ALT</code>, de modo que <code>0/1</code> es un heterocigoto</td>
+</tr>
+</tbody>
+</table></div>
+<h3>Por qué el genoma de referencia no es un detalle</h3>
+<p>Es la línea que más consecuencias tiene y la que más fácil resulta pasar por alto. Una variante no se describe en absoluto: <strong>se describe frente a algo</strong>. Decir «en la posición 2 138 199 del cromosoma 16, donde la referencia pone G, esta muestra tiene A» solo significa algo si consta cuál es esa referencia.</p>
+<p>El genoma humano de referencia se publica en versiones sucesivas, y las coordenadas <strong>no coinciden entre ellas</strong>: la misma variante biológica está en una posición distinta según la versión. Dos ficheros sin esa línea, o con versiones distintas sin declararlo, producen resultados que parecen comparables y no lo son.</p>
+<blockquote>
+<p>Es el mismo principio que el bloque E exige para cualquier vocabulario: <strong>no basta con decir que se usa un estándar, hay que decir en qué versión</strong>. El VCF lo obliga a declarar en el propio fichero; en un CSV corriente, esa declaración es responsabilidad del proyecto o no existe.</p>
+</blockquote>
+<p>Conviene fijarse por último en el nombre de la última columna, <code>EXOMA-0137</code>: <strong>el identificador de la muestra viaja dentro del fichero</strong>, igual que el del paciente viaja dentro de la imagen DICOM.</p>
+<h3>Dónde está escrito todo esto</h3>
+<p>La especificación es pública y la mantiene la comunidad: <strong><a href="https://samtools.github.io/hts-specs/VCFv4.3.pdf">VCF, versión 4.3</a></strong>, en el conjunto de especificaciones <a href="https://samtools.github.io/hts-specs/">hts-specs</a>. No hay que leerla; conviene saber que existe, que cualquiera puede consultarla sin pagar y que no depende de ninguna empresa —que es justamente lo que la unidad D2·07 pedía comprobar de un formato.</p>
+<p>Por eso un programa puede leer un VCF que no ha visto nunca y saber que <code>DP</code> es un entero y qué representa. Con el CSV del ejemplo 1, no.</p>
+<blockquote>
+<p>Ninguna de las dos soluciones es mejor en abstracto. La diferencia es <strong>quién carga con la documentación</strong>: en el VCF, el formato; en el CSV, el proyecto.</p>
+</blockquote>
+<hr />
+<h2>3 · Una imagen médica</h2>
+<p>Un fichero DICOM es binario y no se puede enseñar tal cual. Pero cualquier herramienta de inspección imprime su contenido así, y eso sí se lee:</p>
+<pre><code>(0008,0020) DA  20270412                 StudyDate
+(0008,0060) CS  MR                       Modality
+(0008,103E) LO  Ax T2 FLAIR              SeriesDescription
+(0010,0020) LO  PREVIA-0137              PatientID
+(0018,0050) DS  5.0                      SliceThickness
+(0018,0087) DS  3.0                      MagneticFieldStrength
+(0020,000D) UI  1.2.840.113619.2.55...   StudyInstanceUID
+(0028,0010) US  256                      Rows
+(0028,0011) US  256                      Columns
+</code></pre>
+<p>Cada línea es un atributo, y tiene tres partes: un <strong>identificador numérico</strong> —el par entre paréntesis, que es el nombre real del atributo—, un <strong>tipo</strong> de dos letras, y el valor. El nombre en texto de la derecha está solo para las personas: lo que hace que dos hospitales se entiendan es que <code>(0018,0087)</code> significa intensidad de campo magnético <strong>en la norma</strong>, y no porque nadie lo haya pactado en este estudio.</p>
+<p>Y el mismo contenido, devuelto por los servicios web del estándar:</p>
+<pre><code>{
+  &quot;00080060&quot;: { &quot;vr&quot;: &quot;CS&quot;, &quot;Value&quot;: [&quot;MR&quot;] },
+  &quot;00100020&quot;: { &quot;vr&quot;: &quot;LO&quot;, &quot;Value&quot;: [&quot;PREVIA-0137&quot;] },
+  &quot;00180087&quot;: { &quot;vr&quot;: &quot;DS&quot;, &quot;Value&quot;: [3.0] }
+}
+</code></pre>
+<p>Es JSON, y es el mismo modelo: los mismos identificadores, los mismos tipos, los mismos valores. Es exactamente lo que decía la unidad anterior sobre que la organización y el almacenamiento son decisiones separables.</p>
+<p>Conviene fijarse además en <code>PatientID</code>: <strong>la identidad del sujeto viaja dentro de la imagen</strong>, no en un fichero al lado. Es la razón de que el tratamiento de la cabecera DICOM sea un asunto del bloque C y no un detalle técnico.</p>
+<hr />
+<h2>Los tres, en las tres capas</h2>
+<div class="tabla"><table>
+<thead>
+<tr>
+<th></th>
+<th>Almacenamiento</th>
+<th>Organización</th>
+<th>Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Tabla del cuaderno</strong></td>
+<td>CSV o JSON</td>
+<td>La convención de la herramienta, más lo que el proyecto decida</td>
+<td>El diccionario exportado, y una clasificación de diagnósticos en una variable</td>
+</tr>
+<tr>
+<td><strong>Variantes</strong></td>
+<td>Texto plano</td>
+<td>El estándar VCF, declarado en la propia cabecera</td>
+<td>Nomenclaturas genómicas y un genoma de referencia nombrado</td>
+</tr>
+<tr>
+<td><strong>Imagen</strong></td>
+<td>Binario, XML o JSON</td>
+<td>El modelo DICOM, definido en una norma pública</td>
+<td>El propio estándar, que fija qué significa cada atributo</td>
+</tr>
+</tbody>
+</table></div>
+<p>Léase la columna del medio de arriba abajo: <strong>en el primer caso la organización la pone el proyecto, y en los otros dos viene dada</strong>. Esa es toda la diferencia entre documentar mucho y documentar poco, y explica por qué el bloque D dedica una unidad didáctica entera a los conjuntos tabulares y casi ninguna a los otros dos.</p>
+<h2>Y aun así, ninguno de los tres garantiza nada</h2>
+<p>Conviene cerrar deshaciendo la conclusión cómoda, porque los tres ejemplos invitan a ella. <strong>Usar un formato reconocido, o incluso un estándar internacional, no garantiza que el conjunto esté bien descrito.</strong> El estándar fija <em>dónde</em> se escribe cada cosa; no obliga a que lo escrito sirva para algo.</p>
+<p>En los tres casos anteriores es fácil ver cómo falla:</p>
+<ul>
+<li>El <strong>diccionario del cuaderno</strong> puede estar completo de campos y vacío de contenido: etiquetas sin unidades, opciones sin codificar, variables llamadas <code>var1</code>.</li>
+<li>Un <strong>VCF</strong> puede ser perfectamente válido y no declarar bien su referencia, o traer descripciones de campo que no describen nada.</li>
+<li>Un <strong>DICOM</strong> trae obligatoriamente sus atributos técnicos, pero la descripción de la serie la escribe quien configuró el equipo, a mano y de forma distinta en cada hospital. Dos estudios impecables pueden ser incomparables por eso.</li>
+</ul>
+<blockquote>
+<p>Lo que separa un conjunto bien descrito de otro mal descrito no es el formato: son <strong>los criterios de calidad de quien lo describe</strong>.</p>
+</blockquote>
+<p>Y ahí está el motivo por el que esto aparece en un curso sobre gestión de datos y no en un manual técnico. Esos criterios funcionan mal si dependen del cuidado de cada proyecto: son materia de <strong>política institucional</strong>. Un mínimo exigible, aplicado en el momento en que se crea el instrumento o se deposita el conjunto, y comprobado por alguien —tal como se proponía para la instancia institucional del cuaderno de recogida.</p>
+<p>Esos criterios no hay que inventarlos. La unidad didáctica siguiente presenta los <strong>principios FAIR</strong>, que son precisamente el marco con el que se juzga si una descripción sirve, y el bloque D los convierte en campos concretos del documento.</p>

@@ -1,0 +1,87 @@
+<p>Es una de las palabras que más aparece en las convocatorias y una de las que menos se explican. Antes de decidir qué documentar y qué depositar, conviene fijar qué significa y distinguirlo de los datos que describe.</p>
+<h2>La definición</h2>
+<blockquote>
+<p>Un <strong>metadato</strong> es un dato que describe otro dato.</p>
+</blockquote>
+<p>El título de un conjunto, la fecha en que se recogió, quién lo produjo, cuántos sujetos incluye, qué variables contiene, en qué formato está, bajo qué licencia se distribuye. Nada de eso forma parte de las mediciones; todo eso sirve para saber qué son esas mediciones.</p>
+<h2>El ejemplo que lo aclara</h2>
+<p>Conviene pensar en un artículo científico. El <strong>texto</strong> del artículo es el contenido. El título, los autores, la revista, el año, el DOI, las palabras clave y el resumen son <strong>metadatos</strong>: no son el artículo, pero son lo que permite encontrarlo, citarlo y decidir si interesa antes de leerlo.</p>
+<p>Con un conjunto de datos ocurre lo mismo. Los registros de 400 pacientes son el contenido. Que se recogieron entre 2026 y 2028 en tres hospitales, en pacientes con diabetes tipo 2, con seguimiento de 24 meses, es el metadato.</p>
+<h2>Para qué sirven, en concreto</h2>
+<p><strong>Para encontrar el conjunto.</strong> Nadie puede buscar dentro de unos datos que no puede descargar. Se busca en su descripción.</p>
+<p><strong>Para saber si sirve sin haberlo visto.</strong> Alguien que necesite una cohorte de diabetes con imagen renal tiene que poder descartarlo —o quedárselo— leyendo su descripción.</p>
+<p><strong>Para citarlo.</strong> Autores, título, año, identificador: la cita de un conjunto de datos se construye con metadatos, igual que la de un artículo.</p>
+<p><strong>Para interpretarlo dentro de diez años.</strong> Cuando ya no quede nadie del proyecto, los metadatos son lo que dice qué es ese fichero.</p>
+<h2>Los tipos que aparecen</h2>
+<p>Aunque en la práctica se usan mezclados, conviene distinguirlos porque cada uno se documenta de forma distinta:</p>
+<div class="tabla"><table>
+<thead>
+<tr>
+<th>Tipo</th>
+<th>Responde a…</th>
+<th>Qué incluye</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Descriptivos</strong></td>
+<td>¿De qué va este conjunto?</td>
+<td>Título, resumen, autores, palabras clave, población, periodo</td>
+</tr>
+<tr>
+<td><strong>Estructurales</strong></td>
+<td>¿Cómo está organizado?</td>
+<td>Qué ficheros o tablas lo componen, qué representa una fila en cada uno, cómo se enlazan y qué variables contiene cada uno</td>
+</tr>
+<tr>
+<td><strong>Administrativos y de procedencia</strong></td>
+<td>¿De dónde viene y qué puedo hacer con él?</td>
+<td>Cómo se produjo, qué procesado se le aplicó, quién lo custodia, qué licencia tiene, cuánto se conserva</td>
+</tr>
+</tbody>
+</table></div>
+<p>Los <strong>descriptivos</strong> son los que se publican en el repositorio. Y sobre los <strong>estructurales</strong> conviene una precisión: el <strong>diccionario de variables</strong> es una parte de ellos, pero solo una parte —describe las variables, no la organización del conjunto—. El bloque E vuelve sobre cada mitad por separado.</p>
+<h2>Por qué conviene fijarlo ahora</h2>
+<p>Porque el término reaparece en todo lo que viene después: el diccionario de variables, la documentación del procesado, las palabras clave de la ficha, la licencia, el responsable. Todo eso son metadatos, y hasta ahora se han ido nombrando de pasada.</p>
+<p>Dónde viven, quién los mantiene y cuáles se publican se decide más adelante. Lo que hace falta aquí es saber de qué se está hablando.</p>
+<h2>La propiedad que los hace útiles con datos de salud</h2>
+<p>Conviene retener una propiedad importante: los metadatos descriptivos de un conjunto de datos de salud pueden publicarse aunque los datos individuales no salgan nunca, siempre que no revelen información sobre personas.</p>
+<p>Que un conjunto exista, que contenga estas variables, que cubra esta población y que se solicite por este procedimiento es información pública. Los registros individuales, no. El bloque C justificará por qué, y buena parte de lo que este curso propone se apoya en ello.</p>
+<h2>Cuándo un metadato también puede ser un dato personal</h2>
+<p>La distinción no depende de la palabra que se use, sino de qué se describe. El valor <code>creatinina = 1,4</code> es un dato; que la variable se llame creatinina basal, se mida en mg/dl y tenga determinados valores admitidos es información que permite interpretarlo.</p>
+<p>Una misma información puede cumplir funciones distintas. En un estudio de calidad asistencial, el hospital y la fecha de ingreso pueden ser variables analizadas. En la descripción del conjunto, «tres hospitales, ingresos entre 2026 y 2028» es un metadato agregado. En cambio, esas fechas y centros asociados a cada fila pueden contribuir a identificar a una persona.</p>
+<blockquote>
+<p>Que algo sea metadato en la descripción del conjunto no significa que sea inocuo dentro del fichero.</p>
+</blockquote>
+<div class="tabla"><table>
+<thead>
+<tr>
+<th>Qué se publica o conserva</th>
+<th>Qué describe</th>
+<th>Precaución</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Descripción del conjunto</td>
+<td>Población, periodo, variables y criterios, a nivel agregado</td>
+<td>Revisar grupos pequeños y combinaciones raras</td>
+</tr>
+<tr>
+<td>Diccionario de variables</td>
+<td>Nombres, unidades y codificaciones</td>
+<td>No incluir valores reales o categorías que revelen casos</td>
+</tr>
+<tr>
+<td>Documentación del procesado</td>
+<td>Cómo se limpiaron y transformaron los datos</td>
+<td>Comprobar que no incluya información identificativa</td>
+</tr>
+<tr>
+<td>Ficheros de imagen</td>
+<td>Datos y metadatos técnicos</td>
+<td>Retirar nombres y números de historia que puedan venir incorporados</td>
+</tr>
+</tbody>
+</table></div>
+<p>Por eso, publicar el registro de un conjunto no equivale a publicar sus datos individuales. Pero tampoco basta con llamar «metadato» a un campo para que deje de ser información personal.</p>

@@ -1,0 +1,128 @@
+<p>Aquí empieza la parte práctica del curso. Hasta ahora se ha visto qué son los datos, qué obligaciones recaen sobre ellos y qué tiene de particular la investigación con datos de salud. A partir de este bloque, todo eso se convierte en un documento.</p>
+<h2>No hay un formato único, pero sí un contenido común</h2>
+<p>Cada financiador tiene su formulario. Horizon Europe usa una plantilla de siete apartados; el Instituto de Salud Carlos III pide una memoria más breve; algunas instituciones tienen la suya propia; y las herramientas de plan de gestión de datos generan estructuras distintas según la plantilla que se elija.</p>
+<p>Debajo de esa variedad, <strong>lo que se pregunta es siempre lo mismo</strong>:</p>
+<div class="tabla"><table>
+<thead>
+<tr>
+<th>El financiador quiere saber…</th>
+<th>Y eso es…</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Qué datos hay</td>
+<td>La descripción de los conjuntos</td>
+</tr>
+<tr>
+<td>Si alguien podrá entenderlos</td>
+<td>Documentación y metadatos</td>
+</tr>
+<tr>
+<td>Si su tratamiento es lícito</td>
+<td>Marco legal y ético</td>
+</tr>
+<tr>
+<td>Dónde están y si están protegidos</td>
+<td>Almacenamiento y seguridad</td>
+</tr>
+<tr>
+<td>Cuánto durarán y qué pasará después</td>
+<td>Conservación y disposición final</td>
+</tr>
+<tr>
+<td>Quién podrá usarlos y en qué condiciones</td>
+<td>Compartición y publicación</td>
+</tr>
+<tr>
+<td>Quién responde y con qué medios</td>
+<td>Responsabilidades y recursos</td>
+</tr>
+</tbody>
+</table></div>
+<p>Siete preguntas. Cualquier plan de gestión de datos del mundo es una forma de responderlas.</p>
+<h2>La plantilla del curso</h2>
+<p>La plantilla del curso organiza el documento en once apartados, que son esas siete preguntas más la parte administrativa y dos apartados propios de la investigación biomédica:</p>
+<div class="tabla"><table>
+<thead>
+<tr>
+<th></th>
+<th>Apartado</th>
+<th>Qué decide</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>0</strong></td>
+<td>Portada y control del documento</td>
+<td>Identificación, versión y documentos relacionados</td>
+</tr>
+<tr>
+<td><strong>1</strong></td>
+<td>Resumen de la gestión de datos</td>
+<td>La visión de conjunto, en media página</td>
+</tr>
+<tr>
+<td><strong>2</strong></td>
+<td>Conjuntos de datos</td>
+<td>El inventario y una <strong>ficha por conjunto</strong></td>
+</tr>
+<tr>
+<td><strong>3</strong></td>
+<td>Muestras biológicas</td>
+<td>Solo si el proyecto las maneja</td>
+</tr>
+<tr>
+<td><strong>4</strong></td>
+<td>Otros resultados de investigación</td>
+<td>Software, código, protocolos, modelos</td>
+</tr>
+<tr>
+<td><strong>5</strong></td>
+<td>Documentación y metadatos</td>
+<td>Cómo se entenderán los datos</td>
+</tr>
+<tr>
+<td><strong>6</strong></td>
+<td>Marco legal y ético</td>
+<td>Base legal, consentimiento, cesiones</td>
+</tr>
+<tr>
+<td><strong>7</strong></td>
+<td>Almacenamiento, seguridad y acceso</td>
+<td>Dónde viven y quién entra</td>
+</tr>
+<tr>
+<td><strong>8</strong></td>
+<td>Conservación y disposición final</td>
+<td>Plazos, bloqueo, borrado</td>
+</tr>
+<tr>
+<td><strong>9</strong></td>
+<td>Compartición y publicación</td>
+<td>Repositorio, licencia, acceso</td>
+</tr>
+<tr>
+<td><strong>10</strong></td>
+<td>Responsabilidades y recursos</td>
+<td>Quién, con qué presupuesto</td>
+</tr>
+</tbody>
+</table></div>
+<h2>Debajo de todas las plantillas hay un mismo modelo</h2>
+<p>Que todas pregunten lo mismo no es casualidad: existe <strong>un estándar que lo formaliza</strong>, el <em>RDA DMP Common Standard</em> de la Research Data Alliance. No es una plantilla más, sino un <strong>modelo de datos</strong>: define qué entidades tiene un plan y qué campos tiene cada una, y se publica como esquema legible por máquina.</p>
+<p>Importa por dos razones, y las dos se desarrollan en la unidad D8·04: confirma que la estructura de este documento no es una invención del curso, y explica por qué es razonable esperar que el plan acabe viviendo también dentro de los sistemas de la institución, y no solo en un fichero de texto.</p>
+<h2>Una decisión de diseño que conviene entender</h2>
+<p>Horizon Europe organiza su plantilla <strong>por letras FAIR</strong>: un apartado para «localizables», otro para «accesibles», otro para «interoperables», otro para «reutilizables».</p>
+<p>Esta plantilla no. Se organiza <strong>por decisiones</strong>: describir, documentar, guardar, conservar, compartir. Y es deliberado, porque así es como piensa quien escribe: nadie se sienta a decidir «cómo hago mis datos interoperables», sino «qué formato uso y con qué codifico los diagnósticos».</p>
+<p>Las dos organizaciones contienen lo mismo. La unidad D8·04 detalla la correspondencia campo a campo y comprueba que <strong>volcar de una a otra es mecánico</strong>.</p>
+<h2>El apartado que sostiene todo el documento</h2>
+<p>De los once, hay uno del que dependen casi todos los demás: el <strong>2, conjuntos de datos</strong>, con su ficha por conjunto.</p>
+<p>La razón es simple. Un proyecto no tiene «unos datos»: tiene varios conjuntos con naturalezas distintas. Un cuaderno de recogida, una extracción de la historia clínica, unas imágenes, unos resultados de laboratorio. Y cada uno puede tener un origen distinto, un nivel de identificabilidad distinto, un plazo de conservación distinto y un destino final distinto.</p>
+<blockquote>
+<p>Casi todos los defectos graves de un plan de gestión de datos vienen de haber escrito <strong>en singular</strong> sobre algo que era plural.</p>
+</blockquote>
+<p>Por eso la elaboración empieza por ahí: la unidad D10 está dedicada entera a describir los conjuntos, y el resto del bloque E se apoya en ese inventario.</p>
+<h2>Cómo se recorre la elaboración</h2>
+<p>Cada unidad didáctica cubre un tramo de la plantilla, con la misma mecánica: qué hay que decidir, qué se espera que se escriba, cómo se redacta bien y cuál es el error frecuente. Al final de varias de ellas hay una actividad para rellenar ese tramo <strong>en el documento propio</strong>.</p>
+<p>Realizando esas actividades sobre la marcha, al terminar el bloque E quedan redactados seis de los once apartados, que son los más largos: en extensión, alrededor de tres cuartas partes del plan. El bloque F solo lo cierra y lo revisa.</p>

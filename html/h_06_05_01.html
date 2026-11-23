@@ -1,0 +1,34 @@
+<p>El apartado 7 empieza por una pregunta que parece trivial: <strong>¿dónde están los datos?</strong> Se responde por conjunto, con el nombre del sistema, y la mayoría de los planes la responde mal porque describe dónde <em>deberían</em> estar.</p>
+<h2>Los cuatro emplazamientos que aparecen en un proyecto</h2>
+<p><strong>El sistema de captura o de origen.</strong> La plataforma donde se recogen los datos, o el sistema asistencial del que se extraen. Suele ser institucional, tener respaldo y control de accesos, y no depender del proyecto.</p>
+<p><strong>El almacenamiento institucional de trabajo.</strong> La unidad de red del grupo, el espacio compartido del centro. Es donde vive la copia con la que el equipo trabaja durante el proyecto.</p>
+<p><strong>El entorno de análisis.</strong> Donde se ejecutan los análisis. Puede coincidir con el anterior, ser un servidor de cálculo o un entorno seguro de procesamiento. Cuando no coincide, hay una copia más de los datos, y esa copia también hay que declararla.</p>
+<p><strong>El repositorio de destino.</strong> Donde acabará lo que se deposite. No es almacenamiento del proyecto sino de después, y se trata en el apartado 9.</p>
+<p>Un proyecto ordinario tiene datos en los tres primeros a la vez. Escribir que «los datos residen en la plataforma institucional» cuando además hay una copia en la unidad de red y otra en el servidor de análisis es incompleto, y lo que queda fuera suele ser lo peor protegido.</p>
+<figure class="figura">
+<img src="/static/f7_emplazamientos.png" alt="Cuatro emplazamientos en fila: sistema de captura, almacenamiento de trabajo, entorno de análisis y repositorio, cada uno con su administrador y su política de respaldo. Los tres primeros conviven durante el proyecto. Debajo, en rojo y con línea discontinua, un quinto emplazamiento, el portátil de quien analiza, al que llegan flechas desde el almacenamiento de trabajo y el entorno de análisis.">
+<figcaption>Tres copias vivas a la vez, con respaldos distintos, y una quinta que no debería existir.</figcaption>
+</figure>
+
+<h2>La copia que nadie declara</h2>
+<p>Hay un quinto emplazamiento que no está en la lista porque no debería existir, y existe casi siempre: <strong>el portátil de quien hace el análisis</strong>.</p>
+<p>Se llega a él por el camino más razonable del mundo: alguien exporta la base para trabajar el fin de semana, o para llevarla a un congreso, o porque el servidor va lento. A partir de ahí hay una copia de datos personales fuera de todo control, que sobrevive al proyecto y a menudo a la persona.</p>
+<blockquote>
+<p>El plan no puede fingir que eso no pasa. Puede hacer algo mejor: <strong>decir explícitamente que no se hará</strong>, y ofrecer la alternativa que lo hace innecesario.</p>
+</blockquote>
+<p>Esa declaración es lo que convierte una buena intención en una regla del proyecto que se le puede recordar a alguien.</p>
+<h2>Lo que hay que averiguar de cada emplazamiento</h2>
+<p>Antes de escribir, estas cuatro cosas de cada sitio donde vivan datos:</p>
+<ul>
+<li><strong>Quién lo administra.</strong> Un servicio del centro, el grupo, un proveedor externo.</li>
+<li><strong>Si tiene copias de seguridad</strong> y de qué tipo. Se vuelve sobre ello en D13·03.</li>
+<li><strong>Cómo se controla el acceso</strong> y quién concede los permisos.</li>
+<li><strong>Si está dentro del EEE</strong>, cuando se trate de un servicio externo.</li>
+</ul>
+<p>Ninguna de las cuatro se puede deducir. Todas se preguntan.</p>
+<h2>Cómo se escribe</h2>
+<p>Por conjunto, con nombres:</p>
+<blockquote>
+<p><em>CD1 reside en la plataforma institucional de captura, administrada por el servicio de informática. La base de análisis derivada (CD6) reside en el espacio de red del grupo, con acceso por carpeta restringido nominalmente. El conjunto de imagen (CD3) reside en el servidor de imagen del servicio de radiología y no se copia fuera de él; el análisis se ejecuta en ese mismo servidor.</em></p>
+</blockquote>
+<p>Cada frase se puede comprobar, y para escribirla hubo que preguntar. Eso es exactamente lo que este apartado persigue.</p>

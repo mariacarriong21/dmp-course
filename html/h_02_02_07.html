@@ -1,0 +1,106 @@
+<p>El plazo no es retórico: los datos de un proyecto se conservan habitualmente entre cinco y veinticinco años. La pregunta correcta al elegir formato no es «¿con qué lo abro hoy?», sino <strong>«¿con qué lo abrirá alguien que no tenga mi ordenador?»</strong>.</p>
+<h2>Qué hace que un formato dure</h2>
+<ul>
+<li><strong>Abierto y documentado</strong>: su especificación es pública, de modo que cualquiera puede escribir un programa que lo lea.</li>
+<li><strong>Independiente del programa</strong> que lo creó, y de su versión.</li>
+<li><strong>Ampliamente usado</strong>, porque el soporte sigue al uso.</li>
+<li><strong>Simple</strong>: cuanto menos haga el formato, menos cosas pueden dejar de funcionar.</li>
+</ul>
+<h2>Seis preguntas para decidir</h2>
+<p>Eso, aplicado a un formato concreto, se comprueba preguntando:</p>
+<div class="tabla"><table>
+<thead>
+<tr>
+<th>Pregunta</th>
+<th>Buena señal</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>¿Existe una especificación pública?</strong></td>
+<td>La publica un organismo de normalización —norma <em>de iure</em>— o una comunidad que la mantiene a la vista de todos —norma <em>de facto</em>—, y se puede consultar sin pagar</td>
+</tr>
+<tr>
+<td><strong>¿Quién la controla?</strong></td>
+<td>Un organismo o una comunidad amplia, no un fabricante que puede cambiarla, cerrarla o retirarla cuando le convenga</td>
+</tr>
+<tr>
+<td><strong>¿Con qué licencia?</strong></td>
+<td>El formato se puede implementar libremente: sin permisos, sin patentes que cobrar y sin acuerdos de confidencialidad</td>
+</tr>
+<tr>
+<td><strong>¿Cuánto se usa?</strong></td>
+<td>Muchos grupos, muchas instituciones y, mejor todavía, repositorios que lo exigen. El soporte sigue al uso</td>
+</tr>
+<tr>
+<td><strong>¿Con qué se lee?</strong></td>
+<td>Varias herramientas <strong>independientes entre sí</strong>, y al menos una de código abierto</td>
+</tr>
+<tr>
+<td><strong>¿Depende de un programa concreto?</strong></td>
+<td>Se abre con herramientas de fabricantes distintos, y también sin ninguno</td>
+</tr>
+</tbody>
+</table></div>
+<p>Los dos tipos de norma sirven igual, y el curso ya ha visto un ejemplo de cada uno: <strong>DICOM</strong> es una norma <em>de iure</em>, publicada y mantenida por un comité formal; <strong>VCF</strong> es una norma <em>de facto</em>, nacida de la práctica de una comunidad y documentada por ella. Ninguna de las dos depende de que una empresa siga existiendo.</p>
+<blockquote>
+<p>De las seis, la más decisiva en la práctica es la quinta. <strong>Mientras exista una biblioteca libre capaz de leerlo, un formato sigue vivo aunque su creador desaparezca.</strong> Y si la única forma de leerlo es un programa concreto, el formato durará lo que dure ese programa.</p>
+</blockquote>
+<h2>Cuando el formato se lleva los datos por delante</h2>
+<p>Conviene ver el fallo entero, porque nunca ocurre de golpe.</p>
+<p>Un grupo compra un equipo de laboratorio que viene con su propia aplicación de análisis. Los resultados se guardan en el formato del fabricante, que no está documentado en ninguna parte, y la aplicación se instala con una licencia atada a ese ordenador. Durante cuatro años todo funciona.</p>
+<p>Después, cualquiera de estas cosas, todas corrientes:</p>
+<ul>
+<li>El equipo se sustituye y el nuevo trae otra aplicación, que <strong>no abre los ficheros antiguos</strong>.</li>
+<li>El sistema operativo del ordenador deja de recibir soporte y la aplicación no funciona en el siguiente.</li>
+<li>La empresa es absorbida, o cierra, y <strong>con ella desaparecen el soporte y la posibilidad de reactivar la licencia</strong>.</li>
+</ul>
+<p>No hay incendio ni disco roto: los ficheros están enteros, y son ilegibles. La única salida que queda es reconstruirlos por ingeniería inversa, que es cara y a veces imposible.</p>
+<p>Que esto no es una hipótesis lo demuestra un detalle del propio ecosistema científico: en microscopía existen <strong>decenas de formatos propietarios distintos</strong>, muchos de equipos ya descatalogados, y ha hecho falta un proyecto de código abierto dedicado exclusivamente a leerlos para que esos datos no se perdieran. En citometría de flujo, la comunidad reaccionó antes y acordó un formato común precisamente para no depender de cada fabricante.</p>
+<p><strong>La lección no es «no usar equipos propietarios»</strong>, que rara vez se puede elegir, sino esta:</p>
+<blockquote>
+<p>Si el instrumento solo escribe en su propio formato, <strong>exportar a un formato abierto forma parte de la recogida de datos</strong>, no de las tareas del final. Y esa exportación hay que probarla al principio del proyecto, no cuando el equipo ya no esté.</p>
+</blockquote>
+<h2>Elecciones habituales</h2>
+<div class="tabla"><table>
+<thead>
+<tr>
+<th>Tipo de dato</th>
+<th>Elección duradera</th>
+<th>Qué evitar</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tablas</td>
+<td>CSV con su diccionario</td>
+<td>Hoja de cálculo con fórmulas, macros o formato condicional</td>
+</tr>
+<tr>
+<td>Texto</td>
+<td>Texto plano, Markdown</td>
+<td>Documento de procesador con versión específica</td>
+</tr>
+<tr>
+<td>Imagen clínica</td>
+<td>DICOM</td>
+<td>Capturas de pantalla o exportaciones a formatos de consumo</td>
+</tr>
+<tr>
+<td>Datos estructurados</td>
+<td>JSON, XML</td>
+<td>Formatos binarios propietarios</td>
+</tr>
+<tr>
+<td>Análisis</td>
+<td>Scripts en texto plano</td>
+<td>El histórico de clics de un programa estadístico</td>
+</tr>
+</tbody>
+</table></div>
+<p>Una advertencia sobre la fila de datos estructurados: decir «JSON» o «XML» resuelve la durabilidad, pero <strong>no dice todavía qué hay dentro del fichero</strong>. Es lo que trata la unidad siguiente.</p>
+<h2>La trampa de la hoja de cálculo</h2>
+<p>Merece aviso propio porque es donde vive la mayoría de los datos clínicos. Una hoja de cálculo es una herramienta excelente para mirar datos y muy mala para conservarlos: <strong>transforma silenciosamente</strong> lo que no entiende —fechas, códigos con ceros a la izquierda, identificadores que parecen números—, y mezcla en un mismo fichero los datos con la presentación y con la lógica.</p>
+<p>La recomendación práctica no es prohibirla, sino <strong>exportar a CSV lo que se vaya a conservar</strong> y guardar aparte el diccionario de variables.</p>
+<h2>Un formato duradero no basta</h2>
+<p>Un CSV perfecto sin diccionario de variables es tan inútil como un fichero propietario. El formato garantiza que se podrá <strong>abrir</strong>; la documentación, que se podrá <strong>entender</strong>. Hacen falta los dos.</p>

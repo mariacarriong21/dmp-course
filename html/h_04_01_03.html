@@ -1,0 +1,32 @@
+<p>Hay datos que identifican <strong>aunque se les quiten todas las etiquetas</strong>. No porque lleven el nombre pegado, sino porque la información en sí misma señala a una persona concreta.</p>
+<p>Es una propiedad del dato, no de cómo se ha guardado, y por eso no se arregla borrando columnas.</p>
+<h2>Los cuatro casos</h2>
+<p><strong>Datos genómicos.</strong> Una secuencia es, por su naturaleza, un identificador de la persona de la que procede — y en buena medida de sus familiares. Ninguna transformación razonable lo evita. Con datos genómicos, la decisión sobre el destino se toma al principio y la respuesta casi nunca es la publicación abierta.</p>
+<p><strong>Imagen médica.</strong> Dos problemas distintos. El primero es que los ficheros clínicos llevan <strong>información identificativa dentro</strong>, en sus cabeceras, y a veces impresa sobre la propia imagen. El segundo es más difícil: en las exploraciones craneales es posible <strong>reconstruir los rasgos faciales</strong> a partir de la imagen.</p>
+<p><strong>Series pequeñas y enfermedades poco frecuentes.</strong> Si el estudio incluye a doce personas con una enfermedad minoritaria en una región, la combinación de enfermedad, edad aproximada y provincia basta para identificarlas dentro de su entorno. Aquí el problema no es una variable: es el <strong>tamaño del grupo</strong>.</p>
+<p><strong>Fechas exactas y localización.</strong> La fecha de un ingreso, de una intervención o de un parto, cruzada con muy poca información adicional, es enormemente identificativa. Lo mismo ocurre con el código postal en zonas poco pobladas.</p>
+<h2>En imagen hay una norma para esto</h2>
+<p>De los cuatro casos, la imagen es el único que cuenta con una <strong>norma específica</strong> sobre cómo reducir la identificabilidad, y conviene conocerla aunque no se vaya a aplicar a mano, porque evita improvisar.</p>
+<p>El propio estándar DICOM dedica un anexo a los <strong>perfiles de confidencialidad de atributos</strong> —<a href="https://dicom.nema.org/medical/dicom/current/output/chtml/part15/chapter_E.html">PS3.15, anexo E</a>—, que hace dos cosas:</p>
+<ul>
+<li>Define un <strong>perfil básico</strong>: la lista, atributo por atributo, de qué hay que eliminar, sustituir o conservar en la cabecera. No es una recomendación genérica, sino una tabla concreta que una herramienta puede aplicar y sobre la que puede declarar conformidad.</li>
+<li>Y define <strong>opciones</strong> que se añaden al perfil, precisamente porque quitarlo todo destruiría el valor del dato. Unas obligan a quitar más —limpiar el texto grabado sobre los píxeles, limpiar los rasgos faciales reconocibles, limpiar los gráficos superpuestos— y otras permiten <strong>retener a propósito</strong> lo que el estudio necesita: las fechas cuando hace falta el seguimiento longitudinal, las características del paciente, la identidad del equipo o del centro, los identificadores únicos.</li>
+</ul>
+<blockquote>
+<p>La norma no ofrece un botón de anonimizar: ofrece un <strong>menú que obliga a decidir qué se conserva y por qué</strong>. Que es exactamente la decisión que el plan tiene que dejar escrita.</p>
+</blockquote>
+<p>Dos consecuencias prácticas, y una advertencia del propio estándar.</p>
+<p><strong>Lo que le toca al proyecto no es ejecutarlo.</strong> De eso se encargan herramientas, y normalmente la unidad de imagen o la de datos. Lo que le toca es <strong>decidir y escribir qué perfil y qué opciones se aplican</strong>, porque de ahí depende para qué seguirá sirviendo el conjunto: un estudio de progresión que pierda las fechas se queda sin su variable principal.</p>
+<p><strong>El perfil básico actúa sobre la cabecera.</strong> El texto quemado sobre la propia imagen y la reconstrucción de rasgos faciales son problemas del píxel, y tienen opciones propias que hay que pedir expresamente. Darlos por hechos es el error habitual.</p>
+<p>Y la advertencia, que está escrita en el estándar y dice mejor que nada lo que esta unidad intenta transmitir:</p>
+<blockquote>
+<p>El uso de estos perfiles <strong>no garantiza que se elimine toda la información identificativa</strong>: no sustituye al proceso de reducción de la identificabilidad, sino que debe formar parte de él. Ese proceso incluye determinar con qué finalidad y para quién se hace, interpretar la normativa aplicable y valorar el riesgo de reidentificación.</p>
+<p>— <em>DICOM PS3.15, anexo E</em> (traducido)</p>
+</blockquote>
+<h2>Lo que tienen en común</h2>
+<p>En los cuatro casos, <strong>el riesgo no está en un campo que se pueda suprimir</strong>, sino en el conjunto de la información. Y por eso quitar variables no lo resuelve: o se transforma el dato hasta perder buena parte de su valor, o se acepta que sigue siendo personal y se protege en consecuencia.</p>
+<h2>La consecuencia práctica</h2>
+<blockquote>
+<p>Si un conjunto es de alguno de estos cuatro tipos, <strong>su destino se decide en la primera versión del plan</strong>, no al final.</p>
+</blockquote>
+<p>Descubrir en el momento de publicar que un conjunto genómico no puede compartirse es descubrir algo que se sabía desde el primer día. Y para entonces puede haber una promesa escrita en la memoria del proyecto que ya no se puede cumplir.</p>

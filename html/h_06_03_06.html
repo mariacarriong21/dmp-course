@@ -1,0 +1,263 @@
+<p>Comprobación de lo esencial de esta unidad didáctica. Sin nota y con intentos ilimitados: sirve para detectar lagunas antes de seguir.</p>
+<h2>Ejercicio · ¿Se entiende este diccionario?</h2>
+<p>Un equipo deposita un conjunto de datos de una cohorte con este diccionario de variables. Conviene leerlo desde la posición de alguien de otro centro que quisiera reutilizarlo.</p>
+<div class="tabla"><table>
+<thead>
+<tr>
+<th>Nombre</th>
+<th>Etiqueta</th>
+<th>Tipo</th>
+<th>Valores</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td>Identificador del sujeto</td>
+<td>texto</td>
+<td></td>
+</tr>
+<tr>
+<td><code>edad</code></td>
+<td>Edad</td>
+<td>numérica</td>
+<td></td>
+</tr>
+<tr>
+<td><code>sexo</code></td>
+<td>Sexo</td>
+<td>categórica</td>
+<td>1, 2</td>
+</tr>
+<tr>
+<td><code>fum</code></td>
+<td>Tabaquismo</td>
+<td>categórica</td>
+<td>0, 1, 2, 9</td>
+</tr>
+<tr>
+<td><code>crea_b</code></td>
+<td>Creatinina basal</td>
+<td>numérica</td>
+<td></td>
+</tr>
+<tr>
+<td><code>tfg</code></td>
+<td>Filtrado glomerular</td>
+<td>numérica</td>
+<td></td>
+</tr>
+<tr>
+<td><code>evento</code></td>
+<td>Evento principal</td>
+<td>categórica</td>
+<td>0, 1</td>
+</tr>
+<tr>
+<td><code>t_seg</code></td>
+<td>Tiempo de seguimiento</td>
+<td>numérica</td>
+<td></td>
+</tr>
+<tr>
+<td><code>grupo</code></td>
+<td>Grupo de riesgo</td>
+<td>categórica</td>
+<td>bajo, medio, alto</td>
+</tr>
+</tbody>
+</table></div>
+<pre><code>&gt;&gt;Señalar todos los problemas reales de este diccionario.&lt;&lt;
+[x] Las categorías de `sexo` y `fum` no están descifradas
+[x] Las variables numéricas no declaran unidades
+[x] No se distingue qué código representa un valor ausente
+[x] Las variables derivadas no dicen de qué se derivan ni con qué regla
+[x] No se dice desde cuándo se cuenta el tiempo de seguimiento
+[ ] Los nombres de las variables están abreviados
+[explanation]
+Todo menos lo último.
+
+**Las categorías sin descifrar** son el defecto más grave, porque no impide usar los datos: quien reutiliza asume una convención —1 = hombre— y sigue adelante. El error nunca se detecta.
+
+**Las unidades** faltan en tres variables. `crea_b` puede estar en mg/dl o en µmol/l, y hay un factor de 88 entre las dos. `edad` y `t_seg` pueden estar en años, meses o días.
+
+**Los ausentes**: el `9` de `fum` parece un código de ausente, pero no está declarado. Si no se dice, entra en cualquier cálculo como si fuera una categoría más.
+
+**Las derivadas**: `tfg` se calcula a partir de la creatinina, pero con qué fórmula (CKD-EPI, MDRD) y con qué variables de ajuste. Y `grupo` sale de algún punto de corte que nadie declara, con lo que sus tres categorías no significan nada fuera de este estudio.
+
+**El tiempo de seguimiento** necesita un origen: desde el reclutamiento, desde el diagnóstico, desde el inicio del tratamiento. Sin él, los tiempos de dos estudios no son comparables.
+
+Que los nombres estén **abreviados no es un problema** mientras la etiqueta los explique. Los nombres cortos son incluso preferibles en muchos programas de análisis; lo que importa es que el diccionario los traduzca.
+[explanation]
+</code></pre>
+<pre><code>&gt;&gt;De todos esos defectos, ¿cuál es el más peligroso y por qué?&lt;&lt;
+( ) La ausencia de unidades, porque invalida los cálculos
+(x) Las categorías sin descifrar, porque permiten un análisis aparentemente correcto pero equivocado
+( ) La falta de origen del tiempo de seguimiento, porque impide comparar estudios
+( ) Las variables derivadas sin fórmula, porque no se pueden recalcular
+[explanation]
+Los cuatro son defectos reales, pero solo uno produce un **resultado equivocado que nadie detecta**.
+
+Si faltan las unidades, los valores de creatinina resultan extraños y alguien pregunta. Si falta la fórmula del filtrado glomerular, la variable no se puede recalcular y se ve. Pero si `sexo` vale 1 y 2 y quien reutiliza supone la convención contraria a la real, **el análisis se ejecuta, produce cifras plausibles y las conclusiones están invertidas**.
+
+Los defectos que impiden trabajar se corrigen. Los que permiten trabajar mal, no.
+[explanation]
+</code></pre>
+<pre><code>&gt;&gt;El equipo alega que el diccionario es suficiente porque quien quiera reutilizar los datos puede escribirles y preguntar. ¿Es una respuesta válida?&lt;&lt;
+( ) Sí, siempre que respondan con diligencia
+(x) No: la R de FAIR exige que el conjunto se entienda sin recurrir a sus autores
+( ) Sí, si el conjunto es de acceso controlado
+( ) No, porque el RGPD prohíbe ese tipo de consultas
+[explanation]
+No es válida, por dos razones.
+
+La primera es de principio: la **R de FAIR** pide que un conjunto sea comprensible por sí mismo. Depender de que alguien conteste no es reutilización, es un favor.
+
+La segunda es práctica: en pocos años esa dirección de correo dejará de funcionar, quien conocía las codificaciones se habrá ido a otro centro y el conjunto quedará técnicamente disponible y materialmente inservible. Es el destino de la mayoría de los datos «disponibles bajo petición al autor».
+
+Y hay un tercer motivo, más cercano: quien más va a consultar ese diccionario es **el propio equipo, dos años después**.
+[explanation]
+</code></pre>
+<pre><code>&gt;&gt;El estudio es una cohorte con seguimiento, pero el diccionario tiene una sola entrada por variable. ¿Qué queda sin describir?&lt;&lt;
+[x] Cuántas veces se mide cada variable a lo largo del seguimiento
+[x] Qué representa una fila del fichero
+[x] Dónde están las determinaciones de las visitas posteriores a la basal
+[x] Si un paciente puede aparecer en más de una fila
+[ ] El significado de cada variable por separado
+[explanation]
+Todo salvo lo último: el significado de cada variable es justamente lo que un diccionario sí describe.
+
+Lo que no describe es la **estructura**. El nombre `crea_b` —creatinina basal— delata que hay otras determinaciones en el seguimiento, y `t_seg` confirma que el estudio es longitudinal. Pero el diccionario está escrito como si hubiera una fila por paciente, y no dice si las visitas están en columnas adicionales, en otro fichero o si sencillamente no se entregan.
+
+La consecuencia práctica es que **un recuento no se puede interpretar**: si el fichero tiene 1.200 registros, no hay forma de saber si son 1.200 pacientes o 300 pacientes con cuatro visitas.
+[explanation]
+</code></pre>
+<pre><code>&gt;&gt;¿Qué habría que añadir para que el conjunto sea interpretable?&lt;&lt;
+( ) El nombre del programa estadístico con el que se generó
+(x) Qué tablas lo componen, qué es una fila en cada una, cuántas hay por paciente y por qué campo se enlazan
+( ) El identificador de cada paciente incluido
+( ) La versión del protocolo del estudio
+[explanation]
+La **estructura**: entidades, granularidad, cardinalidad y claves. Cabe en una tabla de cinco filas y no requiere ningún conocimiento de bases de datos.
+
+Conviene precisar hasta dónde llega esa exigencia, porque suele sobredimensionarse. El nivel que se pide es **lógico, no físico**: qué hay, a qué granularidad y cómo se relaciona. No hace falta un diagrama entidad-relación formal, ni saber qué gestor de base de datos se usará, ni declarar tipos, longitudes ni índices. Eso es implementación, y no es asunto del plan.
+
+Los identificadores de los pacientes tampoco: serían datos personales y no tienen nada que hacer en la documentación. La versión del protocolo es útil en la portada del plan, pero no resuelve este problema.
+[explanation]
+</code></pre>
+<h2>Preguntas de repaso</h2>
+<pre><code>&gt;&gt;¿Cuándo debe empezar a escribirse el diccionario de variables?&lt;&lt;
+( ) Al depositar el conjunto en el repositorio
+( ) Al terminar el análisis, cuando las variables ya son definitivas
+(x) Al definir el cuaderno de recogida, y se actualiza sobre la marcha
+( ) Cuando lo solicite el comité de ética
+[explanation]
+Al principio. Un diccionario escrito al final es una **reconstrucción** y siempre tiene huecos: nadie recuerda por qué se cambió la definición de una variable dos años antes.
+[explanation]
+</code></pre>
+<pre><code>&gt;&gt;Un fichero tiene los valores ausentes codificados como -9 y el diccionario no lo declara. ¿Qué ocurre?&lt;&lt;
+( ) El programa de análisis lo detecta y avisa
+(x) Los -9 entran en los cálculos como valores reales y nada avisa de ello
+( ) El conjunto no se puede depositar
+( ) Solo afecta a las variables categóricas
+[explanation]
+Entran en la media, en los modelos y en todo lo demás, y **ningún programa avisa**: para el software, −9 es un número como cualquier otro.
+
+Conviene además distinguir los motivos: no medido, medido y no disponible, no aplicable, el paciente se negó. Son situaciones distintas y a menudo importan.
+[explanation]
+</code></pre>
+<pre><code>&gt;&gt;Un plan declara: «los diagnósticos están codificados con una clasificación internacional de enfermedades». ¿Qué queda sin decir?&lt;&lt;
+( ) Nada: la codificación está declarada
+(x) Qué mide la columna, y en qué versión de la clasificación están los códigos
+( ) El número de diagnósticos distintos que aparecen
+( ) Si los diagnósticos son principales o secundarios
+[explanation]
+Una terminología se aplica en **tres sitios distintos**: qué mide la columna, de qué sistema salen sus valores y de qué trata el conjunto entero.
+
+Esa frase declara solo el segundo, y de forma incompleta: falta **la versión**, porque los códigos y sus significados cambian entre versiones y un conjunto codificado sin decir con cuál es difícil de interpretar años después.
+[explanation]
+</code></pre>
+<pre><code>&gt;&gt;¿Quién elige normalmente la terminología con la que se codifica un dato asistencial?&lt;&lt;
+( ) El investigador principal, al diseñar el estudio
+(x) Nadie del proyecto: viene heredada del sistema de origen y de la normativa de registro
+( ) El comité de ética, al aprobar el protocolo
+( ) El repositorio donde se vaya a depositar
+[explanation]
+Se **hereda**. Si los diagnósticos salen del sistema de historia clínica, vienen con la clasificación que ese sistema usa, impuesta a su vez por la normativa de registro asistencial.
+
+El trabajo del proyecto no es escoger: es **no perder esa codificación** —el error de exportar el texto y descartar el código— y declarar cuál es.
+[explanation]
+</code></pre>
+<pre><code>&gt;&gt;Un estudio se ejecuta sobre bases de datos de tres centros ya transformadas a un modelo común, de forma federada. ¿Qué deposita el proyecto?&lt;&lt;
+( ) Los datos individuales de los tres centros, una vez anonimizados
+(x) Las definiciones de cohorte, el paquete de análisis y los resultados agregados
+( ) Solo los metadatos, porque no puede publicar nada más
+( ) Nada: los datos pertenecen a los centros de origen
+[explanation]
+En una red federada **no viajan los datos**: viaja el paquete de análisis, se ejecuta en cada centro y vuelven resultados agregados.
+
+Por tanto el proyecto nunca tuvo datos individuales que depositar, pero sí tiene tres cosas publicables en abierto sin ningún problema: las definiciones de cohorte, el código y los resultados.
+[explanation]
+</code></pre>
+<pre><code>&gt;&gt;¿Qué se espera razonablemente de un proyecto de tres años en cuanto a estándares y vocabularios?&lt;&lt;
+( ) Transformar todos sus datos a un modelo común como OMOP
+(x) No perder la codificación que ya trae la fuente y elegir un estándar para las variables clave
+( ) Definir un vocabulario propio y documentarlo
+( ) Nada: los estándares son cosa de los repositorios
+[explanation]
+Lo alcanzable: **conservar** la codificación de origen —que se pierde con más frecuencia de la que parece, al exportar los diagnósticos como texto y descartar el código—, codificar con un estándar las variables clave, usar formatos abiertos y declarar en el diccionario qué estándar y qué versión se usaron.
+
+Transformar el conjunto a un modelo común es un proyecto en sí mismo, no un apartado del plan.
+[explanation]
+</code></pre>
+<pre><code>&gt;&gt;¿Qué diferencia hay entre el diccionario de variables y los metadatos del conjunto?&lt;&lt;
+( ) Ninguna: son dos nombres para lo mismo
+(x) El diccionario sirve a quien ya tiene los datos; los metadatos, a quien todavía no sabe que existen
+( ) El diccionario es público y los metadatos son internos
+( ) Los metadatos solo se necesitan en acceso abierto
+[explanation]
+El diccionario explica el contenido a quien lo tiene delante —es la **R**—. Los metadatos son la ficha de catálogo que permite encontrar el conjunto sin haberlo visto —es la **F**—.
+[explanation]
+</code></pre>
+<pre><code>&gt;&gt;Un conjunto de datos clínicos no puede publicarse. ¿Puede tener DOI y metadatos públicos?&lt;&lt;
+(x) Sí: el registro y su descripción son públicos aunque los ficheros estén restringidos
+( ) No, un DOI solo se asigna a conjuntos en acceso abierto
+( ) Solo si los datos están anonimizados
+( ) Solo con autorización expresa del comité de ética
+[explanation]
+Sí. El identificador y los metadatos son públicos, indexables y citables **aunque la descarga esté restringida**. Es la forma habitual de cumplir la F con datos de salud, y la unidad D15·02 la desarrolla.
+[explanation]
+</code></pre>
+<pre><code>&gt;&gt;Un conjunto está depositado, tiene identificador permanente y es descargable, y aun así nadie que no lo conozca llega hasta él. ¿Qué explica ese resultado?&lt;&lt;
+( ) Que se usó un esquema de metadatos distinto del que pide el repositorio
+(x) Que los metadatos se escribieron en el momento del depósito, con prisa, y salieron genéricos
+( ) Que se incluyó demasiada información sobre la población del estudio
+( ) Que se redactaron en español en lugar de en inglés
+[explanation]
+Dejarlos para el final. Se escriben con prisa, por quien tenga tiempo, y salen con un título vago, dos líneas de descripción y sin palabras clave.
+
+El resultado es un conjunto depositado e invisible, que a efectos de la F es casi lo mismo que no estar depositado. Por eso la ficha del apartado 2 ya pide las palabras clave.
+[explanation]
+</code></pre>
+<pre><code>&gt;&gt;De todo el procesado de datos, ¿qué es lo que más se agradece haber documentado y es imposible reconstruir después?&lt;&lt;
+( ) La versión del software empleado
+(x) El recuento de exclusiones paso a paso
+( ) La fecha de cada análisis
+( ) El nombre de quien ejecutó cada guion
+[explanation]
+El **registro de exclusiones**: de 300 reclutados, 9 sin consentimiento válido documentado, 24 sin la variable principal en la basal, 13 con seguimiento corto, quedan 254.
+
+Cuesta cinco minutos anotado sobre la marcha, es irreconstruible un año después y es exactamente lo que pide un revisor cuando pregunta por el diagrama de flujo del estudio.
+[explanation]
+</code></pre>
+<pre><code>&gt;&gt;¿Cuál es la comprobación rápida que detecta si un fichero mezcla niveles?&lt;&lt;
+( ) Contar las variables y comprobar que no superan las cincuenta
+(x) Completar la frase «una fila es un…» con un sustantivo en singular
+( ) Verificar que todas las variables tienen unidades declaradas
+( ) Comprobar que el número de filas coincide con el de pacientes
+[explanation]
+Si la frase no se puede terminar con un solo sustantivo —«una fila es un paciente», «una fila es una visita»—, el fichero está mezclando entidades de niveles distintos.
+
+La última opción es precisamente lo que **no** hay que dar por supuesto: que las filas coincidan con los pacientes es un caso particular, no la norma.
+[explanation]
+</code></pre>

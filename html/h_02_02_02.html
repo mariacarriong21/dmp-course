@@ -1,0 +1,42 @@
+<p>El caso más común en investigación clínica: un estudio que <strong>recoge datos nuevos</strong> de pacientes a lo largo del tiempo, mediante un formulario electrónico diseñado para el proyecto.</p>
+<p>Un <strong>cuaderno electrónico de recogida de datos</strong> (eCRF) es ese formulario: define qué variables se anotan, en qué orden y con qué validaciones. <strong>REDCap</strong> es la herramienta más extendida para construirlos en investigación académica.</p>
+<h2>Un estudio así</h2>
+<p>Una cohorte de <strong>180 pacientes con insuficiencia cardiaca</strong> reclutados en dos hospitales, con visita basal y seguimientos a los 6, 12 y 24 meses. En cada visita se anotan unas sesenta variables: constantes, clase funcional, tratamiento, resultados de analítica y episodios de descompensación. Tres años de reclutamiento y seguimiento, y al final un fichero de unas setecientas filas —una por paciente y visita— con su diccionario al lado.</p>
+<h2>Cómo es el conjunto</h2>
+<div class="tabla"><table>
+
+<tbody>
+<tr>
+<td><strong>Origen</strong></td>
+<td>Recogida nueva, por el equipo investigador, en la consulta o en la visita</td>
+</tr>
+<tr>
+<td><strong>Contenido</strong></td>
+<td>Variables demográficas, antecedentes, exploración, tratamiento, variables de seguimiento y desenlaces</td>
+</tr>
+<tr>
+<td><strong>Estructura</strong></td>
+<td>Tabla rectangular: una fila por sujeto y visita, una columna por variable</td>
+</tr>
+<tr>
+<td><strong>Volumen</strong></td>
+<td>Pequeño. Cientos o pocos miles de filas; megabytes</td>
+</tr>
+<tr>
+<td><strong>Formato de salida</strong></td>
+<td>Exportación a CSV, acompañada del diccionario de variables que la propia herramienta genera</td>
+</tr>
+</tbody>
+</table></div>
+<h2>Lo que lo hace fácil</h2>
+<p>Es el conjunto <strong>mejor documentado</strong> de cualquier proyecto, y casi por accidente: al diseñar el formulario hay que declarar cada variable, su tipo, sus valores permitidos y su etiqueta. Ese diccionario se exporta con los datos.</p>
+<p>Además, las validaciones en el momento de la entrada —rangos, campos obligatorios, saltos lógicos— evitan errores que después costaría mucho limpiar.</p>
+<h2>Para verlo por dentro</h2>
+<p>Quien no haya trabajado nunca con uno, conviene que lo vea antes de seguir:</p>
+<ul>
+<li><strong><a href="https://projectredcap.org/">REDCap</a></strong> — sitio del consorcio que lo desarrolla, con la descripción de la herramienta y de cómo se construye un formulario. La mayoría de las universidades y los institutos sanitarios tienen <strong>su propia instalación</strong>, y esa es la que hay que usar: conviene preguntar por ella antes de montar nada por cuenta propia.</li>
+<li>De la misma familia hay otras, como <strong><a href="https://www.openclinica.com/">OpenClinica</a></strong>, las herramientas comerciales de gestión de ensayos clínicos o el módulo de recogida que ofrezca el propio centro. Lo que importa no es el producto, sino que <strong>declare un diccionario de variables</strong> y pueda exportarlo junto con los datos.</li>
+</ul>
+<h2>Lo que lo complica</h2>
+<p>Que casi nunca viaja solo. Este conjunto se enlaza con resultados de laboratorio, con imagen o con datos de la historia clínica, y ese enlace exige un <strong>identificador de sujeto</strong> estable y común.</p>
+<p>Cómo se construye ese identificador, y quién guarda la correspondencia con la identidad real del paciente, es una decisión de peso que se trata en el bloque C.</p>

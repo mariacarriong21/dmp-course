@@ -1,0 +1,154 @@
+<p>Comprobación de lo esencial de esta unidad didáctica. Sin nota y con intentos ilimitados: sirve para detectar lagunas antes de seguir.</p>
+<h2>Ejercicio · ¿Lo cubre el consentimiento?</h2>
+<p>Un estudio recogió datos hace tres años con un consentimiento que decía, en la parte de datos:</p>
+<blockquote>
+<p><em>«Sus datos serán tratados de forma confidencial por el equipo investigador para los fines del presente estudio. Al finalizar el estudio, los datos serán conservados durante el tiempo legalmente establecido y posteriormente destruidos.»</em></p>
+</blockquote>
+<pre><code>&gt;&gt;El equipo quiere ahora hacer tres cosas con esos datos. Señalar aquellas para las que ese consentimiento resulta suficiente.&lt;&lt;
+[x] Analizar los datos para responder a la pregunta original del estudio
+[ ] Reutilizarlos en un nuevo proyecto sobre otra patología del mismo grupo
+[ ] Depositarlos en un repositorio con acceso bajo solicitud
+[ ] Compartirlos con un centro colaborador para un análisis conjunto
+[x] Conservarlos durante el plazo que fije la normativa aplicable
+[explanation]
+Solo la primera y la última.
+
+El texto autoriza el tratamiento **«para los fines del presente estudio»** y por el **«equipo investigador»**. Nada más. Y menciona la conservación por el plazo legal, así que esa parte está cubierta.
+
+Lo que **no** está cubierto:
+
+- **La reutilización en otro proyecto** es una finalidad distinta, aunque sea el mismo grupo y la misma cohorte.
+- **El depósito en repositorio**, aunque sea con acceso restringido, no aparece por ningún lado.
+- **La cesión a otro centro** amplía quién trata los datos más allá del equipo investigador.
+
+Conviene reparar en lo que esto significa: el consentimiento se redactó pensando solo en la fase de recogida, y con ello **se cerraron tres puertas para siempre**. No hay forma de arreglarlo ahora: rehacer un consentimiento con el estudio terminado y los participantes dispersos es materialmente imposible.
+
+Es por esto que el consentimiento se redacta pensando en el ciclo completo de los datos, y no solo en lo que ocurre mientras el estudio está en marcha.
+[explanation]
+</code></pre>
+<pre><code>&gt;&gt;Una participante solicita retirar su consentimiento. El análisis principal ya se publicó hace un año. ¿Qué procede?&lt;&lt;
+( ) Nada: al estar publicado, la retirada ya no tiene efecto
+( ) Retractar la publicación y rehacer el análisis sin sus datos
+(x) Dejar de tratar sus datos en adelante, sin deshacer lo ya analizado y publicado
+( ) Anonimizar sus datos y seguir usándolos con normalidad
+[explanation]
+La retirada opera **hacia adelante**: obliga a dejar de tratar los datos de esa persona, pero no deshace lo que ya se hizo lícitamente ni obliga a retractar resultados publicados.
+
+Lo relevante para el plan de gestión de datos es otra cosa: para poder cumplirlo hay que **estar en condiciones de localizar y separar los datos de una persona concreta**. Un conjunto sin identificadores gestionables convierte una petición sencilla en un problema técnico serio, y esa capacidad se diseña al principio, no cuando llega la solicitud.
+[explanation]
+</code></pre>
+<h2>Ejercicio · ¿Esto lo exige FAIR o lo exige abrir?</h2>
+<p>Un proyecto con datos clínicos seudonimizados que no pueden publicarse. El equipo cree que, por eso, FAIR no le aplica.</p>
+<pre><code>&gt;&gt;Señalar todo lo que este proyecto sí puede hacer para ser más FAIR, pese a no poder publicar los datos.&lt;&lt;
+[x] Depositar el conjunto con un identificador permanente y describirlo públicamente
+[x] Codificar los diagnósticos con una terminología estándar
+[x] Publicar el diccionario de variables
+[x] Definir y publicar el procedimiento para solicitar el acceso
+[x] Documentar los criterios de inclusión y el procesado aplicado
+[ ] Publicar los registros individuales seudonimizados
+[explanation]
+Todo salvo lo último.
+
+Es la constatación central de esta unidad: **tres de las cuatro letras no se ven afectadas por la protección de datos**.
+
+- **Describir públicamente el conjunto** y darle identificador permanente es la F, y no requiere publicar ni un solo registro.
+- **Codificar con estándares** y **publicar el diccionario** es la I, y es puro trabajo técnico.
+- **Documentar criterios y procesado** es la R.
+- **Definir el procedimiento de acceso** es la A en su versión de acceso controlado, que es exactamente lo que el principio contempla.
+
+Lo único descartado es publicar los registros individuales, porque un conjunto seudonimizado sigue siendo dato personal.
+[explanation]
+</code></pre>
+<pre><code>&gt;&gt;Un conjunto solo se puede obtener escribiendo a la investigadora principal, que responde cuando puede y decide caso por caso sin criterios escritos. ¿Cumple la A de FAIR?&lt;&lt;
+( ) Sí, porque existe una vía para obtener los datos
+(x) No, porque el procedimiento no es conocido, explícito ni aplicable
+( ) Sí, siempre que responda en un plazo razonable
+( ) Depende de si los datos están seudonimizados o anonimizados
+[explanation]
+No cumple. La A no exige acceso abierto, pero sí un **procedimiento**: conocido, explícito y aplicable por cualquiera que reúna las condiciones.
+
+Escribir a una persona que contesta cuando puede y decide sin criterios publicados no es un procedimiento: es una casualidad. Y es, además, lo que ocurre en la mayoría de los conjuntos «disponibles bajo petición al autor» que aparecen en los artículos.
+
+El nivel de identificabilidad no influye aquí: un conjunto anonimizado con ese mismo sistema de acceso tampoco cumpliría la A.
+[explanation]
+</code></pre>
+<h2>Preguntas de repaso</h2>
+<pre><code>&gt;&gt;¿Qué se puede afirmar sobre quién es el responsable del tratamiento en un proyecto de investigación?&lt;&lt;
+( ) Es siempre el investigador principal, porque es quien decide qué se hace con los datos
+( ) Es siempre la institución, y el investigador principal queda al margen
+(x) Es una entidad —normalmente la institución—, aunque la configuración concreta varía y hay que preguntarla
+( ) Es el delegado de protección de datos, que es quien responde ante la autoridad
+[explanation]
+La norma no reparte el papel por cargos: lo atribuye a quien **decide las finalidades y los medios**, y es siempre una entidad, no una persona física. Una gerencia o una dirección la representan, pero no son ellas el responsable.
+
+Lo habitual es designar a la institución y hacer constar al investigador principal como quien responde del tratamiento dentro de ella, pero **hay centros que designan a los dos conjuntamente**; los datos de historia clínica tienen su propio responsable, distinto del tratamiento con fines de investigación; y con promotor externo o en consorcio puede haber corresponsabilidad.
+
+Por eso el dato se pregunta al delegado de protección de datos y se escribe en el plan: determina quién firma las cesiones y en qué registro de actividades entra el proyecto.
+[explanation]
+</code></pre>
+<pre><code>&gt;&gt;¿Por qué el consentimiento no es siempre la mejor base legal en investigación?&lt;&lt;
+( ) Porque los comités de ética prefieren otras vías
+(x) Porque es revocable y en estudios retrospectivos a menudo no es obtenible
+( ) Porque no es válido para datos de categoría especial
+( ) Porque obliga a anonimizar los datos
+[explanation]
+Es la vía más intuitiva pero tiene dos inconvenientes: la persona puede **retirarlo** en cualquier momento, lo que introduce incertidumbre en estudios largos, y en un retrospectivo sobre miles de historias clínicas **localizar a cada persona puede ser materialmente imposible**.
+[explanation]
+</code></pre>
+<pre><code>&gt;&gt;De estos cuatro problemas, ¿cuál detendría un expediente en el comité de ética sin que sea un error de fondo del proyecto?&lt;&lt;
+( ) Que el plan de gestión de datos no cite la normativa aplicable
+(x) Que el protocolo, la hoja de información y el plan describan flujos de datos distintos
+( ) Que no se haya elegido todavía el repositorio de depósito
+( ) Que los datos no estén anonimizados
+[explanation]
+La **incoherencia entre documentos** ocurre porque los escriben personas distintas en momentos distintos y nadie los lee seguidos. El comité sí los lee seguidos, y lo que encuentra no es un proyecto mal diseñado, sino tres descripciones que no encajan.
+
+Leerlos uno detrás de otro antes de presentarlos cuesta una hora y evita semanas de espera.
+
+Las otras tres no detienen un expediente por sí solas: citar normativa no es lo que se evalúa, el repositorio puede decidirse más adelante, y que los datos no estén anonimizados es la situación normal en investigación biomédica.
+[explanation]
+</code></pre>
+<pre><code>&gt;&gt;Según el Reglamento del Espacio Europeo de Datos Sanitarios, ¿cómo se prevé que se analicen los datos en uso secundario?&lt;&lt;
+( ) Descargándolos tras obtener el permiso correspondiente
+(x) En entornos seguros de los que salen resultados, no datos
+( ) Únicamente de forma anonimizada
+( ) Mediante acuerdos bilaterales entre centros
+[explanation]
+El modelo previsto **no es entregar ficheros**, sino dar acceso a un entorno controlado donde los datos residen y del que salen resultados. Es el mismo principio que ya aplican los entornos seguros de análisis, generalizado a escala europea.
+[explanation]
+</code></pre>
+<pre><code>&gt;&gt;Un grupo publica los resultados de su cohorte. Con el Espacio Europeo de Datos Sanitarios ya en aplicación, ¿qué ocurre con esos datos?&lt;&lt;
+( ) Nada: los datos de los proyectos de investigación quedan fuera del uso secundario
+(x) Entran en el ámbito tras la primera publicación de los resultados, y la obligación recae en la institución, no en el investigador
+( ) Hay que publicarlos en abierto para que cualquiera pueda descargarlos
+( ) Solo afecta si el proyecto era un ensayo clínico
+[explanation]
+El Reglamento enumera entre las categorías de datos para uso secundario los procedentes de ensayos clínicos e investigaciones clínicas y los procedentes de **grupos de investigación, cuestionarios y encuestas** relacionadas con la salud, estos últimos *tras la primera publicación de los resultados correspondientes*.
+
+Dos precisiones cambian bastante el alcance. Las obligaciones son de los **tenedores de datos de salud**, y el Reglamento exime expresamente a las personas físicas —incluidos los investigadores individuales— y a las microempresas: quien queda obligada es **la entidad**, aunque cada Estado puede extenderlo. Y esas categorías concretas no se aplican hasta 2031.
+
+Poner los datos a disposición no significa publicarlos: el acceso pasa por un permiso y por un entorno seguro. Lo que sí es público es **la descripción** del conjunto en el catálogo.
+[explanation]
+</code></pre>
+<pre><code>&gt;&gt;Un proyecto con datos seudonimizados que no puede publicarlos. ¿Qué letras de FAIR puede cumplir?&lt;&lt;
+( ) Ninguna: sin publicar los datos no hay FAIR
+( ) Solo la I, que es puramente técnica
+(x) Las cuatro: tres por completo y la A en su versión de acceso controlado
+( ) Solo la F y la I
+[explanation]
+Localizable, Interoperable y Reutilizable **no se ven afectadas** por la protección de datos: describir el conjunto, codificar con estándares y documentar procedencia se pueden hacer íntegramente. Y la A se cumple con un procedimiento de acceso conocido y explícito, que es lo que el principio pide.
+
+Lo único descartado es publicar el fichero.
+[explanation]
+</code></pre>
+<pre><code>&gt;&gt;Según el modelo de metadatos propuesto para los catálogos del EEDS, ¿para qué conjuntos es obligatorio describir en detalle la estructura interna?&lt;&lt;
+( ) Para los públicos, que son los que cualquiera puede descargar
+(x) Para los NO públicos, porque su descripción es lo único que el solicitante puede ver
+( ) Para todos por igual
+( ) Solo para los datos genómicos
+[explanation]
+Para los **no públicos**, que es el caso de casi todos los datos de salud individuales.
+
+La lógica es la misma que recorre todo el bloque: si el dato no se puede ver, lo único que tiene quien lo solicita para decidir si le sirve es su descripción. **Cuanto más restringido es un conjunto, más importa que esté bien documentado.**
+[explanation]
+</code></pre>

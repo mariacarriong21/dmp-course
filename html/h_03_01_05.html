@@ -1,0 +1,135 @@
+<p>Comprobación de lo esencial de esta unidad didáctica. Sin nota y con intentos ilimitados: sirve para detectar lagunas antes de seguir.</p>
+<h2>Ejercicio · ¿Quién responde de qué?</h2>
+<p>Cuatro situaciones de un proyecto multicéntrico con dos investigadores principales, un centro coordinador y tres participantes.</p>
+<pre><code>&gt;&gt;La unidad técnica extrae los datos clínicos que el proyecto solicitó. Meses después el equipo descubre que faltan dos variables imprescindibles para el análisis. ¿De quién es la responsabilidad?&lt;&lt;
+( ) De la unidad técnica, que debió anticipar qué variables harían falta
+(x) Del IP, que responde de haber pedido los datos correctos
+( ) Compartida, porque ambos participaron en la extracción
+( ) Del comité que autorizó el acceso sin revisar la lista de variables
+[explanation]
+La tarea se delega; la responsabilidad, no. La unidad técnica **ejecuta lo autorizado**: entrega exactamente lo que decía la solicitud. Determinar qué variables necesita el análisis es una decisión científica que corresponde al equipo investigador, y comprobar que lo recibido se ajusta a lo que hace falta es del IP, en el momento de la entrega.
+
+Es además la razón de que convenga revisar la lista de variables antes de solicitar: ampliarla después obliga a rehacer el trámite entero.
+[explanation]
+</code></pre>
+<pre><code>&gt;&gt;Una doctoranda defendió su tesis hace catorce meses y dejó el grupo. Su acceso al conjunto de datos sigue activo. ¿Dónde ha fallado el proceso?&lt;&lt;
+( ) En el servicio de sistemas, que debió detectar la inactividad
+( ) En la doctoranda, que debió solicitar su baja
+(x) En el equipo del proyecto, que no comunicó la salida
+( ) En ningún sitio: el acceso caduca solo al cabo de dos años
+[explanation]
+Los sistemas gestionan altas y bajas, pero **solo saben que alguien ha dejado el proyecto si se lo comunican**. No hay ninguna señal automática que lo revele: la persona simplemente deja de entrar, y un acceso sin usar no se distingue de uno en pausa.
+
+Comunicar las bajas es responsabilidad del equipo, y conviene ligarlo a un momento que ya ocurre —fin de contrato, defensa de la tesis— en lugar de confiar en acordarse.
+[explanation]
+</code></pre>
+<pre><code>&gt;&gt;El proyecto tiene dos investigadores principales. Llega una petición de otro grupo para reutilizar uno de los conjuntos de datos. ¿Quién decide?&lt;&lt;
+( ) Cualquiera de los dos, indistintamente
+( ) Los dos de común acuerdo, y si no lo hay, el centro coordinador
+(x) La persona nombrada responsable de ese conjunto concreto
+( ) El centro coordinador, por ser el custodio de la base común
+[explanation]
+Lo que no puede ocurrir es que los dos IP respondan de todo: entonces, en la práctica, no responde ninguno, y la primera decisión que haya que tomar revelará que cada uno pensaba que le tocaba al otro.
+
+Que el reparto se haya hecho conjunto por conjunto o designando a uno de los dos como responsable principal es secundario. En los dos casos, la pregunta «¿quién decide sobre este conjunto?» tiene **un solo nombre** por respuesta, y es a esa persona a quien se dirige la petición.
+
+Que exista un responsable nombrado no significa que decida en solitario ni que pueda saltarse las autorizaciones que correspondan; significa que hay alguien a quien preguntar y que responde de la decisión.
+[explanation]
+</code></pre>
+<pre><code>&gt;&gt;El proyecto termina en diciembre. El contrato de la persona que ha manejado los datos durante tres años termina en octubre. ¿Qué hay que resolver?&lt;&lt;
+[x] Traspasar la responsabilidad sobre los conjuntos a alguien que siga en el proyecto
+[x] Asegurar que la documentación de los datos es comprensible sin esa persona
+[x] Comunicar la baja de su acceso a los sistemas
+[ ] Prorrogar su contrato hasta el cierre del proyecto
+[x] Registrar el cambio en el plan de gestión de datos
+[explanation]
+Las cuatro primeras salvo la prórroga. Es el escenario que más datos huérfanos produce, y ocurre en casi todos los proyectos porque **los contratos son más cortos que los proyectos, y los proyectos más cortos que los plazos de conservación**.
+
+Prorrogar el contrato resolvería el problema durante dos meses y lo devolvería intacto en diciembre. Lo que hay que hacer es lo que sirve a diez años vista: que la responsabilidad tenga sucesor, que la documentación se sostenga sola, que el acceso se cierre y que quede registrado quién responde ahora.
+[explanation]
+</code></pre>
+<h2>Preguntas de repaso</h2>
+<pre><code>&gt;&gt;¿Por qué el proyecto es la unidad natural de gestión de los datos?&lt;&lt;
+( ) Porque es la unidad que exigen los financiadores
+(x) Porque es lo único que tiene a la vez principio y fin, presupuesto, responsable y datos delimitados
+( ) Porque los grupos de investigación cambian con demasiada frecuencia
+( ) Porque cada proyecto genera un único conjunto de datos
+[explanation]
+Un grupo no tiene final ni presupuesto propio; una línea de investigación no tiene responsable único; un servicio no tiene datos propios. El proyecto reúne las cuatro condiciones, y por eso es donde se ancla la gestión.
+[explanation]
+</code></pre>
+<pre><code>&gt;&gt;«El proyecto termina, los datos no.» ¿Qué consecuencia tiene esa asimetría?&lt;&lt;
+( ) Que conviene alargar los proyectos todo lo posible
+(x) Que las decisiones hay que documentarlas, porque tendrán que entenderse cuando no quede nadie que las recuerde
+( ) Que los datos deben destruirse al cerrar el proyecto
+( ) Que la responsabilidad se extingue con el proyecto
+[explanation]
+De esa asimetría salen casi todas las obligaciones del curso: documentar, nombrar responsables, fijar plazos, dejar constancia. Los datos se conservan cinco, diez o veinticinco años; el proyecto dura tres o cuatro, y los contratos menos aún.
+[explanation]
+</code></pre>
+<pre><code>&gt;&gt;¿Cuál de estas tareas SÍ corresponde al investigador principal?&lt;&lt;
+( ) Extraer los datos de los sistemas clínicos
+( ) Administrar las copias de seguridad
+(x) Comprobar que el respaldo declarado en el plan existe realmente
+( ) Construir el entorno seguro de análisis
+[explanation]
+Extraer, administrar y construir infraestructura son **servicios**, y existen para que el investigador no tenga que ser técnico. Lo que no se delega es responder de que lo prometido en el plan sea verdad: si el plan dice que hay copias de seguridad, alguien tuvo que preguntarlo.
+[explanation]
+</code></pre>
+<pre><code>&gt;&gt;¿Quién suele custodiar la tabla que relaciona el código de estudio con la identidad del paciente?&lt;&lt;
+( ) El servicio de informática, siempre
+(x) Con frecuencia el propio equipo investigador, y hay que decir en el plan quién y dónde
+( ) Nadie: si existe esa tabla, los datos no están seudonimizados
+( ) El comité de ética que autorizó el estudio
+[explanation]
+Conviene no confundir anonimizar con seudonimizar. Anonimizar de forma irreversible, con valoración del riesgo de reidentificación, es trabajo especializado. En cambio la **seudonimización básica** —decidir que los identificadores no entren en el cuaderno de recogida, asignar un código y guardar la correspondencia— suele hacerla el propio equipo, y a menudo el investigador principal.
+
+Es una tarea modesta en esfuerzo y grande en consecuencias, porque quien guarda esa tabla puede revertir la seudonimización. Por eso el plan tiene que decir **quién la custodia, dónde y separada de quién**, y es uno de los campos que más veces aparece vacío.
+[explanation]
+</code></pre>
+<pre><code>&gt;&gt;Al cerrar el proyecto, el conjunto se deposita en un repositorio con acceso controlado. El depósito se hace desde la cuenta personal del investigador principal, que se jubila dos años después. ¿Qué problema hay?&lt;&lt;
+( ) Ninguno: el registro tiene identificador permanente y seguirá localizable
+( ) Que el repositorio borrará el registro al quedar la cuenta inactiva
+(x) Que el registro seguirá publicado y ya no habrá quien lo mantenga ni atienda las solicitudes
+( ) Que el identificador permanente dejará de resolver
+[explanation]
+El registro no desaparece, y ese es justamente el problema: queda **visible y huérfano**. Nadie puede corregirlo, publicar una versión nueva ni contestar a quien escriba pidiendo acceso, porque la cuenta y el correo de contacto eran de una persona que ya no está.
+
+Los plazos de conservación llegan a los quince o veinticinco años, de modo que la custodia posterior al cierre tiene que ser **institucional**: depositar desde una cuenta del centro o vincular el registro a su colección, poner como contacto un buzón funcional y dejar escrito en el plan qué unidad asume esas funciones.
+[explanation]
+</code></pre>
+<pre><code>&gt;&gt;En un proyecto con dos investigadores principales, ¿qué reparto de la responsabilidad sobre los datos NO funciona?&lt;&lt;
+(x) Que ambos respondan por igual de todos los conjuntos de datos
+( ) Que cada conjunto tenga nombrado un responsable, repartidos entre los dos
+( ) Que uno de los dos sea el responsable principal de los datos del proyecto
+( ) Que uno responda de los datos de su centro y el otro de los del suyo
+[explanation]
+Las tres últimas son formas válidas de organizarlo, y la elección depende de cómo esté montado el proyecto. La que no funciona es la primera: si los dos responden de todo, en la práctica no responde ninguno, y la primera decisión revelará que cada uno daba por hecho que le tocaba al otro.
+
+La prueba está en el resultado, no en el modelo: si la pregunta «¿quién decide sobre este conjunto?» no tiene **un solo nombre** por respuesta, el reparto está mal hecho.
+[explanation]
+</code></pre>
+<pre><code>&gt;&gt;Un proyecto europeo en consorcio. ¿Cuántos planes de gestión de datos hay que presentar?&lt;&lt;
+( ) Uno por cada socio, que cada institución gestiona por su cuenta
+(x) Uno solo del proyecto, que monta el coordinador con lo que aporta cada socio
+( ) Ninguno: el acuerdo de consorcio hace sus veces
+( ) Uno del coordinador, y los demás socios quedan al margen
+[explanation]
+En los proyectos europeos el plan es **un entregable del proyecto**, con una primera versión en los primeros meses y actualizaciones antes del cierre. Es uno solo para todo el consorcio, y cada socio tiene que aportar lo suyo: qué conjuntos produce o reutiliza, con qué amparo legal, dónde los deposita y qué cuesta.
+
+Dos consecuencias. Un socio que no responde a tiempo **bloquea un entregable del proyecto**. Y el plan común no sustituye a las obligaciones de cada institución sobre los datos que trata: lo que no puede haber son dos documentos que describan de forma distinta el mismo flujo de datos.
+
+El acuerdo de consorcio es otra cosa: reparte titularidad y derechos de uso, y conviene leerlo, pero no es un plan de gestión de datos.
+[explanation]
+</code></pre>
+<pre><code>&gt;&gt;¿Por qué el acceso a los datos debe ser nominal y no mediante una cuenta compartida?&lt;&lt;
+( ) Porque lo exigen los repositorios de datos
+(x) Porque una credencial compartida hace imposible saber quién hizo qué
+( ) Porque las cuentas compartidas caducan antes
+( ) Porque permite repartir el coste del entorno entre el equipo
+[explanation]
+Sin acceso nominal no hay **trazabilidad**: cualquier incidente se vuelve imposible de aclarar y no se puede acreditar ante un comité o una auditoría quién accedió a qué. Es también lo que permite dar de baja a una persona sin afectar al resto.
+
+Y tiene una ventaja añadida: cuando el acceso es nominal y pasa por un sistema, **ese sistema ya lleva el registro de quién entra**. En una herramienta de recogida de datos, la tabla de usuarios del proyecto y sus permisos es la lista de acceso, y es mejor que cualquier lista paralela, porque no es una copia que pueda quedarse desactualizada.
+[explanation]
+</code></pre>

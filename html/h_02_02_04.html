@@ -1,0 +1,45 @@
+<p>Radiología, anatomía patológica, oftalmología, dermatología. Un conjunto con dos particularidades que no tienen los anteriores: <strong>el volumen</strong> y el hecho de que <strong>el dato viene con información dentro</strong>.</p>
+<h2>Un estudio así</h2>
+<p><strong>Doscientos pacientes con resonancia magnética cerebral</strong> basal y al año, para medir la progresión de las lesiones. Cada exploración son varias secuencias y unos trescientos megabytes, de modo que el estudio completo ronda los <strong>120 gigabytes</strong>. Además, un neurorradiólogo segmenta a mano las lesiones en cada imagen, y de esas segmentaciones se extraen doce variables de volumen que son, en realidad, <strong>las que entran en el análisis estadístico</strong>. Tres conjuntos de datos distintos, por tanto, y solo el tercero cabe en una hoja de cálculo.</p>
+<h2>La estructura DICOM</h2>
+<p>La imagen clínica no es un fichero de imagen corriente. El estándar <strong>DICOM</strong> empaqueta, en un mismo fichero, dos cosas:</p>
+<ul>
+<li>Los <strong>píxeles</strong> de la imagen.</li>
+<li>Una <strong>cabecera</strong> con decenas de campos: qué equipo la adquirió, con qué parámetros, cuándo, en qué centro y a quién.</li>
+</ul>
+<p>Y se organiza en una jerarquía: un <strong>estudio</strong> (la exploración completa) contiene <strong>series</strong> (cada secuencia o plano) que contienen <strong>instancias</strong> (cada corte).</p>
+<p>Esa estructura es una ventaja enorme para la investigación —los parámetros de adquisición vienen con la imagen, no hay que reconstruirlos— y a la vez la fuente de sus dos problemas.</p>
+<h2>El volumen</h2>
+<div class="tabla"><table>
+<thead>
+<tr>
+<th>Modalidad</th>
+<th>Orden de magnitud por estudio</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Radiografía simple</td>
+<td>Megabytes</td>
+</tr>
+<tr>
+<td>TC o RM</td>
+<td>Cientos de megabytes</td>
+</tr>
+<tr>
+<td>Imagen digital de patología</td>
+<td>Gigabytes por preparación</td>
+</tr>
+</tbody>
+</table></div>
+<p>Una cohorte de doscientos pacientes con resonancia basal y de seguimiento se pone en cientos de gigabytes sin dificultad. <strong>Es la principal decisión de infraestructura de muchos proyectos</strong>, y hay que tomarla antes de empezar a recoger.</p>
+<h2>Los conjuntos derivados</h2>
+<p>La imagen original casi nunca es lo que se analiza. Alrededor de ella aparecen otros conjuntos con vida propia: <strong>anotaciones</strong> de un especialista, <strong>segmentaciones</strong>, <strong>variables cuantitativas</strong> extraídas de la imagen. Cada uno debe inventariarse por separado.</p>
+<h2>Para verlo por dentro</h2>
+<ul>
+<li>El estándar, con toda su documentación pública: <strong><a href="https://www.dicomstandard.org/">DICOM</a></strong>.</li>
+<li>Para ver imágenes reales con sus cabeceras, sin pedirle permiso a nadie: <strong><a href="https://www.cancerimagingarchive.net/">The Cancer Imaging Archive</a></strong> (TCIA), que publica colecciones anonimizadas de imagen oncológica con sus datos clínicos asociados. Es además un buen ejemplo de cómo se describe y se deposita un conjunto de imagen.</li>
+<li>Para abrirlas en el navegador sin instalar nada: <strong><a href="https://ohif.org/">OHIF</a></strong>, un visor libre de uso extendido en investigación.</li>
+</ul>
+<h2>Lo que lo complica</h2>
+<p>La cabecera DICOM contiene información sobre el paciente, y en algunas modalidades la imagen permite reconstruir rasgos reconocibles. Qué hacer con eso es materia del bloque C.</p>

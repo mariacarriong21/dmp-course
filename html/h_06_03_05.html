@@ -1,0 +1,33 @@
+<p>Cierra el apartado 5 con dos decisiones concretas: <strong>qué metadatos se van a publicar y quién los escribe</strong>, y <strong>cómo se nombran los ficheros</strong> para que dentro de dos años se sepa cuál es el bueno.</p>
+<h2>Los metadatos del depósito</h2>
+<p>Son los metadatos <strong>descriptivos</strong>: la ficha de catálogo que aparecerá en la página del repositorio. Título, descripción, autores, fechas, población, periodo cubierto, palabras clave, condiciones de acceso y licencia.</p>
+<p>Lo que el plan tiene que decidir es corto:</p>
+<p><strong>Qué esquema.</strong> Lo impone en gran medida el repositorio. Los generalistas —Zenodo, Dryad, figshare— piden un conjunto básico común, el de <strong>DataCite</strong>; los repositorios de dominio piden esquemas propios más ricos, con campos específicos de su ámbito. Como la elección de repositorio se toma en D15, aquí basta con decir cuál se prevé y con qué esquema trabaja.</p>
+<p><strong>Quién los redacta.</strong> Con nombre. Es una tarea pequeña que no ocurre si no tiene dueño.</p>
+<p><strong>Cuándo.</strong> Esta es la que importa.</p>
+<h2>El error frecuente: dejarlos para el final</h2>
+<p>Los metadatos se escriben en el momento del depósito, con prisa, por quien tenga tiempo. Y salen como salen en esas condiciones: título vago, dos líneas de descripción, sin palabras clave, sin describir la población.</p>
+<p>El conjunto queda depositado y <strong>es invisible</strong>, que a efectos prácticos es casi lo mismo que no estarlo.</p>
+<p>Por eso el curso ha ido pidiendo estos campos por adelantado: las <strong>palabras clave</strong> están en la ficha del apartado 2, la <strong>descripción</strong> sale de ahí, la <strong>población y el periodo</strong> están en el protocolo y las <strong>condiciones de acceso</strong> se deciden en el apartado 9. Llegado el depósito, los metadatos deberían ser un ejercicio de reunir, no de redactar.</p>
+<blockquote>
+<p>El identificador permanente —normalmente un DOI— lo asigna el repositorio en el momento del depósito. Es la otra mitad de la F, y se decide junto con el repositorio: se trata en <strong>D15·04</strong>.</p>
+</blockquote>
+<h2>Nombrado y versionado de ficheros</h2>
+<p>Parece el campo más menor de la plantilla y resuelve un problema muy real: saber cuál de los siete ficheros de la carpeta es el vigente.</p>
+<p>Sin convención, aparece siempre la misma cadena:</p>
+<pre><code>datos_final.csv
+datos_final_v2.csv
+datos_final_v2_revisado.csv
+datos_final_v2_revisado_BUENO.csv
+datos_definitivo_ok.csv
+</code></pre>
+<p>Cualquier convención explícita es mejor que eso. Una que funciona:</p>
+<pre><code>[proyecto]_[conjunto]_v[versión]_[AAAA-MM-DD].[extensión]
+PREVIA_CD1_v3_2027-04-12.csv
+</code></pre>
+<p>La fecha en formato año-mes-día ordena bien alfabéticamente, que es media solución por sí sola.</p>
+<p><strong>Tres reglas que evitan el resto de los problemas:</strong> nada de espacios ni acentos en los nombres de fichero; la palabra «final» no se usa nunca; y una versión que se sustituye no se borra, se archiva en una subcarpeta, porque a veces hay que volver.</p>
+<h2>Lo que se escribe en el plan</h2>
+<blockquote>
+<p><em>Los metadatos del depósito se redactan conforme al esquema DataCite del repositorio previsto, a partir de las fichas de conjunto del apartado 2, y los prepara [nombre] en el momento de enviar el artículo correspondiente. Los ficheros siguen la convención <code>PREVIA_[conjunto]_v[n]_[fecha]</code>; las versiones sustituidas se archivan y no se eliminan.</em></p>
+</blockquote>

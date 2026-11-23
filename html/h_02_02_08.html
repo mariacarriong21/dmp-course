@@ -1,0 +1,104 @@
+<p>La unidad anterior terminaba recomendando formatos abiertos, y entre ellos JSON y XML. Conviene deshacer ahora un malentendido que esa recomendación produce con frecuencia, porque afecta a lo que se escribe en el plan.</p>
+<blockquote>
+<p>Decir que unos datos están en JSON informa tan poco como decir que un informe está en Word. Describe <strong>el envase</strong>, no lo que hay dentro.</p>
+</blockquote>
+<p>Dos proyectos pueden entregar sendos ficheros JSON impecables y perfectamente incombinables, porque cada uno se ha inventado sus campos, sus nombres y su forma de anidarlos. El formato es el mismo; los datos no se entienden entre sí.</p>
+<h2>Tres preguntas distintas sobre un mismo fichero</h2>
+<div class="tabla"><table>
+<thead>
+<tr>
+<th></th>
+<th>La pregunta que responde</th>
+<th>Ejemplos</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1 · Almacenamiento</strong></td>
+<td>¿Cómo están escritos los bytes?</td>
+<td>CSV, JSON, XML, Parquet, binario</td>
+</tr>
+<tr>
+<td><strong>2 · Organización</strong></td>
+<td>¿Qué representa una fila, cómo se reparte el conjunto en ficheros y cómo se enlazan entre sí?</td>
+<td>Una convención propia, BIDS, un modelo común de datos clínicos</td>
+</tr>
+<tr>
+<td><strong>3 · Significado</strong></td>
+<td>¿Qué quieren decir los valores de un campo?</td>
+<td>Las terminologías clínicas de diagnósticos, fármacos o pruebas</td>
+</tr>
+</tbody>
+</table></div>
+<p>La primera es la que casi todo el mundo llama «el formato», y es la menos informativa de las tres: se elige con los criterios de durabilidad de la unidad anterior y se despacha nombrándola. <strong>Lo que hace que unos datos se puedan combinar con otros, o simplemente entender, son la segunda y la tercera.</strong></p>
+<p>Las dos de abajo son las que el bloque E convierte en apartados del documento: la <strong>organización</strong> se escribe como el diccionario de variables y la descripción de la estructura, y el <strong>significado</strong>, como la declaración de qué terminologías se usan. La unidad didáctica D11 las desarrolla.</p>
+<h2>La segunda es la que más se descuida</h2>
+<p>Merece detenerse en ella, porque es invisible: no tiene nombre en el menú de «Guardar como» y aun así decide si el conjunto se entiende.</p>
+<p>Organizar unos datos es responder a cuatro cosas, y hay que responderlas <strong>aunque nadie las pregunte</strong>:</p>
+<ul>
+<li><strong>Qué representa una fila.</strong> Un paciente, una visita, una determinación. Es la decisión de granularidad, y de ella depende todo lo demás.</li>
+<li><strong>Formato ancho o largo.</strong> Las tres mediciones de tensión de un paciente, ¿son tres columnas de una fila o tres filas de dos columnas? Las dos son correctas y no se pueden mezclar dentro del mismo conjunto.</li>
+<li><strong>Cómo se reparte en ficheros y carpetas</strong>, y con qué criterio se nombran. Un fichero por tabla, una carpeta por sujeto, una carpeta por visita.</li>
+<li><strong>Cómo se enlazan las partes.</strong> Por qué variable se une la tabla de visitas con la de laboratorio, y qué pasa con lo que no casa.</li>
+</ul>
+<blockquote>
+<p>Un mismo conjunto de datos, con las mismas variables y guardado en el mismo formato, admite varias organizaciones distintas. Suelen ser todas legítimas, y ninguna es compatible con las demás.</p>
+</blockquote>
+<h2>Tres grados de convención</h2>
+<p>Y aquí está la respuesta a «¿me invento la organización o sigo una?». Hay tres situaciones, y conviene saber en cuál se está:</p>
+<div class="tabla"><table>
+<thead>
+<tr>
+<th>Grado</th>
+<th>Qué significa</th>
+<th>Cuándo aparece</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Impuesta</strong></td>
+<td>Existe un estándar y alguien lo exige</td>
+<td>Ensayos clínicos con finalidad regulatoria, donde las agencias exigen la organización en dominios normalizados de <a href="https://www.cdisc.org/">CDISC</a>; repositorios especializados que solo admiten datos organizados de una manera</td>
+</tr>
+<tr>
+<td><strong>Adoptada</strong></td>
+<td>Existe una convención de comunidad y el proyecto decide seguirla</td>
+<td><a href="https://bids.neuroimaging.io/">BIDS</a> en neuroimagen, el <a href="https://www.ohdsi.org/data-standardization/">modelo común de OHDSI</a> en datos clínicos, <a href="https://frictionlessdata.io/">Frictionless Data</a> para empaquetar tablas con su descripción</td>
+</tr>
+<tr>
+<td><strong>Propia</strong></td>
+<td>No hay convención aplicable, y el proyecto define la suya</td>
+<td>La mayoría de los estudios, y la mayoría de los conjuntos dentro de cada estudio</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Ninguno de los tres grados es un fallo.</strong> Inventarse la organización es lo normal y casi siempre lo razonable: ningún estándar cubre las escalas y los desenlaces que un proyecto concreto define.</p>
+<p>Lo que sí es un fallo es esto:</p>
+<blockquote>
+<p>Una convención propia es perfectamente válida. Una convención <strong>tácita</strong> no lo es.</p>
+</blockquote>
+<p>Es decir: si la organización se la ha inventado el proyecto, esa invención <strong>es la documentación del conjunto</strong> y hay que escribirla, aplicarla de forma consistente y entregarla con los datos. Si solo vive en la cabeza de quien montó los ficheros, el conjunto es ilegible en cuanto esa persona se va —que es exactamente la historia de la unidad D0·01.</p>
+<p><strong>Merece la pena mirar cómo es una convención de verdad.</strong> BIDS es un buen ejemplo para entenderlo sin ser experto en neuroimagen: no inventa ningún formato de fichero —usa los que ya había— y se limita a fijar cómo se nombran las carpetas y los ficheros, qué información acompaña a cada uno y dónde se escribe. Con eso basta para que un programa sepa recorrer los datos de cualquier estudio que la siga, y para que un repositorio como <a href="https://openneuro.org/">OpenNeuro</a> pueda validarlos automáticamente.</p>
+<h2>Los estándares separan estas capas, y por eso funcionan</h2>
+<p>Un estándar bien hecho define <strong>la organización</strong> y deja el almacenamiento como una decisión aparte. Por eso el mismo estándar puede viajar de varias maneras sin dejar de ser el mismo:</p>
+<p><strong>DICOM.</strong> Lo que define es un modelo de información: objetos —un estudio, una serie, una imagen— compuestos por atributos, cada uno con su identificador numérico y su tipo de valor. Ese modelo se puede escribir de tres formas distintas:</p>
+<ul>
+<li>Como <strong>fichero binario</strong>, que es lo habitual: un fichero por imagen, con una cabecera de metadatos delante de los píxeles, y la elección de cómo se comprimen los píxeles hecha aparte. Eso es lo que hay en el disco cuando alguien copia un estudio.</li>
+<li>Como <strong>XML</strong>, definido por el propio estándar para representar el mismo contenido en texto.</li>
+<li>Como <strong>JSON</strong>, que es la forma en que los servicios web del estándar devuelven los metadatos de un estudio.</li>
+</ul>
+<p>Los tres contienen lo mismo. Lo que hace a DICOM interoperable no es que sea binario, sino que <em>qué atributo es cuál</em> está escrito en una norma pública.</p>
+<p><strong>Los registros clínicos de intercambio</strong> siguen el mismo patrón: un modelo de recursos —paciente, observación, medicación— y varias serializaciones posibles, JSON entre ellas. Es exactamente el caso de «JSON, pero no el mío».</p>
+<p><strong>VCF</strong>, el formato de variantes genómicas, hace algo distinto y muy instructivo: es <strong>texto plano</strong>, y lleva en su propia cabecera la declaración de qué campos contiene y de qué tipo son. La organización viaja dentro del fichero.</p>
+<p><strong>CSV</strong> es el extremo contrario: no define nada. No tiene tipos, ni campos obligatorios, ni forma de declarar qué significa una columna. Es un formato excelente para conservar precisamente porque no hace nada, y por eso mismo <strong>un CSV sin diccionario de variables no es un conjunto de datos documentado</strong>.</p>
+<h2>Qué significa esto para el plan</h2>
+<p>Tres consecuencias prácticas, que se recogen en el bloque E:</p>
+<ol>
+<li><strong>Nombrar el formato no es describir los datos.</strong> «Los datos se conservarán en CSV y JSON» es una frase que no informa de nada. Lo que informa es qué hay en esos ficheros.</li>
+<li><strong>Si la organización es propia, hay que entregarla por escrito.</strong> El diccionario de variables y la descripción de la estructura son esa convención puesta en un lenguaje que entiende una persona.</li>
+<li><strong>Si existe una convención en uso para ese tipo de dato, conviene averiguarlo antes de inventar.</strong> No por purismo: porque el trabajo de ponerse de acuerdo ya está hecho, y porque los repositorios especializados suelen exigirla.</li>
+</ol>
+<blockquote>
+<p>La pregunta útil no es «¿en qué formato guardo esto?», sino <strong>«¿con qué tendría que poder combinarse esto algún día, y cómo lo organiza esa gente?»</strong>.</p>
+</blockquote>
+<p>Y si la respuesta es «con nada, esto no sale del grupo», la pregunta sigue en pie cambiando de sujeto: <strong>el propio equipo dentro de cinco años</strong>.</p>

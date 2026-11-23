@@ -1,0 +1,98 @@
+<blockquote>
+<p><strong>Nivel 1 · Variables.</strong> Qué significa cada columna.</p>
+</blockquote>
+<p>El apartado 5 responde a una sola pregunta: <strong>¿alguien que no estuvo en el proyecto podrá entender estos datos?</strong> La primera pieza de la respuesta es el diccionario de variables.</p>
+<h2>Qué es</h2>
+<p>Un documento —normalmente una hoja de cálculo— con una fila por variable y, como mínimo, estas columnas:</p>
+<div class="tabla"><table>
+<thead>
+<tr>
+<th>Columna</th>
+<th>Contenido</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Nombre</strong></td>
+<td>El nombre exacto de la variable en el fichero</td>
+</tr>
+<tr>
+<td><strong>Etiqueta</strong></td>
+<td>Qué significa, en lenguaje natural</td>
+</tr>
+<tr>
+<td><strong>Tipo</strong></td>
+<td>Numérica, categórica, fecha, texto libre</td>
+</tr>
+<tr>
+<td><strong>Unidades</strong></td>
+<td>Para las numéricas, siempre</td>
+</tr>
+<tr>
+<td><strong>Valores admitidos</strong></td>
+<td>Rango, o la lista de categorías con su codificación</td>
+</tr>
+<tr>
+<td><strong>Ausentes</strong></td>
+<td>Cómo se codifica un valor ausente, y si se distinguen sus motivos</td>
+</tr>
+<tr>
+<td><strong>Origen</strong></td>
+<td>De dónde sale: recogida directa, sistema de origen o derivada de otras</td>
+</tr>
+<tr>
+<td><strong>Notas</strong></td>
+<td>Cambios de definición, incidencias, particularidades</td>
+</tr>
+</tbody>
+</table></div>
+<h2>Los tres campos que se olvidan y hacen ilegible un conjunto</h2>
+<p><strong>La codificación de las categóricas.</strong> Una columna <code>sexo</code> con valores 1 y 2 no significa nada sin el diccionario. Y lo peor es que <strong>parece que sí lo significa</strong>: quien la reutiliza asume una convención y sigue adelante, con lo que el error nunca se detecta.</p>
+<p><strong>El código de los ausentes.</strong> Si los ausentes están como <code>-9</code>, <code>99</code> o casilla vacía, hay que decirlo. Un <code>-9</code> no declarado entra en la media, y ningún análisis avisa de ello.</p>
+<p>Y hay una distinción que rinde mucho: no es lo mismo <em>no medido</em>, <em>medido y no disponible</em>, <em>no aplicable</em> y <em>el paciente se negó</em>. Si el estudio los distingue, el diccionario debe decir con qué código.</p>
+<p><strong>Las variables derivadas.</strong> Las que se calculan a partir de otras. El diccionario debe decir a partir de qué y con qué regla, incluidos los puntos de corte: «índice de masa corporal calculado como peso/talla²» o «categoría de riesgo alta si la puntuación es mayor o igual a 4».</p>
+<h2>Quién lo mantiene y desde cuándo</h2>
+<p>Estas dos preguntas están en la plantilla y no son retóricas.</p>
+<blockquote>
+<p>Un diccionario que se escribe al final del proyecto es una <strong>reconstrucción</strong>, y siempre tiene huecos: nadie recuerda por qué en 2026 se cambió la definición de una variable.</p>
+</blockquote>
+<p>Lo que funciona es empezarlo el mismo día que se define el cuaderno de recogida y actualizarlo cada vez que algo cambie. Con una persona responsable nombrada, que suele ser quien coordina los datos.</p>
+<div class="fair">
+<p class="fair-t">En clave FAIR · R</p>
+<p>Un conjunto sin diccionario no es reutilizable, por accesible que sea. Y la <strong>R</strong> tiene una particularidad que conviene aprovechar: es la única letra que no depende de ningún permiso, de ningún repositorio ni de ningún tercero. Depende enteramente de lo que el equipo escriba mientras recoge.</p>
+</div>
+
+<h2>Por qué compensa escribirlo</h2>
+<p>Porque sirve a cuatro cosas a la vez, y solo una de ellas es compartir:</p>
+<div class="tabla"><table>
+<thead>
+<tr>
+<th>Para quién</th>
+<th>Qué le resuelve</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Quien se incorpora al equipo</td>
+<td>Entiende los datos sin necesidad de tutoría</td>
+</tr>
+<tr>
+<td>Quien hace el análisis</td>
+<td>No tiene que adivinar codificaciones</td>
+</tr>
+<tr>
+<td>Quien recibe el conjunto años después</td>
+<td>Puede usarlo sin preguntar a nadie</td>
+</tr>
+<tr>
+<td><strong>El propio equipo, dos años después</strong></td>
+<td>Que es el caso que más veces se da</td>
+</tr>
+</tbody>
+</table></div>
+<p>Es también lo que hace que la R de FAIR sea alcanzable con datos restringidos: el diccionario se puede publicar aunque los datos no.</p>
+<h2>Lo que le falta al diccionario</h2>
+<p>Con todo lo anterior bien hecho, el diccionario sigue sin decir una cosa esencial: <strong>cómo está organizado el conjunto</strong>. Cuántas veces se mide cada variable, si hay cosas que no son del paciente —muestras, estudios de imagen, ingresos—, qué representa una fila y cómo se enlazan los ficheros entre sí.</p>
+<p>Es el <strong>nivel 2</strong>, y le corresponde la unidad siguiente.</p>
+<h2>Lo que se escribe en el plan</h2>
+<p>No el diccionario entero. Solo dónde vive, quién lo mantiene, desde cuándo existe, <strong>cómo está organizado</strong> —por conjunto, o por tabla dentro de cada conjunto— y si se publicará junto con los datos.</p>

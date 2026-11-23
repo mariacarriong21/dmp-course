@@ -1,0 +1,34 @@
+<p>﻿---
+titulo: Qué son los datos de investigación
+tipo: texto</p>
+<hr />
+<p><strong>Datos de investigación son todos los registros que sostienen los resultados.</strong> Si un revisor, un comité o el propio equipo dentro de tres años quisieran comprobar una conclusión, los datos de investigación son aquello a lo que habría que volver.</p>
+<p>Esa definición es más amplia de lo que la gente supone. En un proyecto biomédico típico incluye:</p>
+<ul>
+<li>Las <strong>respuestas de un cuestionario</strong> y las variables recogidas en la consulta.</li>
+<li>Los <strong>valores de laboratorio</strong> y los resultados de las pruebas.</li>
+<li>Las <strong>imágenes</strong> de una resonancia o de un corte histológico.</li>
+<li>Las <strong>señales</strong> de un monitor o de un dispositivo portátil.</li>
+<li>Los <strong>datos extraídos de la historia clínica</strong> de los pacientes incluidos.</li>
+<li>La <strong>base de datos limpia</strong> sobre la que finalmente se hizo el análisis.</li>
+<li>Las <strong>tablas de resultados</strong> que aparecen en el artículo.</li>
+</ul>
+<h2>Lo que también cuenta, y casi nadie inventaría</h2>
+<p>Hay tres cosas que forman parte de los datos de investigación aunque no lo parezcan, y que son justamente las que más se pierden:</p>
+<ul>
+<li><strong>La descripción de los datos</strong>: qué conjuntos hay, qué representa una fila en cada uno, cómo se enlazan entre sí, y qué significa cada variable, en qué unidades y con qué valores admisibles. El <strong>diccionario de variables</strong> es la parte más conocida de esa descripción, pero es solo una parte: una lista de columnas no dice cómo está organizado el conjunto. Sin todo ello, una tabla es una cuadrícula de números.</li>
+<li><strong>El código de análisis</strong>: los guiones que transforman el dato crudo en el resultado publicado.</li>
+<li><strong>Los pesos de los modelos entrenados con datos del proyecto</strong>, incluidos los modelos de aprendizaje profundo y los modelos fundacionales, junto con sus hiperparámetros y la versión de los datos de entrenamiento utilizados. El modelo entrenado y la información que permite identificar cómo se obtuvo forman parte de los resultados de investigación y deben describirse y gestionarse.\n- <strong>Las decisiones tomadas sobre los datos</strong>: no solo las de limpieza —por qué se excluyeron catorce casos, qué se hizo con los valores imposibles—, sino también las transformaciones y variables derivadas que se aplicaron, y la elección de las técnicas de análisis. Dos equipos que parten del mismo fichero y deciden distinto obtienen resultados distintos sin que ninguno haya hecho nada mal; lo que separa un resultado reproducible de uno que no lo es no es el fichero, sino la constancia de esas decisiones.</li>
+</ul>
+<h2>Lo que no son datos de investigación</h2>
+<p>No lo son el protocolo, la memoria del proyecto ni el artículo: esos son <strong>documentos</strong>. Tampoco lo son los datos administrativos del proyecto —presupuesto, contratos, justificaciones—, que tienen su propia gestión.</p>
+<p>La distinción importa porque todo lo que este curso explica se aplica a los datos, no a los documentos.</p>
+<p>Conviene matizarla en un punto. Que un artículo no sea un dato de investigación no significa que quede fuera de la gestión de datos: el registro de un conjunto en un repositorio <strong>referencia las publicaciones</strong> que se han hecho con él, del mismo modo que el artículo cita el conjunto. Cada uno tiene su identificador permanente y se apunta al otro. Es lo que permite llegar desde el artículo a los datos que lo sostienen, y desde los datos a lo que se ha publicado con ellos.</p>
+<h2>No todos los datos los genera el proyecto</h2>
+<p>Lo anterior describe lo que un proyecto produce. En un instituto sanitario, sin embargo, buena parte de los datos que se analizan <strong>ya existían antes de que el proyecto empezara</strong>, y de dónde vengan cambia por completo lo que hay que hacer antes de poder tocarlos. Se anticipan aquí tres casos frecuentes, que el bloque C trata en detalle:</p>
+<p><strong>Datos recogidos con finalidad asistencial.</strong> Historia clínica, laboratorio, farmacia, imagen. Es el caso más habitual y el que más proyectos retrasa: se recogieron para atender a una persona, no para investigar, de modo que su uso en investigación no es automático. Requiere una habilitación propia y sigue el circuito de autorización y extracción que cada institución tenga establecido, con sus propias políticas y sus propios plazos.</p>
+<p><strong>Bases de datos externas.</strong> Registros de consorcios, cohortes de otras organizaciones, fuentes comerciales. Aquí el acceso se negocia: hay que llegar a un acuerdo previo, a veces pagarlo, y aceptar unas condiciones de uso que suelen limitar qué se puede hacer con los datos y qué se puede publicar después. Son gestiones de meses.</p>
+<p><strong>Datos de proyectos anteriores de la propia institución.</strong> Que los datos estén en casa no significa que estén disponibles. Hay que solicitarlos, y alguien tiene que comprobar que la finalidad nueva está amparada por aquello a lo que los pacientes consintieron en su momento. Y lo que se consulta para comprobarlo es, precisamente, <strong>lo que el plan de gestión de datos de aquel proyecto dejó escrito</strong>: qué se recogió, con qué consentimiento, durante cuánto tiempo se conserva y quién responde de ello.</p>
+<blockquote>
+<p>Ese último caso es el argumento más directo a favor de escribir bien el plan propio: quien lo lea dentro de cinco años, para decidir si puede reutilizar estos datos, puede ser un compañero del mismo centro.</p>
+</blockquote>

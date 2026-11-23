@@ -1,0 +1,29 @@
+<p>Todo proyecto sabe decir quién tiene acceso a los datos. Casi ninguno sabe decir <strong>quién lo pierde, cuándo y quién se encarga de retirarlo</strong>. Esa segunda mitad es la que este apartado persigue.</p>
+<h2>El acceso no es una lista, es un ciclo</h2>
+<p>Un permiso tiene cuatro momentos, y el plan debe cubrir los cuatro:</p>
+<p><strong>Se concede.</strong> A quién, con qué nivel —lectura, escritura, administración— y quién lo autoriza. La autorización es del investigador principal; la ejecución técnica, de quien administre el sistema.</p>
+<p><strong>Se usa.</strong> Con registro de accesos, si el sistema lo permite. No es vigilancia: es lo que permite reconstruir qué pasó si algo va mal, y es una de las medidas que un comité da por supuesta en datos de categoría especial.</p>
+<p><strong>Se revisa.</strong> Periódicamente, contra la lista real del equipo. Basta una vez al año, o en cada hito del proyecto.</p>
+<p><strong>Se retira.</strong> Cuando alguien deja el proyecto. Este es el punto donde falla todo el mundo.</p>
+<h2>Por qué se acumulan los accesos</h2>
+<p>Porque nada obliga a retirarlos. Cuando alguien se marcha hay una despedida, una entrega de tareas y a veces una devolución de material, pero los permisos son invisibles: no ocupan espacio, no molestan a nadie y nadie los echa de menos.</p>
+<p>El resultado, en un proyecto de cinco años con rotación de personal en formación, es una lista de acceso con más gente fuera que dentro.</p>
+<blockquote>
+<p>El principio que se aplica es el de <strong>mínimo privilegio</strong>: cada persona tiene el acceso que necesita, mientras lo necesita. La segunda mitad de esa frase es la que se olvida.</p>
+</blockquote>
+<h2>La regla que resuelve la mayor parte</h2>
+<p>Vincular la retirada a un acto que sí ocurre:</p>
+<blockquote>
+<p><em>La retirada de accesos forma parte del procedimiento de salida del proyecto y la ejecuta [rol] en el plazo de una semana desde que la persona cesa su participación. La lista de personas con acceso a cada conjunto se revisa en cada reunión de seguimiento anual.</em></p>
+</blockquote>
+<p>Es comprobable, tiene un plazo y tiene un responsable. Y en particular <strong>tiene un responsable distinto de «el equipo»</strong>: una tarea de todos es una tarea de nadie.</p>
+<h2>Los accesos que no son personas</h2>
+<p>Dos casos que conviene no olvidar:</p>
+<p><strong>Las cuentas de servicio y las claves de aplicación.</strong> Herramientas que acceden a los datos sin que nadie inicie sesión. Sobreviven a las personas y casi nunca se revisan.</p>
+<p><strong>Las cuentas compartidas.</strong> Un usuario que usa todo el grupo. Rompen el registro de accesos —nadie puede saber quién hizo qué— y son incompatibles con la responsabilidad proactiva. Si existen en el proyecto, el plan debe decir que se sustituyen por cuentas nominales.</p>
+<h2>Medidas adicionales</h2>
+<p>La plantilla pide declarar las que apliquen: cifrado en reposo, cifrado en tránsito, registro de accesos, doble factor de autenticación, aislamiento del entorno de análisis.</p>
+<p>Se declara <strong>lo que hay</strong>, no lo deseable. Si el proyecto no cifra en reposo porque el sistema institucional no lo ofrece, escribirlo es más útil que prometerlo: deja constancia de una limitación real, que es el primer paso para que alguien la resuelva.</p>
+<h2>Transferencia de datos</h2>
+<p>El campo de la plantilla que pregunta cómo viajan los datos cuando salen de su sistema —entre centros, hacia el equipo de análisis, hacia un tercero— merece respuesta concreta, porque es el momento en que un dato deja de estar protegido por el sistema que lo guardaba y todavía no lo protege el que lo recibirá.</p>
+<p>Lo que se escribe es el canal y el mecanismo: qué vía se usa, quién la autoriza y con qué protección. Y encaja con la declaración de la unidad anterior, que dice por qué vías <strong>no</strong> viajarán.</p>

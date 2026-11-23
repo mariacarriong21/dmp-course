@@ -1,0 +1,96 @@
+<p>Esta es la única regla necesaria para saber si un párrafo del plan está bien.</p>
+<blockquote>
+<p><strong>Un párrafo del PGD está bien si un tercero puede comprobar que se cumple.</strong></p>
+</blockquote>
+<p>No es una aspiración: es una prueba que se aplica frase a frase. Si nadie ajeno al proyecto puede verificar lo que dice, el párrafo no compromete a nada y sobra.</p>
+<h2>La prueba, sobre una frase real</h2>
+<p>Véase esta frase, del tipo que aparece en casi cualquier plan:</p>
+<blockquote>
+<p><em>Los datos se almacenarán en servidores institucionales protegidos mediante medidas de seguridad técnicas y organizativas adecuadas.</em></p>
+</blockquote>
+<p>Está bien escrita, es correcta y no dice nada. ¿Qué servidores? ¿Qué medidas? ¿Quién responde de ellas? Nadie puede comprobar si se cumple, porque no afirma nada comprobable.</p>
+<p>Ahora esta:</p>
+<blockquote>
+<p><em>Los datos de CD1 residen en la plataforma institucional de captura, con acceso por roles y registro de accesos. Las copias de seguridad las realiza el servicio de sistemas con periodicidad diaria y retención de treinta días.</em></p>
+</blockquote>
+<p>Cualquiera puede ir y comprobarlo. Y por eso mismo, hay que haberlo preguntado antes de escribirlo.</p>
+<h2>Tres pares más, donde más se nota</h2>
+<p>El criterio se aplica igual en todos los apartados, pero es en la descripción de los conjuntos donde separa más claramente un plan escrito de uno rellenado.</p>
+<h3>Describir un conjunto de datos</h3>
+<blockquote>
+<p><em>El proyecto generará datos clínicos de los pacientes incluidos, así como datos de imagen.</em></p>
+</blockquote>
+<p>No es falso: es que no permite hacer nada con ello. Ni saber cuántos conjuntos hay, ni qué contienen, ni si el volumen cabe donde se dice que va a caber.</p>
+<blockquote>
+<p><em>CD1 · Cuaderno de recogida electrónico. 300 pacientes, una fila por paciente y visita —basal, 6, 12 y 24 meses—, 62 variables: demográficas, antecedentes, estadio de la enfermedad renal, función renal (creatinina, filtrado glomerular estimado, albuminuria), tratamiento concomitante y desenlaces. Se exporta en CSV con el diccionario de variables que genera la propia herramienta. Unos 3 MB. Responsable: [nombre].</em></p>
+</blockquote>
+<p>Aquí hay cuatro cosas comprobables: el número de filas que debería tener el fichero, que el diccionario existe, el formato en que se conservará y una persona a la que preguntar.</p>
+<h3>Decir de dónde sale</h3>
+<blockquote>
+<p><em>Se utilizarán datos procedentes de la historia clínica.</em></p>
+<p><em>CD2 se extrae del sistema de historia clínica del centro mediante solicitud a [órgano], para los mismos pacientes incluidos en CD1, con una ventana de los 24 meses anteriores a la inclusión y la lista de variables del anexo II. La extracción la realiza [unidad]; el equipo investigador no accede a los sistemas.</em></p>
+</blockquote>
+<p>La segunda versión se puede contrastar con la autorización concedida, que es exactamente lo que hará quien la lea.</p>
+<h3>Decir qué se comparte</h3>
+<blockquote>
+<p><em>Los datos se compartirán conforme a los principios FAIR y estarán disponibles previa petición razonada al investigador principal.</em></p>
+</blockquote>
+<p>Dos defectos a la vez: no dice qué conjuntos, y el procedimiento que propone <strong>no cumple la A de FAIR</strong> que dice estar cumpliendo.</p>
+<blockquote>
+<p><em>CD7, las tablas agregadas de resultados, se deposita en abierto en [repositorio] con licencia [licencia] al publicarse el artículo. CD1 se deposita en el mismo repositorio con acceso restringido: el registro es público y el acceso se solicita a [órgano], que resuelve en [plazo] conforme a los criterios publicados en [enlace]. CD3, las imágenes, no se comparte, por [razón].</em></p>
+</blockquote>
+<p>Tres conjuntos, tres destinos distintos y ninguna promesa sin sujeto. Es la forma que tendrá el apartado 9 al terminar el bloque.</p>
+<h2>Las que pasan el primer filtro y no el segundo</h2>
+<p>Hay un tipo de frase peor que la vacía, porque <strong>suena concreta y se lee sin sospechar</strong>. Casi siempre falla por lo mismo: falta un dato que parecía estar.</p>
+<div class="tabla"><table>
+<thead>
+<tr>
+<th>La frase</th>
+<th>Qué falta</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Los datos se conservarán un mínimo de cinco años</em></td>
+<td><strong>El máximo.</strong> Un mínimo sin fecha de fin no se puede ejecutar: nadie sabe nunca cuándo toca borrar, y en la práctica no se borra</td>
+</tr>
+<tr>
+<td><em>Se conservarán mientras sean necesarios para la investigación</em></td>
+<td><strong>Un final comprobable.</strong> Siempre podrán parecer necesarios</td>
+</tr>
+<tr>
+<td><em>Se realizarán copias de seguridad diarias</em></td>
+<td><strong>El sujeto.</strong> Quién las hace, dónde quedan y cuánto se retienen. Es la afirmación que más veces resulta falsa al comprobarla</td>
+</tr>
+<tr>
+<td><em>Los datos podrán depositarse en un repositorio, si procede</em></td>
+<td><strong>El compromiso.</strong> Con «podrán» y «si procede» no hay forma de incumplirlo, y tampoco de cumplirlo</td>
+</tr>
+<tr>
+<td><em>Los datos se anonimizarán antes de compartirlos</em></td>
+<td><strong>El alcance y el término.</strong> ¿Qué conjuntos? ¿Y es anonimizar o seudonimizar? No son lo mismo</td>
+</tr>
+<tr>
+<td><em>Se seguirá la política institucional de datos</em></td>
+<td><strong>La referencia.</strong> Cuál, de qué fecha, y qué dice en este punto concreto</td>
+</tr>
+<tr>
+<td><em>El acceso estará restringido al personal autorizado</em></td>
+<td><strong>Quién autoriza y cómo se retira.</strong> Sin eso describe una intención, no un control</td>
+</tr>
+</tbody>
+</table></div>
+<p>Todas se arreglan igual: añadiendo el dato que falta. Y todas se detectan igual, con el mismo criterio —<strong>nadie ajeno puede comprobarlas</strong>—, aunque a primera vista parezcan suficientes.</p>
+<blockquote>
+<p>El plazo de conservación es el caso donde más caro sale, porque un plazo mal escrito no se descubre al presentar el plan: se descubre <strong>años después</strong>, cuando alguien tiene que decidir si borra y no encuentra en el documento la respuesta.</p>
+</blockquote>
+<h2>Tres preguntas para aplicarlo solo</h2>
+<p>Sobre cualquier párrafo del documento:</p>
+<ol>
+<li><strong>¿Nombra cosas concretas?</strong> Sistemas, órganos, personas, plazos, cifras, conjuntos con su código.</li>
+<li><strong>¿Podría alguien ir y comprobarlo?</strong> Sin preguntarle nada a quien lo escribió.</li>
+<li><strong>¿Serviría este párrafo, tal cual, para otro proyecto cualquiera?</strong> Si la respuesta es sí, está mal.</li>
+</ol>
+<p>La tercera es la más rápida y la que más veces acierta.</p>
+<h2>Por qué importa tanto</h2>
+<p>Porque el defecto que hay que temer en un plan de gestión de datos no es el error, que se ve: es el <strong>documento largo y vacío</strong>, que no se ve. Páginas de frases correctas que no comprometen a nada y que dan la impresión de estar completas. Este criterio es lo único que lo detecta.</p>

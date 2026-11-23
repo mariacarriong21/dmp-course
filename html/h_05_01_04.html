@@ -1,0 +1,148 @@
+<p>La pregunta práctica es esta: si el plan se escribe con la plantilla del curso y después hay que presentarlo en el formulario de otro financiador, ¿hay que rehacerlo?</p>
+<p>No. <strong>Se escribe una vez y se vuelca.</strong> Esta unidad muestra por qué.</p>
+<h2>Los referentes</h2>
+<p><strong>Horizon Europe.</strong> La plantilla de plan de gestión de datos de la Comisión Europea es el formulario más exigente que se encuentra un investigador, y el que más se ha copiado. Tiene <strong>siete apartados</strong>:</p>
+<div class="tabla"><table>
+<thead>
+<tr>
+<th>Apartado</th>
+<th>De qué trata</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Data Summary</em></td>
+<td>Qué datos hay, de dónde salen, para qué y cuántos</td>
+</tr>
+<tr>
+<td><em>FAIR data</em></td>
+<td>Dividido en cuatro: <em>making data findable</em>, <em>making data accessible</em>, <em>making data interoperable</em> e <em>increase data re-use</em></td>
+</tr>
+<tr>
+<td><em>Other research outputs</em></td>
+<td>Todo lo que produce el proyecto y no es un conjunto de datos, digital o físico</td>
+</tr>
+<tr>
+<td><em>Allocation of resources</em></td>
+<td>Qué cuesta y quién responde</td>
+</tr>
+<tr>
+<td><em>Data security</em></td>
+<td>Seguridad, recuperación y transferencia</td>
+</tr>
+<tr>
+<td><em>Ethics</em></td>
+<td>Cuestiones éticas y legales que afecten a la compartición</td>
+</tr>
+<tr>
+<td><em>Other issues</em></td>
+<td>Si el proyecto se acoge además a otros procedimientos de gestión de datos</td>
+</tr>
+</tbody>
+</table></div>
+<p>Dos precisiones sobre ella que conviene tener antes de abrirla.</p>
+<p><strong>Las preguntas no van numeradas.</strong> Dentro de cada apartado hay una lista de preguntas en cursiva, sin letras ni números. Las referencias del tipo «1.A» o «4.C» que circulan en guías y cursos <strong>no son de la Comisión</strong>: las añaden las herramientas de plan de gestión de datos para poder referirse a cada campo. Conviene saberlo para no buscarlas en el documento. Por la misma razón, este curso se refiere siempre a los apartados <strong>por su título</strong> y no por su número: la Comisión revisa la plantilla cada cierto tiempo y los números se mueven.</p>
+<p><strong>Es recomendada, no obligatoria.</strong> El propio documento lo dice: lo que obliga es el <strong>artículo 17 del acuerdo de subvención</strong>, y la plantilla es la forma sugerida de cumplirlo. Si se usa otra, hay que asegurarse de que responde a lo mismo.</p>
+<p><strong>Las convocatorias nacionales.</strong> En España, la Acción Estratégica en Salud del Instituto de Salud Carlos III y las convocatorias del Plan Estatal piden un plan de gestión de datos alineado con los principios FAIR, en un formato más breve y con menos apartados. La <a href="https://www.boe.es/eli/es/l/2022/09/05/17">Ley 17/2022</a>, que reformó la Ley de la Ciencia, es la que da respaldo legal a esa exigencia.</p>
+<p>No se les dedica una columna en la tabla siguiente, y conviene decir por qué: <strong>su redacción cambia de una convocatoria a otra</strong>, de modo que cualquier correspondencia detallada quedaría desfasada en un año. Lo que sí se mantiene es la relación de fondo — lo que piden es <strong>un subconjunto</strong> de lo que pide la plantilla del curso, no algo distinto—, y la regla operativa es la de la unidad D5·07: la fuente válida es el texto de la convocatoria del año en curso.</p>
+<p><strong>El modelo RDA.</strong> El <em>DMP Common Standard</em> de la Research Data Alliance no es un formulario: es un <strong>modelo de datos</strong>. Define cómo se representa un plan de gestión de datos para que una máquina pueda leerlo, validarlo e intercambiarlo, y se publica como <a href="https://github.com/RDA-DMP-Common/RDA-DMP-Common-Standard">esquema JSON de acceso público</a>. Es la referencia que siguen por dentro las herramientas de plan de gestión de datos, y por eso importa aunque nunca llegue a verse.</p>
+<h2>La correspondencia</h2>
+<div class="tabla"><table>
+<thead>
+<tr>
+<th>Plantilla del curso</th>
+<th>Horizon Europe</th>
+<th>Modelo RDA</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0 · Portada y control</td>
+<td>—</td>
+<td>La cabecera del plan y los datos del proyecto</td>
+</tr>
+<tr>
+<td>1 · Resumen y finalidad</td>
+<td><em>Data Summary</em> — finalidad de los datos y su relación con los objetivos</td>
+<td>La descripción general</td>
+</tr>
+<tr>
+<td>2 · Conjuntos de datos (ficha)</td>
+<td><em>Data Summary</em> — tipos y formatos, reutilización de datos existentes, procedencia, volumen previsto y utilidad fuera del proyecto</td>
+<td><strong>La ficha de cada conjunto</strong>, incluidas las palabras clave, si se reutiliza y el aseguramiento de la calidad</td>
+</tr>
+<tr>
+<td>3 · Muestras biológicas</td>
+<td><em>Other research outputs</em>, entre los resultados físicos que la plantilla enumera: materiales, anticuerpos, reactivos y <strong>muestras</strong></td>
+<td>— <em>(fuera del modelo)</em></td>
+</tr>
+<tr>
+<td>4 · Otros resultados</td>
+<td><em>Other research outputs</em>, en su vertiente digital: software, flujos de trabajo, protocolos, modelos</td>
+<td>Se representan también como conjuntos de datos, con otro tipo</td>
+</tr>
+<tr>
+<td>5 · Documentación y metadatos</td>
+<td><em>Making data findable</em> · <em>making data interoperable</em> · la documentación que pide <em>increase data re-use</em> para validar el análisis</td>
+<td>Los metadatos de cada conjunto y su identificador</td>
+</tr>
+<tr>
+<td>6 · Marco legal y ético</td>
+<td><em>Ethics</em> — cuestiones éticas y legales que afecten a la compartición, y consentimiento para compartir y conservar</td>
+<td>La declaración de cuestiones éticas y la de datos personales y sensibles</td>
+</tr>
+<tr>
+<td>7 · Almacenamiento y seguridad</td>
+<td><em>Data security</em> · y de <em>making data accessible</em>, cómo se acredita la identidad de quien accede</td>
+<td>Las medidas de seguridad y el sistema que aloja cada conjunto</td>
+</tr>
+<tr>
+<td>8 · Conservación y disposición</td>
+<td><em>Allocation of resources</em>, en su parte de preservación a largo plazo · y de <em>making data accessible</em>, cuánto seguirán disponibles los datos y sus metadatos</td>
+<td>La declaración de conservación y hasta cuándo estará disponible</td>
+</tr>
+<tr>
+<td>9 · Compartición y publicación</td>
+<td><em>Making data accessible</em> — repositorio fiable, embargo, comisión de acceso · y las licencias de <em>increase data re-use</em></td>
+<td>La distribución de cada conjunto: modo de acceso, repositorio, licencia y formato</td>
+</tr>
+<tr>
+<td>10 · Responsabilidades y recursos</td>
+<td><em>Allocation of resources</em> — costes, cómo se cubren y quién responde de la gestión de datos</td>
+<td>Los costes, y las personas con su papel</td>
+</tr>
+<tr>
+<td><em>(sin equivalente)</em></td>
+<td><em>Other issues</em> — ¿se usan otros procedimientos de gestión de datos, nacionales, del financiador, sectoriales o del departamento?</td>
+<td>—</td>
+</tr>
+</tbody>
+</table></div>
+<h2>Dos coincidencias que no son casuales</h2>
+<p><strong>El modelo RDA es <em>dataset</em>-céntrico.</strong> Un plan, en ese modelo, contiene una lista de conjuntos de datos, y cada conjunto lleva colgando sus propias distribuciones, sus metadatos, sus medidas de seguridad y su declaración de preservación. Es exactamente la <strong>ficha por conjunto</strong> de la plantilla del curso.</p>
+<p>Es una confirmación importante: la ficha por conjunto no es una manía pedagógica. Es cómo el estándar internacional modela un plan de gestión de datos.</p>
+<p><strong>«Abierto · acceso controlado · no se comparte»</strong> es literalmente el campo <code>data_access</code> del estándar, cuyos tres valores admitidos son <code>open</code>, <code>shared</code> y <code>closed</code>. La decisión que este curso pide tomar conjunto por conjunto es el dato exacto que espera cualquier herramienta.</p>
+<p><strong>Y el estándar obliga justo donde este curso insiste.</strong> De todos los campos que puede tener un conjunto de datos en ese modelo, solo cuatro son obligatorios: el identificador, el título, <strong>si contiene datos personales</strong> y <strong>si contiene datos sensibles</strong> —estos dos con tres valores posibles: sí, no o <em>se desconoce</em>—. Un plan que no responda a eso no es válido ni como fichero.</p>
+<h2>Dos diferencias deliberadas</h2>
+<p><strong>La plantilla no se organiza por letras FAIR</strong>, sino por decisiones, por el motivo que daba la unidad D8·01. Con la tabla de arriba, el volcado al formulario de Horizon Europe es mecánico.</p>
+<p><strong>Hay campos que la plantilla de Horizon Europe no pide.</strong> Nivel de identificabilidad, custodia de la clave de seudonimización, bloqueo, borrado seguro, transferencias internacionales. Las palabras «seudonimizado», «anonimizado» e «identificable» no aparecen ni una vez en el documento.</p>
+<p>Conviene entender bien por qué, porque no significa que a un proyecto europeo eso no le aplique:</p>
+<blockquote>
+<p>La Comisión <strong>no ha puesto la protección de datos en el plan de gestión de datos</strong>. La ha puesto en otro sitio: en el acuerdo de subvención y en la autoevaluación ética de la propuesta, que sí preguntan por identificabilidad, seudonimización y transferencias fuera de la Unión.</p>
+</blockquote>
+<p>De modo que un proyecto de Horizon Europe responde a todo eso, solo que en documentos distintos. La plantilla del curso lo junta en su apartado 6, y esa es la única diferencia real: <strong>dónde vive la respuesta, no si hay que darla</strong>. La ventaja de juntarlo es que así se ven las contradicciones —el caso del apartado 6 que impide lo que promete el 9— que separadas pasan desapercibidas.</p>
+<h2>Lo único que falta en la plantilla del curso</h2>
+<p>Una fila de la tabla queda sin pareja, y merece decirse en vez de disimularla: <em>Other issues</em>, que pregunta si el proyecto se acoge además a otros procedimientos de gestión de datos —nacionales, del financiador, sectoriales o del propio departamento—.</p>
+<p>No tiene un campo propio en esta plantilla porque su respuesta es, casi siempre, <strong>la política de datos de la institución</strong>, que el apartado 0 ya identifica entre los documentos relacionados. Quien rellene el formulario europeo puede responderlo desde ahí en una línea.</p>
+<h2>Por qué el estándar va a notarse</h2>
+<p>Queda por decir para qué sirve todo esto, porque es lo que da sentido a que aparezca en un curso que no va de informática. El modelo existe para que <strong>las herramientas se entiendan entre sí</strong>: que un plan escrito en la herramienta de una universidad pueda leerse en la de un financiador, que el sistema de gestión de la investigación sepa qué conjuntos de datos ha declarado un proyecto, que un repositorio reciba la ficha ya rellena en lugar de pedirla otra vez.</p>
+<blockquote>
+<p>La consecuencia razonable es que el plan de gestión de datos <strong>deje de ser solo un documento de texto</strong> y pase a ser también información de gestión estructurada dentro de los sistemas de la institución.</p>
+</blockquote>
+<p>Hoy conviven las dos cosas: se entrega un documento de texto o un PDF, y algunas herramientas ya guardan detrás los campos. Es esperable que con el tiempo pese más lo segundo, entre otras razones porque los catálogos del Espacio Europeo de Datos Sanitarios funcionan exactamente así.</p>
+<p>Para quien escribe el plan la consecuencia es modesta, pero conviene tenerla presente: <strong>cuanto más estructurada esté la información —una ficha por conjunto, con campos identificables, en lugar de párrafos corridos—, menos costará volcarla</strong> el día que haya que meterla en un sistema. Que es, de paso, la razón de que la plantilla del curso esté hecha de fichas y de tablas.</p>
+<h2>Lo que hay que llevarse</h2>
+<blockquote>
+<p>Ningún formulario de plan de gestión de datos pregunta algo que no esté en esta lista de once apartados. Si está decidido lo que hay en ellos, rellenar cualquier formulario es un ejercicio de copiar y pegar.</p>
+</blockquote>
+<p>Y la implicación contraria, que es la que de verdad importa: si ante un formulario no se sabe qué escribir, el problema no es el formulario. Es que la decisión <strong>todavía no está tomada</strong>.</p>

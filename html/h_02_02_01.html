@@ -1,0 +1,114 @@
+<p>Un <strong>conjunto de datos</strong> —<em>dataset</em>— es un grupo de datos que se producen de la misma manera, se guardan juntos y tienen el mismo destino.</p>
+<p>Las tres condiciones importan a la vez. Si dos grupos de datos se originan por vías distintas, viven en sistemas distintos o van a acabar de forma distinta, <strong>son dos conjuntos</strong>, aunque se analicen juntos y acaben en el mismo artículo.</p>
+<p>Conviene notar que la primera condición dice <em>producir</em>, no <em>recoger</em>. Hay datos que un proyecto no recoge de ninguna parte: los calcula. Y siguen siendo datos.</p>
+<h2>Cómo decidir cuántos hay</h2>
+<p>La definición anterior está bien para reconocer un conjunto, y mal para contarlos. Hace falta un procedimiento que no dependa del criterio de cada uno, y es este.</p>
+<p><strong>Paso 1 · Una lista provisional, por orígenes.</strong> Un grupo por cada vía distinta por la que entran datos al proyecto: lo que recoge el equipo, lo que se extrae de un sistema asistencial, lo que produce cada instrumento, lo que llega de otro centro y lo que el proyecto calcula. Es una lista de partida, no la definitiva.</p>
+<p><strong>Paso 2 · A cada grupo, cinco preguntas.</strong> No son cinco preguntas cualesquiera: son las cinco decisiones de la unidad D1·02 —qué datos, dónde, cómo se entienden, cuánto tiempo, con quién— hechas ahora <strong>conjunto por conjunto</strong>, más una que en investigación biomédica no se puede dejar fuera: qué permiso ampara cada uno.</p>
+<div class="tabla"><table>
+<thead>
+<tr>
+<th>Pregunta</th>
+<th>Apartado del plan al que corresponde</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>¿De dónde sale?</td>
+<td>Origen</td>
+</tr>
+<tr>
+<td>¿Dónde vive durante el proyecto?</td>
+<td>Almacenamiento</td>
+</tr>
+<tr>
+<td>¿Qué lo ampara, y con qué nivel de identificabilidad?</td>
+<td>Marco legal</td>
+</tr>
+<tr>
+<td>¿Cuánto tiempo se conserva?</td>
+<td>Conservación</td>
+</tr>
+<tr>
+<td>¿Qué se hace con él al terminar?</td>
+<td>Destino</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Paso 3 · La regla.</strong> Cada respuesta tiene que caber en una frase, sin matices:</p>
+<blockquote>
+<p>Si alguna de las cinco respuestas necesita un <strong>«excepto»</strong> o un <strong>«depende»</strong>, es que ahí dentro hay más de un conjunto. Se parte por donde aparece la excepción y se vuelve a preguntar.</p>
+</blockquote>
+<p>Y la misma regla al revés, que evita el error contrario —el de partir hasta el absurdo, un conjunto por fichero o por visita:</p>
+<blockquote>
+<p>Si dos grupos responden lo mismo a las cinco preguntas, <strong>son un solo conjunto</strong>. Separarlos no añade información y multiplica el trabajo de mantener el documento.</p>
+</blockquote>
+<h2>Cómo se ve aplicada</h2>
+<p>Un proyecto empieza declarando un único conjunto, «los datos del estudio», y le hace las cinco preguntas:</p>
+<ul>
+<li><em>¿Dónde vive?</em> «En la plataforma institucional… <strong>excepto</strong> las resonancias, que están en el servidor del servicio de radiología.» → la imagen se separa.</li>
+<li><em>¿Qué lo ampara?</em> «El consentimiento del estudio… <strong>excepto</strong> los datos de historia clínica anteriores al reclutamiento, que se extraen con autorización del centro.» → la extracción retrospectiva se separa.</li>
+<li><em>¿Qué se hace al terminar?</em> «Nada sale del centro y todo se conserva quince años… <strong>excepto</strong> una versión depurada y seudonimizada, preparada para analizar, que se deposita en un repositorio de acceso controlado para que otros grupos puedan solicitarla.» → esa versión preparada se separa de los ficheros tal como se recogieron.</li>
+</ul>
+<p>Tres excepciones, cuatro conjuntos. Y ninguno de los cuatro apareció por una reflexión teórica sobre qué es un conjunto de datos: aparecieron al intentar responder una pregunta con una sola frase.</p>
+<h2>Por qué esta separación condiciona todo lo demás</h2>
+<p>Porque todo lo demás se decide <strong>por conjunto</strong>, no para el proyecto entero: dónde vive cada uno, quién accede, cuánto se conserva, qué se comparte. Un proyecto que trata sus datos como un bloque indiferenciado acaba tomando la decisión más restrictiva para todo, o la más laxa, y ninguna de las dos es correcta.</p>
+<p>Es también lo que más distingue un plan de gestión de datos útil de uno que solo lo parece.</p>
+<h2>Qué no es un conjunto de datos</h2>
+<ul>
+<li><strong>No es un fichero.</strong> Un conjunto puede ser un fichero, veinte ficheros o una base de datos entera.</li>
+<li><strong>No es una carpeta del proyecto.</strong> La carpeta suele mezclar datos, documentos, borradores y copias.</li>
+<li><strong>No es «los datos del estudio».</strong> Ese es el título del proyecto otra vez.</li>
+<li><strong>No es cualquier fichero intermedio.</strong> Los productos transitorios de un análisis —una tabla auxiliar, un fichero de paso que se regenera con volver a ejecutar el código— no se inventarían. Si desaparecieran mañana y no pasara nada, no son conjuntos.</li>
+</ul>
+<p>Esta última conviene matizarla, porque la frontera no está en ser intermedio o final, sino en si <strong>alguien lo va a necesitar después</strong>. Un fichero que resulta de transformaciones con criterios propios —exclusiones, recodificaciones, variables derivadas, imputaciones—, que se conserva y sobre el que se hace el análisis, <strong>sí es un conjunto de datos</strong>, por muy intermedio que parezca en el diagrama. El fichero depurado sobre el que finalmente se analiza es exactamente eso, y lo mismo vale para uno ya normalizado a un modelo común o para una versión seudonimizada que se entrega a otro centro.</p>
+<h2>¿Y lo que se deriva de otros datos?</h2>
+<p>Antes de responder, conviene fijar dos nombres que se usan a partir de aquí y que la unidad D2·08 desarrolla:</p>
+<ul>
+<li><strong>Dato crudo</strong>: el dato tal como se recogió o se extrajo, sin depurar y sin decisiones aplicadas.</li>
+<li><strong>Base de análisis</strong>: el fichero ya depurado sobre el que se calculan los resultados, con las exclusiones hechas, los valores corregidos y las variables derivadas añadidas.</li>
+</ul>
+<p>Con eso, la pregunta razonable que plantea la definición, y que merece respuesta explícita: si la base de análisis y las tablas de resultados salen del dato crudo, <strong>¿no son simplemente el dato crudo transformado?</strong></p>
+<p>En sentido estricto, sí. Pero inventariar algo en un plan de gestión de datos <strong>no es afirmar que sea una cosa distinta</strong>: es afirmar que necesita decisiones propias. La pregunta no es qué es, sino qué hay que decidir sobre ello.</p>
+<p>La prueba es esta. Sobre un ejemplo concreto —una tabla de resultados agregados obtenida a partir de datos clínicos individuales—, cuatro preguntas:</p>
+<div class="tabla"><table>
+<thead>
+<tr>
+<th>Pregunta</th>
+<th>El dato clínico de partida</th>
+<th>La tabla agregada de este ejemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>¿Es dato personal?</td>
+<td>Sí</td>
+<td>No, en este caso</td>
+</tr>
+<tr>
+<td>¿Cuánto se conserva?</td>
+<td>Plazo tasado, luego se destruye</td>
+<td>Indefinidamente</td>
+</tr>
+<tr>
+<td>¿Dónde vive?</td>
+<td>Sistema restringido</td>
+<td>Repositorio público</td>
+</tr>
+<tr>
+<td>¿Cuál es su destino?</td>
+<td>No se comparte</td>
+<td>Abierto</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Cuatro respuestas distintas.</strong> Si el plan lo tratara como una parte del conjunto de origen, tendría que decir a la vez que ese conjunto se destruye a los quince años y que se conserva para siempre, y que no se comparte y que se publica en abierto. Por eso necesita su propia fila: no porque sea otra cosa, sino porque <strong>su ciclo de vida es otro</strong>.</p>
+<p>Conviene leer las dos columnas como lo que son: <strong>un ejemplo</strong>, no dos categorías del mundo. Otro par de conjuntos daría otras cuatro respuestas. Lo que hay que repetir en cada proyecto es el procedimiento —hacerle las cuatro preguntas a cada producto derivado—, no copiar esta tabla.</p>
+<blockquote>
+<p>Una salvedad sobre la primera fila: que una tabla agregada no sea dato personal <strong>no es automático</strong>. Si agrega muy pocos casos, o cruza suficientes variables —un recuento por sexo, tramo de edad y hospital en el que una celda contiene dos pacientes—, puede permitir deducir la información de una persona concreta, y entonces sigue siendo dato personal. Es un juicio que hay que hacer tabla por tabla, y del que se ocupa el bloque C.</p>
+</blockquote>
+<h2>Dos casos que conviene no confundir</h2>
+<p><strong>La base de análisis</strong> es un conjunto de datos sin discusión. No es una transformación mecánica: incorpora exclusiones, criterios, variables derivadas y decisiones de imputación. Reconstruirla exige el dato de partida y el registro de todas esas decisiones, y es el conjunto que pediría un revisor.</p>
+<p><strong>Las tablas de resultados</strong> son el caso discutible, y es legítimo verlas como parte de la publicación más que como un conjunto de datos. Aquí se inventarían por una razón muy concreta de la investigación biomédica: con frecuencia son <strong>lo único que el proyecto puede publicar</strong>, y algo que va a salir al mundo con su propia licencia y su propio destino necesita estar en la lista.</p>
+<p>La unidad D2·08 vuelve sobre esto, incluido el argumento de que publicar el código de análisis debería hacer innecesario depositar lo que ese código produce.</p>
+<p>Las tres unidades siguientes aplican todo lo anterior a tres tipos de datos biomédicos habituales.</p>

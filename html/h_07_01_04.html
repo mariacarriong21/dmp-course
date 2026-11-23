@@ -1,0 +1,96 @@
+<p>Dos versiones del plan del mismo proyecto de ejemplo, el estudio PREVIA, escritas por dos equipos distintos. Se trata de leerlas y puntuarlas con los cuatro criterios de la lista de comprobación.</p>
+<p><strong>Antes de empezar, dos advertencias sobre lo que se ve y lo que no.</strong></p>
+<p>Lo que sigue son <strong>extractos</strong>: de cada plan se reproducen los <strong>mismos seis apartados</strong>, los que hablan de los datos, y en el mismo orden. La comparación es por tanto justa —se está viendo lo mismo de los dos—, pero no permite juzgar lo que no se muestra: si el resto del documento está completo, si las fichas de conjunto existen o si la portada lleva control de versiones. Las preguntas se limitan a lo que hay delante.</p>
+<p>La <strong>extensión total</strong> de cada plan sí es un dato del caso, igual que lo son el número de pacientes o el nombre del proyecto: el A tiene 22 páginas y el B, 7. No hay que comprobarlo; hay que interpretarlo.</p>
+<hr />
+<h2>Plan A · extracto (22 páginas en total)</h2>
+<blockquote>
+<p><strong>Datos.</strong> El proyecto generará datos clínicos, analíticos y de imagen de los pacientes incluidos, que serán tratados conforme a los principios de la investigación biomédica y a la normativa vigente en materia de protección de datos.</p>
+<p><strong>Almacenamiento.</strong> Los datos se custodiarán en servidores institucionales del centro, protegidos mediante las medidas de seguridad técnicas y organizativas adecuadas, y se realizarán copias de seguridad periódicas que garanticen su disponibilidad.</p>
+<p><strong>Marco legal.</strong> El tratamiento se realizará conforme al Reglamento (UE) 2016/679, a la Ley Orgánica 3/2018 y a la Ley 14/2007, de Investigación Biomédica, previa obtención del consentimiento informado de los participantes y del dictamen favorable del comité de ética correspondiente.</p>
+<p><strong>Conservación.</strong> Los datos se conservarán durante el tiempo necesario para el cumplimiento de las finalidades del estudio y, posteriormente, se procederá a su supresión.</p>
+<p><strong>Compartición.</strong> El equipo investigador se adhiere a los principios FAIR y pondrá los datos a disposición de la comunidad científica, garantizando en todo momento la confidencialidad de los participantes. Los datos estarán disponibles bajo petición razonada al investigador principal.</p>
+<p><strong>Responsabilidades.</strong> La gestión de los datos será responsabilidad del equipo investigador, con el apoyo de los servicios centrales del centro.</p>
+</blockquote>
+<h2>Plan B · extracto (7 páginas en total)</h2>
+<blockquote>
+<p><strong>Datos.</strong> Siete conjuntos, cada uno con su ficha en la sección 2. Se resumen aquí los cuatro sobre los que se decide distinto: CD1, cuaderno de recogida electrónico, 300 sujetos, seudonimizado. CD2, extracción de antecedentes y tratamientos de la historia clínica de esos mismos sujetos. CD3, resonancia basal de 120 de ellos, DICOM, ~120 GB. CD7, tablas agregadas del análisis principal, no personales.</p>
+<p><strong>Almacenamiento.</strong> CD1 en la plataforma institucional de captura, administrada por informática. CD2 y CD7 en el espacio de red del grupo, acceso nominal a cinco personas. CD3 en el servidor del servicio de radiología, sin copia fuera de él. La plataforma de captura tiene copia diaria con 30 días de retención; <strong>el espacio de red del grupo no está incluido en ese respaldo</strong>, por lo que la responsable de datos mantiene copia semanal en el espacio institucional. No se ha probado una restauración; se solicitará una prueba en el primer semestre.</p>
+<p><strong>Marco legal.</strong> CD1: consentimiento explícito (art. 6.1.a y 9.2.a RGPD), hoja de información v2.1. CD2: acceso autorizado por la dirección del centro con dictamen del CEIm [ref], limitado a este proyecto. El consentimiento <strong>no contempla</strong> la cesión a terceros ni la reutilización futura, por lo que el depósito se limita a CD7. Clave de seudonimización custodiada por informática, sin acceso del equipo de análisis.</p>
+<p><strong>Conservación.</strong> CD1 y CD3: 15 años desde el cierre, por compromiso institucional y reproducibilidad. CD2: cierre + 3 años, según la autorización concedida. CD7: indefinido, no son datos personales. Borrado seguro ejecutado por informática con acta de destrucción.</p>
+<p><strong>Compartición.</strong> CD7 abierto en Zenodo, CC BY 4.0. CD1 depositado en Zenodo con metadatos públicos y ficheros restringidos; las solicitudes las evalúa la comisión de acceso a datos del centro conforme a criterios publicados en la entrada, plazo de dos meses. CD2 no se comparte: la autorización cubre solo este proyecto. CD3 no se deposita por volumen; se registra su descripción y el acceso sigue el mismo procedimiento que CD1.</p>
+<p><strong>Responsabilidades.</strong> Mantenimiento del documento, diccionario y depósito: [coordinadora de datos]. Accesos: informática, a petición de la IP. Clave: informática. Borrado al vencimiento: informática, con acta a la IP o a quien la sustituya. Si la coordinadora deja el proyecto, la responsabilidad revierte a la IP hasta designar sustituto.</p>
+</blockquote>
+<hr />
+<pre><code>&gt;&gt;¿Qué plan describe mejor lo que el proyecto va a hacer con sus datos?&lt;&lt;
+( ) El plan A: cubre más aspectos y está más desarrollado
+(x) El plan B: cada afirmación se puede comprobar
+( ) Los dos por igual, con estilos distintos
+( ) El plan A en la parte legal, el B en la técnica
+[explanation]
+El plan B, y no está cerca.
+
+El plan A ocupa tres veces más y **no afirma nada verificable**: no nombra un solo sistema, un solo repositorio, un solo responsable ni un solo plazo. Sus seis párrafos se pueden pegar sin cambiar una palabra en cualquier proyecto biomédico del mundo, que es la prueba definitiva de que no describen este.
+
+Es el antipatrón número uno, el **documento largo y vacío**, y es el que casi todo el mundo puntúa alto la primera vez: confundimos extensión con completitud.
+
+Ni siquiera la parte legal del A se salva. Cita tres normas correctamente y no dice qué ampara qué tratamiento, que es lo único que se le preguntaba.
+[explanation]
+</code></pre>
+<pre><code>&gt;&gt;¿Qué puntuación corresponde al plan A en el criterio R1, inventario de datos?&lt;&lt;
+(x) Insuficiente
+( ) Aceptable
+( ) Bueno
+[explanation]
+Insuficiente. Habla de «datos clínicos, analíticos y de imagen» en bloque, sin inventario ni fichas.
+
+La consecuencia se ve dos párrafos más abajo: al no distinguir conjuntos, tiene que decidir en bloque, y acaba prometiendo compartir «los datos» cuando la mayoría de los conjuntos del proyecto no son compartibles.
+[explanation]
+</code></pre>
+<pre><code>&gt;&gt;¿Qué puntuación corresponde al plan B en el criterio R2, concreción verificable?&lt;&lt;
+( ) Insuficiente
+( ) Aceptable
+(x) Bueno
+[explanation]
+Bueno. Nombra sistemas, frecuencias, retenciones, órganos, plazos, licencias y personas. Todo se puede ir a comprobar.
+
+Y hay un detalle que conviene notar: el plan B **declara lo que no está cubierto** —el espacio de red del grupo no entra en el respaldo institucional, y no se ha probado ninguna restauración—. Eso sube la puntuación, no la baja. Un documento que reconoce una limitación y dice qué hace al respecto es más fiable que uno que promete un respaldo universal inexistente.
+[explanation]
+</code></pre>
+<pre><code>&gt;&gt;El plan A dice: «se adhiere a los principios FAIR y pondrá los datos a disposición de la comunidad científica, garantizando la confidencialidad». ¿Qué criterio falla ahí sobre todo?&lt;&lt;
+( ) R1 · Inventario de datos
+( ) R2 · Concreción verificable
+(x) R3 · Coherencia interna
+( ) R4 · Documento terminado
+[explanation]
+Falla R2 también, pero lo que se rompe ahí es **R3, la coherencia**. La frase promete a la vez poner los datos a disposición de todos y garantizar la confidencialidad de datos personales que no se pueden publicar. Las dos cosas no se sostienen juntas.
+
+Es el antipatrón de la **promesa incumplible**, y es lo que un comité detecta antes: la sección legal describe unos datos no publicables y la de compartición ofrece publicarlos.
+
+El plan B resuelve exactamente el mismo conflicto en la dirección correcta: declara el límite del consentimiento y ajusta el destino de cada conjunto en consecuencia.
+[explanation]
+</code></pre>
+<pre><code>&gt;&gt;Según los datos del caso, el plan A ocupa 22 páginas y el B, 7. ¿Qué conclusión es la correcta?&lt;&lt;
+( ) El plan B está incompleto y necesita desarrollarse
+(x) La extensión no mide la completitud: el A repite fórmulas generales, el B toma decisiones
+( ) El plan A es más apropiado para una convocatoria europea
+( ) Ambos deberían converger en unas 15 páginas
+[explanation]
+La extensión no mide nada por sí sola. Un proyecto biomédico ordinario cabe en **seis a doce páginas**, y los documentos de veinticinco no suelen ser más completos: son más genéricos. De hecho es lo que muestran los extractos: los seis apartados del A ocupan más que los del B y dicen bastante menos.
+
+Sobre la convocatoria europea, el efecto es el contrario del que se supone. Horizon Europe pregunta por sistemas, costes, responsables y procedimientos concretos: el plan B se vuelca a su formulario casi campo a campo, y el A no tiene con qué rellenarlo.
+[explanation]
+</code></pre>
+<pre><code>&gt;&gt;El plan B dice que no se ha probado ninguna restauración de las copias de seguridad. ¿Debería haberlo omitido?&lt;&lt;
+( ) Sí: reconocer una debilidad perjudica la evaluación del proyecto
+(x) No: declara una limitación real y la acción prevista, que es lo que hace ejecutable el documento
+( ) Sí, mientras el respaldo exista formalmente
+( ) Es indiferente para la calidad del plan
+[explanation]
+No. Un plan de gestión de datos no es un escaparate: es un documento operativo que alguien tendrá que ejecutar.
+
+Declarar que no se ha probado la restauración y que se solicitará una prueba convierte un riesgo invisible en una tarea con plazo. Ocultarlo deja el riesgo intacto y añade una afirmación que no se sostiene.
+
+Es la diferencia entre los dos documentos, resumida: el A describe un proyecto ideal, el B describe este.
+[explanation]
+</code></pre>
